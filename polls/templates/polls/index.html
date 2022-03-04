@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <button onclick="doDisplay('popup-place-info')">지도 테스트용 버튼</button>
+
+
+                <footer style=>
+                    <!-- st. 장소 클릭 시 상세정보 -->
+                    <div id="popup-place-info" style="width: 100%;">
+                        <div class="place-info" id="place-info">
+                            <aside id="right-float" style="width: 30%;padding: 5px;">
+                                <img src="../img/다운로드.jpg" width="100%" />
+                                <footer style="float: right;">
+                                    <form>
+                                        <!-- 자세히보기 버튼 :  
+                              선한영향력 : https://xn--o39akkz01az4ip7f4xzwoa.com/store/view?idx=인덱스번호-->
+                                        <button style="margin-bottom: 30px;" type="button" onclick="location.href='https://xn--o39akkz01az4ip7f4xzwoa.com/store/view?idx=1090';" class="btn btn-light btn-outline-secondary btnflt1">자세히보기</button>
+                                    </form>
+                                </footer>
+                            </aside>
+                            <aside id="right-float" style="width: 10%;height:100%;padding: 0px;">
+
+                                <img style="margin:0" src="https://www.foodbank.co.kr/news/photo/202111/62168_19582_4347.jpg" width="100%" />
+                                <!-- 선한영향력이면 선한영향력 사진 뜨게 -->
+
+                            </aside>
+                            <div style="width: 65%;">
+                                <p class="smallname">채은네식당</p>
+                                강원도 철원군 서면 자등리
+                                <br> 영업시간 :
+                                <br> 꼬르륵
+                                <br> 대상자 : 저소득층 자녀
+                                <br> 동반 1인 가능
+                                <br> <button onclick="timeNow()">현재시간</button>
+                                <br> <span id="time" onload="timeNow()"> </span>
+                            </div>
+                        </div>
+                        <!-- en. 장소 클릭 시 상세정보 -->
+                </footer>
+                </div>
+                <div class="col-3">
+                    <!-- st . nav bar=============================== -->
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Fifth navbar example">
+                        <a class="navbar-brand" href="#">밥먹자
+                        </a>
+                    </nav>
+                    <hr>
+                    <!-- en. nav bar=========================== -->
+                    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 100%;height: 80%;">
+                        <ul class="nav nav-pills flex-column mb-auto">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link link-dark" aria-current="page">
+                                    <svg class="bi me-2" width="16" height="16"></svg> 정보수정
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link link-dark">
+                                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg> 질문게시판
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link link-dark">
+                                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg> 으햐
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link link-dark">
+                                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg> 손저려
+                                </a>
+                            </li>
+                        </ul>
+
+                        <hr>
+                        <div class="dropdown">
+                            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" aria-expanded="false">
+                                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 지도종류 선택============= -->
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width: 100%;">
+                        <input onclick="doDisplay3('sunhan','card','muryo')" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                        <label class="btn btn-outline-secondary" for="btnradio1" style="font-size:95% ; width:100%">선한 영향력</label>
+
+                        <input onclick="doDisplay3('muryo','card','sunhan')" type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" style="width:30%">
+                        <label class="btn btn-outline-secondary" for="btnradio2" style="width: 100%;">급식소</label>
+
+                        <input onclick="doDisplay3('card','muryo','sunhan')" type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                        <label class="btn btn-outline-secondary" for="btnradio3" style="width:100%">급식카드</label>
+                    </div>
+                    <!-- en.지도 종류 선택 ============== -->
+                    <!-- 상세조건 선택============= -->
+                    <form id="sunhan" class="jogeon" style="display: block;">
+                        <input type="checkbox" name="target1_code" value="1" checked> 1인
+                        <input type="checkbox" name="target1_code" value="0"> 동반 가능
+                        <hr>
+                        <input type="checkbox" name="target2_code" value="1" checked> 결식아동
+                        <input type="checkbox" name="target2_code" value="1"> 독거노인
+                        <input type="checkbox" name="target2_code" value="99"> 소방관 등
+
+                    </form>
+                    <form id="muryo" class="jogeon" style="display: none;">
+                        <input type="checkbox" name="target1_code" value="1" checked> 무료
+                        <input type="checkbox" name="target1_code" value="0"> 급식소
+
+                    </form>
+                    <form id="card" class="jogeon" style="display: none;">
+                        <input type="checkbox" name="target1_code" value="1" checked> 꿈나무
+                        <input type="checkbox" name="target1_code" value="0"> 카드
+
+
+                    </form>
+                    <!-- en.상세조건 선택 ============== -->
+                    <!-- en. 플롯 사이드바 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="../js/main.js">
+</script>
+
+</html>
