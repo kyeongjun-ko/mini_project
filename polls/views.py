@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def index(request):
+    print('안녕하세요, 호출되었습니다! ')
