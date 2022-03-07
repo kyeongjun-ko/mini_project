@@ -66,14 +66,13 @@ WSGI_APPLICATION = 'bit2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bitteam',
+        'NAME': 'bitmini',
         'USER': 'root',
         'PASSWORD': '000000',
         'HOST': 'localhost',
         'PORT': '3306'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
