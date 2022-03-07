@@ -4,57 +4,64 @@
     font-weight: normal;
     font-style: normal;
 }
+
 * {
     /* border: 2px solid #000000; */
-    margin: 0% ;
-    padding: 0% ;
+    margin: 0%;
+    padding: 0%;
 }
+
 body {
     border: 1px solid #000000;
-    font-family: 'IM_Hyemin-Regular','Selif' !important;
+    font-family: 'IM_Hyemin-Regular', 'Selif' !important;
     margin: 0%;
     padding: 0;
     height: 100%;
 }
+
 footer {
-    position : fixed;
-    bottom : 0;
+    position: fixed;
+    bottom: 0;
 }
+
 #right-float {
     float: right;
 }
-.place-info {
-    padding: 10px;
-    border: 1px grey solid;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background-color: #ffffff;
 
+.smallname {
+    font-weight: bold;
+    font-size: 2em;
+    line-height: 1em;
 }
-.smallname {font-weight: bold; font-size: 1.5em;}
+
 #side-bar {
     float: right;
     background-color: #ffffff;
     width: 27%;
 }
+
 article {
     float: left;
     width: 70%;
 }
+
 li {
     list-style: none;
     padding: 5px;
 }
+
 .btn-group {
     background-color: #ffffff;
     text-align: center;
     margin: 2px auto;
 }
+
 #popup-place-info {
     padding: 5px 5px 0 5px;
-    display : none;
-    height : 20%;
+    display: none;
+    height: 20%;
 }
+
 .btnflt1 {
     float: right;
     margin: 0 2px 0 auto;
@@ -63,6 +70,7 @@ li {
 .jogeon {
     padding: 5px;
 }
+
 .loginimg {
     border-radius: 50%;
     width: 3em;

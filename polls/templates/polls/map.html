@@ -1,0 +1,4088 @@
+
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a927522049c349118927a29c7493c243 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+
+            <div class="folium-map" id="map_a927522049c349118927a29c7493c243" ></div>
+
+</body>
+<script>
+
+            var map_a927522049c349118927a29c7493c243 = L.map(
+                "map_a927522049c349118927a29c7493c243",
+                {
+                    center: [37.49315, 127.02843],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+
+
+
+
+            var tile_layer_76baab88b2fe47f98596257ada5d82dd = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a927522049c349118927a29c7493c243);
+
+
+            var marker_680bdaff746c45af8b5b0cb47f600dbc = L.marker(
+                [37.49315, 127.02843],
+                {}
+            ).addTo(map_a927522049c349118927a29c7493c243);
+
+
+            var icon_de7555b19832416389582ba23ad6d5ab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_680bdaff746c45af8b5b0cb47f600dbc.setIcon(icon_de7555b19832416389582ba23ad6d5ab);
+
+
+            var tile_layer_e446d36d31cd4471b4eb11d3fecb936d = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_ee9df9a3b9184bde903968e879a65cb7 = new L.Control.MiniMap(
+                tile_layer_e446d36d31cd4471b4eb11d3fecb936d,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": false, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_a927522049c349118927a29c7493c243.addControl(mini_map_ee9df9a3b9184bde903968e879a65cb7);
+
+
+            var marker_cluster_28621e751957478996f32db1c0840b28 = L.markerClusterGroup(
+                {}
+            );
+            map_a927522049c349118927a29c7493c243.addLayer(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+            var marker_7a25be6c85344cd1b721dcbc3231f939 = L.marker(
+                [37.51555641, 127.0327484],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_94240cbdd6d64be393a39ad0258135cc = L.popup({"maxWidth": "100%"});
+
+
+            var html_d1db807c5f5040e8ad7f128a130ef6c0 = $(`<div id="html_d1db807c5f5040e8ad7f128a130ef6c0" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 삼청골명가 더수제비 <br>주소: 서울 강남구 논현로132길 29<br>영업 시간: 11시~8시 (평일),  11시~6시 (토)<br>적용대상 : Nan<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_94240cbdd6d64be393a39ad0258135cc.setContent(html_d1db807c5f5040e8ad7f128a130ef6c0);
+
+
+        marker_7a25be6c85344cd1b721dcbc3231f939.bindPopup(popup_94240cbdd6d64be393a39ad0258135cc)
+        ;
+
+
+
+
+            var marker_2b1e89b32a1e4d889b6a46b0c9df6b65 = L.marker(
+                [37.49751412, 127.0593834],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_1b0af3a463e24519b4c64884fe9b5a93 = L.popup({"maxWidth": "100%"});
+
+
+            var html_70c0bf2b76d44ea1a91974508214656b = $(`<div id="html_70c0bf2b76d44ea1a91974508214656b" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 87.5 탭댄스 컴퍼니<br>주소: 서울 강남구 대치동 1016-4<br>영업 시간: 오후1시 - 오후 10시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_1b0af3a463e24519b4c64884fe9b5a93.setContent(html_70c0bf2b76d44ea1a91974508214656b);
+
+
+        marker_2b1e89b32a1e4d889b6a46b0c9df6b65.bindPopup(popup_1b0af3a463e24519b4c64884fe9b5a93)
+        ;
+
+
+
+
+            var marker_f8c971f3784f4927ba73a510219736da = L.marker(
+                [37.49277901, 127.0410676],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_5e3fda69bf814f8f9eec4de4087b2a76 = L.popup({"maxWidth": "100%"});
+
+
+            var html_03ff5f7b2b684d21ad67693f3fe77a56 = $(`<div id="html_03ff5f7b2b684d21ad67693f3fe77a56" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 피트니스플랜비<br>주소: 서울 강남구 도곡로 203<br>영업 시간: nan<br>적용대상 : Nan<br>적용인원 : Nan </pre> </div>`)[0];
+            popup_5e3fda69bf814f8f9eec4de4087b2a76.setContent(html_03ff5f7b2b684d21ad67693f3fe77a56);
+
+
+        marker_f8c971f3784f4927ba73a510219736da.bindPopup(popup_5e3fda69bf814f8f9eec4de4087b2a76)
+        ;
+
+
+
+
+            var marker_43094470f442466fbc65f784fe1f72da = L.marker(
+                [37.49883014, 127.0595582],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_71b67b964ee3400c97d61ab694d87612 = L.popup({"maxWidth": "100%"});
+
+
+            var html_399c60fe00cc4fe4a3d3b6d9143545c2 = $(`<div id="html_399c60fe00cc4fe4a3d3b6d9143545c2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 바바에스안경원(대치점)<br>주소: 서울 강남구 도곡로 449<br>영업 시간: 10:00 ~21:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_71b67b964ee3400c97d61ab694d87612.setContent(html_399c60fe00cc4fe4a3d3b6d9143545c2);
+
+
+        marker_43094470f442466fbc65f784fe1f72da.bindPopup(popup_71b67b964ee3400c97d61ab694d87612)
+        ;
+
+
+
+
+            var marker_f3e5fc37b8e84f1eb7f3b10b0f64525d = L.marker(
+                [37.51007091, 127.040892],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_2ff2b5aedaf94a47832b6268e23d11e7 = L.popup({"maxWidth": "100%"});
+
+
+            var html_08168a65f50444b89fdfa71b9c90bb29 = $(`<div id="html_08168a65f50444b89fdfa71b9c90bb29" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 한국전문연주자협회<br>주소: 서울 강남구 선릉로111길 33<br>영업 시간: 9~19<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_2ff2b5aedaf94a47832b6268e23d11e7.setContent(html_08168a65f50444b89fdfa71b9c90bb29);
+
+
+        marker_f3e5fc37b8e84f1eb7f3b10b0f64525d.bindPopup(popup_2ff2b5aedaf94a47832b6268e23d11e7)
+        ;
+
+
+
+
+            var marker_d35d5b4d128b43d8a6c0744854a4b9d5 = L.marker(
+                [37.49642535, 127.0439124],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0bacc87f5eb9445f8a324cb797e27166 = L.popup({"maxWidth": "100%"});
+
+
+            var html_9179a47d1f8d451b95b717a3350902f6 = $(`<div id="html_9179a47d1f8d451b95b717a3350902f6" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 우리카페<br>주소: 서울 강남구 언주로69길 16<br>영업 시간: 10~21<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_0bacc87f5eb9445f8a324cb797e27166.setContent(html_9179a47d1f8d451b95b717a3350902f6);
+
+
+        marker_d35d5b4d128b43d8a6c0744854a4b9d5.bindPopup(popup_0bacc87f5eb9445f8a324cb797e27166)
+        ;
+
+
+
+
+            var marker_a6ce2355c6a04be4b5a4ac151e01e4d1 = L.marker(
+                [37.50061921, 127.0348978],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_a62741a3c7c54a60ace14d33c6ec6dec = L.popup({"maxWidth": "100%"});
+
+
+            var html_db95a91702f74afab29447d679db75ce = $(`<div id="html_db95a91702f74afab29447d679db75ce" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 메이머스트<br>주소: 서울 강남구 테헤란로 143<br>영업 시간: nan<br>적용대상 : Nan<br>적용인원 : Nan </pre> </div>`)[0];
+            popup_a62741a3c7c54a60ace14d33c6ec6dec.setContent(html_db95a91702f74afab29447d679db75ce);
+
+
+        marker_a6ce2355c6a04be4b5a4ac151e01e4d1.bindPopup(popup_a62741a3c7c54a60ace14d33c6ec6dec)
+        ;
+
+
+
+
+            var marker_4fcd2d06cbed4805b67d4f0851b51b65 = L.marker(
+                [37.51698816, 127.0396507],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0f740ca543c74e9886288700c1312b46 = L.popup({"maxWidth": "100%"});
+
+
+            var html_12af2577afa240c4a95ae4ce27a81951 = $(`<div id="html_12af2577afa240c4a95ae4ce27a81951" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 법률사무소 서화담<br>주소: 서울 강남구 학동로 335<br>영업 시간: 09시 ~ 18시<br>적용대상 : Nan<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_0f740ca543c74e9886288700c1312b46.setContent(html_12af2577afa240c4a95ae4ce27a81951);
+
+
+        marker_4fcd2d06cbed4805b67d4f0851b51b65.bindPopup(popup_0f740ca543c74e9886288700c1312b46)
+        ;
+
+
+
+
+            var marker_f2a9e24732254115b32935632c810519 = L.marker(
+                [37.55662641, 127.1687802],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_cc795296e4da49b7a6bc47cf1325ac95 = L.popup({"maxWidth": "100%"});
+
+
+            var html_5375df74a43d43808d0e6328a50065cf = $(`<div id="html_5375df74a43d43808d0e6328a50065cf" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 통닭&강동생족발보쌈<br>주소: 서울 강동구 고덕로 390<br>영업 시간: 점심12시~밤12시<br>적용대상 : 결식아동,독거노인,소방관은 전메뉴 50%할인<br>적용인원 : 포장 배달 전문점입니다. </pre> </div>`)[0];
+            popup_cc795296e4da49b7a6bc47cf1325ac95.setContent(html_5375df74a43d43808d0e6328a50065cf);
+
+
+        marker_f2a9e24732254115b32935632c810519.bindPopup(popup_cc795296e4da49b7a6bc47cf1325ac95)
+        ;
+
+
+
+
+            var marker_a236a07dc8fa45328cacdbd161ff1b99 = L.marker(
+                [37.5600131, 127.1637038],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_b14ae6d87f1441ada331b6adb139b99e = L.popup({"maxWidth": "100%"});
+
+
+            var html_7f737c9992254f27a1fcb1a2027d5b7b = $(`<div id="html_7f737c9992254f27a1fcb1a2027d5b7b" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 벨라로그<br>주소: 서울 강동구 동남로82길 120<br>영업 시간: 20-Oct<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_b14ae6d87f1441ada331b6adb139b99e.setContent(html_7f737c9992254f27a1fcb1a2027d5b7b);
+
+
+        marker_a236a07dc8fa45328cacdbd161ff1b99.bindPopup(popup_b14ae6d87f1441ada331b6adb139b99e)
+        ;
+
+
+
+
+            var marker_7d2a3d8d6d0e4a76ac537e3d99ee039e = L.marker(
+                [37.55052146, 127.1262047],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_e38a2b77269449cea052e8af42a5714f = L.popup({"maxWidth": "100%"});
+
+
+            var html_16c6b2b09be547ecbd67392bace2284f = $(`<div id="html_16c6b2b09be547ecbd67392bace2284f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 암사비치푸드마켓<br>주소: 서울 강동구 상암로 24<br>영업 시간: pm 4::30 ~ PM 12:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_e38a2b77269449cea052e8af42a5714f.setContent(html_16c6b2b09be547ecbd67392bace2284f);
+
+
+        marker_7d2a3d8d6d0e4a76ac537e3d99ee039e.bindPopup(popup_e38a2b77269449cea052e8af42a5714f)
+        ;
+
+
+
+
+            var marker_628d9afd2da349bbbf9a5afb8135575f = L.marker(
+                [37.53062111, 127.1217148],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_d03622e3ba294a5fb0711de930dad6f5 = L.popup({"maxWidth": "100%"});
+
+
+            var html_052923eea40b4d22b3099d40c304c804 = $(`<div id="html_052923eea40b4d22b3099d40c304c804" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 미미고찹쌀꽈배기강동구청점<br>주소: 서울 강동구 성내로 7<br>영업 시간: 09:00 ~ 21:00<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_d03622e3ba294a5fb0711de930dad6f5.setContent(html_052923eea40b4d22b3099d40c304c804);
+
+
+        marker_628d9afd2da349bbbf9a5afb8135575f.bindPopup(popup_d03622e3ba294a5fb0711de930dad6f5)
+        ;
+
+
+
+
+            var marker_3b56d4bf6c88406e8740ff46941f87f2 = L.marker(
+                [37.52738373, 127.1303196],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_3e6353e6207a48959a076512b604209e = L.popup({"maxWidth": "100%"});
+
+
+            var html_ecfb33dba11141f994944d74db29a4fa = $(`<div id="html_ecfb33dba11141f994944d74db29a4fa" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 엥겔플랜트<br>주소: 서울 강동구 성안로 39<br>영업 시간: 12:00-24:00<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_3e6353e6207a48959a076512b604209e.setContent(html_ecfb33dba11141f994944d74db29a4fa);
+
+
+        marker_3b56d4bf6c88406e8740ff46941f87f2.bindPopup(popup_3e6353e6207a48959a076512b604209e)
+        ;
+
+
+
+
+            var marker_86fac58a45ab4e389d65450223b40ce1 = L.marker(
+                [37.57209972, 127.174498],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_1f8af10684fc4b85927cc6dbd124c1bb = L.popup({"maxWidth": "100%"});
+
+
+            var html_8785a2069afd4ab4a6d625bf2c973c2d = $(`<div id="html_8785a2069afd4ab4a6d625bf2c973c2d" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 식사준비 강일점<br>주소: 서울 강동구 아리수로93나길 50<br>영업 시간: 10:00~20:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_1f8af10684fc4b85927cc6dbd124c1bb.setContent(html_8785a2069afd4ab4a6d625bf2c973c2d);
+
+
+        marker_86fac58a45ab4e389d65450223b40ce1.bindPopup(popup_1f8af10684fc4b85927cc6dbd124c1bb)
+        ;
+
+
+
+
+            var marker_17baf5c3b8c3497db9e1c4d3ac38fdef = L.marker(
+                [37.54404843, 127.1420544],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_40cf7e3574c247888bd9cea1dedd94a2 = L.popup({"maxWidth": "100%"});
+
+
+            var html_5326ce94218348448efaa39c9a822908 = $(`<div id="html_5326ce94218348448efaa39c9a822908" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 신참떡볶이 굽은다리역점<br>주소: 서울 강동구 양재대로 1549<br>영업 시간: 10시30분~22시 30분<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_40cf7e3574c247888bd9cea1dedd94a2.setContent(html_5326ce94218348448efaa39c9a822908);
+
+
+        marker_17baf5c3b8c3497db9e1c4d3ac38fdef.bindPopup(popup_40cf7e3574c247888bd9cea1dedd94a2)
+        ;
+
+
+
+
+            var marker_c908c3a4333b4c31a792197ab1096797 = L.marker(
+                [37.53867777, 127.1412204],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_5973c09a843a45f4a79703057f537a44 = L.popup({"maxWidth": "100%"});
+
+
+            var html_0ad0ddc4c1b745428f4ba5de14a22217 = $(`<div id="html_0ad0ddc4c1b745428f4ba5de14a22217" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 라라브레드<br>주소: 서울 강동구 양재대로116길 13<br>영업 시간: 11:00 ~ 20:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_5973c09a843a45f4a79703057f537a44.setContent(html_0ad0ddc4c1b745428f4ba5de14a22217);
+
+
+        marker_c908c3a4333b4c31a792197ab1096797.bindPopup(popup_5973c09a843a45f4a79703057f537a44)
+        ;
+
+
+
+
+            var marker_7de9dc87471e4b4285a0987e81139772 = L.marker(
+                [37.53851199, 127.1321077],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_6d77569feaa54dd592dae132bc27976a = L.popup({"maxWidth": "100%"});
+
+
+            var html_3de2d278b2df41d7ab27027dc64dd641 = $(`<div id="html_3de2d278b2df41d7ab27027dc64dd641" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 청춘집합소<br>주소: 서울 강동구 진황도로29길 8<br>영업 시간: nan<br>적용대상 : Nan<br>적용인원 : Nan </pre> </div>`)[0];
+            popup_6d77569feaa54dd592dae132bc27976a.setContent(html_3de2d278b2df41d7ab27027dc64dd641);
+
+
+        marker_7de9dc87471e4b4285a0987e81139772.bindPopup(popup_6d77569feaa54dd592dae132bc27976a)
+        ;
+
+
+
+
+            var marker_4b7224e22e014757a34d8a2f9fcad4bc = L.marker(
+                [37.53660488, 127.1331156],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_a96945a7c5484a6a852b9042bef04f6c = L.popup({"maxWidth": "100%"});
+
+
+            var html_aa1d5935259347e4bd41d23e6f28f58e = $(`<div id="html_aa1d5935259347e4bd41d23e6f28f58e" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 미화동<br>주소: 서울 강동구 천호대로 1089<br>영업 시간: 10시30분~20시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_a96945a7c5484a6a852b9042bef04f6c.setContent(html_aa1d5935259347e4bd41d23e6f28f58e);
+
+
+        marker_4b7224e22e014757a34d8a2f9fcad4bc.bindPopup(popup_a96945a7c5484a6a852b9042bef04f6c)
+        ;
+
+
+
+
+            var marker_35e7a91ed5fd4b56a271692d8c1240b8 = L.marker(
+                [37.53586511, 127.1489976],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_30ef22b98a484f3eb7ec97155bc5039a = L.popup({"maxWidth": "100%"});
+
+
+            var html_398ea4574cbe4187b7884d7e25843622 = $(`<div id="html_398ea4574cbe4187b7884d7e25843622" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 허브문화예술창작소<br>주소: 서울 강동구 천호대로 1240-13<br>영업 시간: 10:00~8:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_30ef22b98a484f3eb7ec97155bc5039a.setContent(html_398ea4574cbe4187b7884d7e25843622);
+
+
+        marker_35e7a91ed5fd4b56a271692d8c1240b8.bindPopup(popup_30ef22b98a484f3eb7ec97155bc5039a)
+        ;
+
+
+
+
+            var marker_6b21390231c14045b96fff03d92e2ab5 = L.marker(
+                [37.63930588, 127.0224522],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_b5ca478a3fe04169af9d4db887ce22f1 = L.popup({"maxWidth": "100%"});
+
+
+            var html_ec73ce854e724d15a1d28eef4c07ad54 = $(`<div id="html_ec73ce854e724d15a1d28eef4c07ad54" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 아이엠<br>주소: 서울 강북구 노해로 41<br>영업 시간: 17시~02시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_b5ca478a3fe04169af9d4db887ce22f1.setContent(html_ec73ce854e724d15a1d28eef4c07ad54);
+
+
+        marker_6b21390231c14045b96fff03d92e2ab5.bindPopup(popup_b5ca478a3fe04169af9d4db887ce22f1)
+        ;
+
+
+
+
+            var marker_d72fdc8a89a74e328455237d022266f7 = L.marker(
+                [37.63513651, 127.0266419],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0b3b07d1bb494ef780f3cde4b6c2e385 = L.popup({"maxWidth": "100%"});
+
+
+            var html_3141362f26c845869cb9d8c0b2daf0d2 = $(`<div id="html_3141362f26c845869cb9d8c0b2daf0d2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 인생푸드<br>주소: 서울 강북구 덕릉로 115<br>영업 시간: nan<br>적용대상 : 결식아동,입양보류아동,무연고아동<br>적용인원 : Nan </pre> </div>`)[0];
+            popup_0b3b07d1bb494ef780f3cde4b6c2e385.setContent(html_3141362f26c845869cb9d8c0b2daf0d2);
+
+
+        marker_d72fdc8a89a74e328455237d022266f7.bindPopup(popup_0b3b07d1bb494ef780f3cde4b6c2e385)
+        ;
+
+
+
+
+            var marker_34eff65809904a8393394ab578990c27 = L.marker(
+                [37.61459298, 127.0305177],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_bac0874f84744fa3bffce95deb15e996 = L.popup({"maxWidth": "100%"});
+
+
+            var html_5e7457addd3e4453926eb6a7a7172ac4 = $(`<div id="html_5e7457addd3e4453926eb6a7a7172ac4" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 롯데백화점 미아점 송탄영빈루 <br>주소: 서울 강북구 도봉로 62<br>영업 시간: 10:30~19:30<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_bac0874f84744fa3bffce95deb15e996.setContent(html_5e7457addd3e4453926eb6a7a7172ac4);
+
+
+        marker_34eff65809904a8393394ab578990c27.bindPopup(popup_bac0874f84744fa3bffce95deb15e996)
+        ;
+
+
+
+
+            var marker_759b7b2b99bc423390d96ab4f89b51c8 = L.marker(
+                [37.63730555, 127.0168281],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0703808f592c475bbc583f3a4f110ce7 = L.popup({"maxWidth": "100%"});
+
+
+            var html_fdb91877af824c35bbcb582cee8a31df = $(`<div id="html_fdb91877af824c35bbcb582cee8a31df" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 땅땅치킨 수유점<br>주소: 서울 강북구 삼양로93길 3<br>영업 시간: nan<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_0703808f592c475bbc583f3a4f110ce7.setContent(html_fdb91877af824c35bbcb582cee8a31df);
+
+
+        marker_759b7b2b99bc423390d96ab4f89b51c8.bindPopup(popup_0703808f592c475bbc583f3a4f110ce7)
+        ;
+
+
+
+
+            var marker_936d5af69c7a4b1bab0593ac4162925b = L.marker(
+                [37.61989293, 127.0166481],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_5ea095a5cfd045b7aee85bca1cf93534 = L.popup({"maxWidth": "100%"});
+
+
+            var html_673b32a6b3994b598546f7c0421e2f72 = $(`<div id="html_673b32a6b3994b598546f7c0421e2f72" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 달리는커피 서울 삼각산점<br>주소: 서울 강북구 솔샘로 216<br>영업 시간: 평일 10시~20시 /토요일 10시~18시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_5ea095a5cfd045b7aee85bca1cf93534.setContent(html_673b32a6b3994b598546f7c0421e2f72);
+
+
+        marker_936d5af69c7a4b1bab0593ac4162925b.bindPopup(popup_5ea095a5cfd045b7aee85bca1cf93534)
+        ;
+
+
+
+
+            var marker_391111c89b7f4b3b986319a8b66d391c = L.marker(
+                [37.55459095, 126.8373033],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_92dd05260e7e46e794b79b8539e80449 = L.popup({"maxWidth": "100%"});
+
+
+            var html_eefe9a8254e84017bc067323c1ba4972 = $(`<div id="html_eefe9a8254e84017bc067323c1ba4972" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 작심스터디카페 발산점<br>주소: 서울 강서구 강서로 324<br>영업 시간: 24시간<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_92dd05260e7e46e794b79b8539e80449.setContent(html_eefe9a8254e84017bc067323c1ba4972);
+
+
+        marker_391111c89b7f4b3b986319a8b66d391c.bindPopup(popup_92dd05260e7e46e794b79b8539e80449)
+        ;
+
+
+
+
+            var marker_e7f059600f4c4b37a34ed86ee11d704b = L.marker(
+                [37.55993353, 126.8404988],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_5158e58b381e42bb8ec8f342b37dba93 = L.popup({"maxWidth": "100%"});
+
+
+            var html_cb7a5b56e6b843958c2a873814be444e = $(`<div id="html_cb7a5b56e6b843958c2a873814be444e" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 마라홀릭<br>주소: 서울 강서구 강서로56길 17<br>영업 시간: 매일10:30~20:30<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_5158e58b381e42bb8ec8f342b37dba93.setContent(html_cb7a5b56e6b843958c2a873814be444e);
+
+
+        marker_e7f059600f4c4b37a34ed86ee11d704b.bindPopup(popup_5158e58b381e42bb8ec8f342b37dba93)
+        ;
+
+
+
+
+            var marker_ac5a1688d3cd4870a4147b5c1efb14b7 = L.marker(
+                [37.53297009, 126.8467649],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_e8af923c212b4a689c3acaaf762d4568 = L.popup({"maxWidth": "100%"});
+
+
+            var html_148d2e7ff4f14c47be1915b9e59bebf8 = $(`<div id="html_148d2e7ff4f14c47be1915b9e59bebf8" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 우리상회<br>주소: 서울 강서구 곰달래로25길 65-27<br>영업 시간: 09시-20시까지<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_e8af923c212b4a689c3acaaf762d4568.setContent(html_148d2e7ff4f14c47be1915b9e59bebf8);
+
+
+        marker_ac5a1688d3cd4870a4147b5c1efb14b7.bindPopup(popup_e8af923c212b4a689c3acaaf762d4568)
+        ;
+
+
+
+
+            var marker_226cb3aa1fb34c24b8702a33a071b2c8 = L.marker(
+                [37.55932597, 126.8255148],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_8868c4c506ad482cb39fb489b15ca92e = L.popup({"maxWidth": "100%"});
+
+
+            var html_6a05ed179c9a407684ae13c9b77c11f0 = $(`<div id="html_6a05ed179c9a407684ae13c9b77c11f0" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 엘로이카페<br>주소: 서울 강서구 공항대로 164<br>영업 시간: 08:00~19:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_8868c4c506ad482cb39fb489b15ca92e.setContent(html_6a05ed179c9a407684ae13c9b77c11f0);
+
+
+        marker_226cb3aa1fb34c24b8702a33a071b2c8.bindPopup(popup_8868c4c506ad482cb39fb489b15ca92e)
+        ;
+
+
+
+
+            var marker_7ad465207d7940cc8d825419a396dd8e = L.marker(
+                [37.5584802, 126.8343276],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_b2c23877ffbe4ebea594b6e78193ac32 = L.popup({"maxWidth": "100%"});
+
+
+            var html_80055b6503094075b2176a15dbb13ce4 = $(`<div id="html_80055b6503094075b2176a15dbb13ce4" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 양평해장국 강서마곡점<br>주소: 서울 강서구 공항대로 242<br>영업 시간: 매일 09 : 00 ~ 21 : 00<br>적용대상 : 결식아동<br>적용인원 : 동반자 모두 </pre> </div>`)[0];
+            popup_b2c23877ffbe4ebea594b6e78193ac32.setContent(html_80055b6503094075b2176a15dbb13ce4);
+
+
+        marker_7ad465207d7940cc8d825419a396dd8e.bindPopup(popup_b2c23877ffbe4ebea594b6e78193ac32)
+        ;
+
+
+
+
+            var marker_34fda4e4649248d1a6c0af018f6f1bd2 = L.marker(
+                [37.55218449, 126.8642673],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_19b22fc5ef3d4221a5b13f0f70d56b43 = L.popup({"maxWidth": "100%"});
+
+
+            var html_1e1f6ba0f6484adc96ccb76feac0879b = $(`<div id="html_1e1f6ba0f6484adc96ccb76feac0879b" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 심리상담연구소 문<br>주소: 서울 강서구 공항대로59가길 7<br>영업 시간: 예약제로 운영<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아동 및 가족 </pre> </div>`)[0];
+            popup_19b22fc5ef3d4221a5b13f0f70d56b43.setContent(html_1e1f6ba0f6484adc96ccb76feac0879b);
+
+
+        marker_34fda4e4649248d1a6c0af018f6f1bd2.bindPopup(popup_19b22fc5ef3d4221a5b13f0f70d56b43)
+        ;
+
+
+
+
+            var marker_e7b55ca29ef34ffa87ab907ae7799ff2 = L.marker(
+                [37.55983847, 126.8470287],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_b0b81ab260be4b139e1f61da07c720c2 = L.popup({"maxWidth": "100%"});
+
+
+            var html_3e76c384ef084b9485824d269e547ee2 = $(`<div id="html_3e76c384ef084b9485824d269e547ee2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 연어꽃<br>주소: 서울 강서구 등촌동 701<br>영업 시간: 16:30~02:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_b0b81ab260be4b139e1f61da07c720c2.setContent(html_3e76c384ef084b9485824d269e547ee2);
+
+
+        marker_e7b55ca29ef34ffa87ab907ae7799ff2.bindPopup(popup_b0b81ab260be4b139e1f61da07c720c2)
+        ;
+
+
+
+
+            var marker_990b7ed34d73423a8dc2a7963579f6ec = L.marker(
+                [37.56785424, 126.8274661],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_6d42277bc9ee4578a6948fac0b858f2e = L.popup({"maxWidth": "100%"});
+
+
+            var html_16d622db0a674d3eb791f6c39d8f291a = $(`<div id="html_16d622db0a674d3eb791f6c39d8f291a" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 샵일구구공<br>주소: 서울 강서구 마곡동 760-2<br>영업 시간: 10:30 - 20:30<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_6d42277bc9ee4578a6948fac0b858f2e.setContent(html_16d622db0a674d3eb791f6c39d8f291a);
+
+
+        marker_990b7ed34d73423a8dc2a7963579f6ec.bindPopup(popup_6d42277bc9ee4578a6948fac0b858f2e)
+        ;
+
+
+
+
+            var marker_c53e68212c874e259ffbb0af346e3e92 = L.marker(
+                [37.56771074, 126.8256454],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_1078c0cb18cd46c6bf834f10fa983fa9 = L.popup({"maxWidth": "100%"});
+
+
+            var html_c02609e4e3ae4fe7b21118e840d93a49 = $(`<div id="html_c02609e4e3ae4fe7b21118e840d93a49" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: EXPER2<br>주소: 서울 강서구 마곡서로 152<br>영업 시간: 17:00~00:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 4명까지 가능 </pre> </div>`)[0];
+            popup_1078c0cb18cd46c6bf834f10fa983fa9.setContent(html_c02609e4e3ae4fe7b21118e840d93a49);
+
+
+        marker_c53e68212c874e259ffbb0af346e3e92.bindPopup(popup_1078c0cb18cd46c6bf834f10fa983fa9)
+        ;
+
+
+
+
+            var marker_836ced20a9df426cacb29ef24ec8df34 = L.marker(
+                [37.56771074, 126.8256454],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_7e0311b02b9e426fa1209de1820d4b10 = L.popup({"maxWidth": "100%"});
+
+
+            var html_bf655651c6a94dc585ecdea8e021f164 = $(`<div id="html_bf655651c6a94dc585ecdea8e021f164" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 아트포유 셀프사진관<br>주소: 서울 강서구 마곡서로 152<br>영업 시간: nan<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_7e0311b02b9e426fa1209de1820d4b10.setContent(html_bf655651c6a94dc585ecdea8e021f164);
+
+
+        marker_836ced20a9df426cacb29ef24ec8df34.bindPopup(popup_7e0311b02b9e426fa1209de1820d4b10)
+        ;
+
+
+
+
+            var marker_2465191a01cb441296dcda03d1c4aa40 = L.marker(
+                [37.55884745, 126.8256377],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_4ca7fa97ee3e4e3cb32c8c48431caebc = L.popup({"maxWidth": "100%"});
+
+
+            var html_69f5164542db481ca2d960f3fadfc1ec = $(`<div id="html_69f5164542db481ca2d960f3fadfc1ec" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 순희네 꼬마김밥<br>주소: 서울 강서구 마곡중앙로 59-9<br>영업 시간: 07~20시까지<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_4ca7fa97ee3e4e3cb32c8c48431caebc.setContent(html_69f5164542db481ca2d960f3fadfc1ec);
+
+
+        marker_2465191a01cb441296dcda03d1c4aa40.bindPopup(popup_4ca7fa97ee3e4e3cb32c8c48431caebc)
+        ;
+
+
+
+
+            var marker_9c940a487d3b4d8581eead03623f533f = L.marker(
+                [37.57151275, 126.8379095],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_77bf7b00ec034121b6f564f3438732c6 = L.popup({"maxWidth": "100%"});
+
+
+            var html_fe866fcbcf404469ab0bab3f7de5c51d = $(`<div id="html_fe866fcbcf404469ab0bab3f7de5c51d" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 금수저<br>주소: 서울 강서구 양천로47길 24<br>영업 시간: 월-금/11:00~20:00 토/11:00~15:00<br>적용대상 : 독거노인<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_77bf7b00ec034121b6f564f3438732c6.setContent(html_fe866fcbcf404469ab0bab3f7de5c51d);
+
+
+        marker_9c940a487d3b4d8581eead03623f533f.bindPopup(popup_77bf7b00ec034121b6f564f3438732c6)
+        ;
+
+
+
+
+            var marker_e8c7e2e9355e414c8368bb7ae4459a65 = L.marker(
+                [37.53487822, 126.8394323],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0bafe12bcf2a4e6c8ddb507457824f38 = L.popup({"maxWidth": "100%"});
+
+
+            var html_fc6d1e6b2e53405b8269f83e707bce37 = $(`<div id="html_fc6d1e6b2e53405b8269f83e707bce37" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 샌드위치만드는언니<br>주소: 서울 강서구 월정로30길 64<br>영업 시간: 월-토 10시~9시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_0bafe12bcf2a4e6c8ddb507457824f38.setContent(html_fc6d1e6b2e53405b8269f83e707bce37);
+
+
+        marker_e8c7e2e9355e414c8368bb7ae4459a65.bindPopup(popup_0bafe12bcf2a4e6c8ddb507457824f38)
+        ;
+
+
+
+
+            var marker_3a5dd0b78b884f57b690f3e0033e35a0 = L.marker(
+                [37.53300706, 126.8449262],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_231554e1816449f2b59b9c42004c44d6 = L.popup({"maxWidth": "100%"});
+
+
+            var html_bf321a58297c4cc7a2a8ca58930f84ff = $(`<div id="html_bf321a58297c4cc7a2a8ca58930f84ff" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 청춘푸줏간<br>주소: 서울 강서구 화곡동 348-4<br>영업 시간: 9/30/2022 22:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_231554e1816449f2b59b9c42004c44d6.setContent(html_bf321a58297c4cc7a2a8ca58930f84ff);
+
+
+        marker_3a5dd0b78b884f57b690f3e0033e35a0.bindPopup(popup_231554e1816449f2b59b9c42004c44d6)
+        ;
+
+
+
+
+            var marker_ffa0673e870a4dff940831a18edaddf5 = L.marker(
+                [37.53443312, 126.8568023],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_9962026f5e6f45f5bae4a0a6a0ea38cb = L.popup({"maxWidth": "100%"});
+
+
+            var html_af3acf19e1ad4da4850bab4040e8fad2 = $(`<div id="html_af3acf19e1ad4da4850bab4040e8fad2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: (주)지니글로벌네트웍스<br>주소: 서울 강서구 화곡동 822-20<br>영업 시간: non<br>적용대상 : Nan<br>적용인원 : Nan </pre> </div>`)[0];
+            popup_9962026f5e6f45f5bae4a0a6a0ea38cb.setContent(html_af3acf19e1ad4da4850bab4040e8fad2);
+
+
+        marker_ffa0673e870a4dff940831a18edaddf5.bindPopup(popup_9962026f5e6f45f5bae4a0a6a0ea38cb)
+        ;
+
+
+
+
+            var marker_3feee0c9d9b4412fa2bbf020bf0b1b9a = L.marker(
+                [37.55228371, 126.8497029],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_bcc07ebd4d9d41d986396d20b8fcd77f = L.popup({"maxWidth": "100%"});
+
+
+            var html_fc4512b9fe274aa99cab25c745925288 = $(`<div id="html_fc4512b9fe274aa99cab25c745925288" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 컴포즈커피 강서구청점<br>주소: 서울 강서구 화곡로 313<br>영업 시간: 08:00~23:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인 직접 방문 </pre> </div>`)[0];
+            popup_bcc07ebd4d9d41d986396d20b8fcd77f.setContent(html_fc4512b9fe274aa99cab25c745925288);
+
+
+        marker_3feee0c9d9b4412fa2bbf020bf0b1b9a.bindPopup(popup_bcc07ebd4d9d41d986396d20b8fcd77f)
+        ;
+
+
+
+
+            var marker_5943b0c98def4ab884bba6e14fc093d0 = L.marker(
+                [37.55483518, 126.8512924],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_4dbf9657a0eb4194a9f1a0bb8e4b7c66 = L.popup({"maxWidth": "100%"});
+
+
+            var html_542923294bce4e5c817eac1c928956f1 = $(`<div id="html_542923294bce4e5c817eac1c928956f1" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 투썸플레이스강서구청점<br>주소: 서울 강서구 화곡로 347<br>영업 시간: 오전08:00~오후11:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_4dbf9657a0eb4194a9f1a0bb8e4b7c66.setContent(html_542923294bce4e5c817eac1c928956f1);
+
+
+        marker_5943b0c98def4ab884bba6e14fc093d0.bindPopup(popup_4dbf9657a0eb4194a9f1a0bb8e4b7c66)
+        ;
+
+
+
+
+            var marker_ac0a595fa32545e1831816ca081dfa68 = L.marker(
+                [37.4849602, 126.9563],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0c8a70ac793a432697c709d8533ec0a0 = L.popup({"maxWidth": "100%"});
+
+
+            var html_f6a66cec5525491e8952cfc68e66cd4f = $(`<div id="html_f6a66cec5525491e8952cfc68e66cd4f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 카핏<br>주소: 서울 관악구 관악로 234<br>영업 시간: 오전10시 ~ 오후7시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_0c8a70ac793a432697c709d8533ec0a0.setContent(html_f6a66cec5525491e8952cfc68e66cd4f);
+
+
+        marker_ac0a595fa32545e1831816ca081dfa68.bindPopup(popup_0c8a70ac793a432697c709d8533ec0a0)
+        ;
+
+
+
+
+            var marker_2bcff6a18ff64e8c96c6344b92b5592a = L.marker(
+                [37.48689701, 126.9567893],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_675700c1a8c24f26a38953de1705911a = L.popup({"maxWidth": "100%"});
+
+
+            var html_9b916b58f3c34f48a39585ae6efdb52d = $(`<div id="html_9b916b58f3c34f48a39585ae6efdb52d" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 까사피에스타<br>주소: 서울 관악구 관악로 251<br>영업 시간: 오전9시~익일 오전12시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_675700c1a8c24f26a38953de1705911a.setContent(html_9b916b58f3c34f48a39585ae6efdb52d);
+
+
+        marker_2bcff6a18ff64e8c96c6344b92b5592a.bindPopup(popup_675700c1a8c24f26a38953de1705911a)
+        ;
+
+
+
+
+            var marker_4db3c442aa0741b9933d794d229b6614 = L.marker(
+                [37.47197623, 126.9228698],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_435210e143814b8f8f07c0c40bc8367e = L.popup({"maxWidth": "100%"});
+
+
+            var html_d57bbada2b764f20a4e5388e441dbc68 = $(`<div id="html_d57bbada2b764f20a4e5388e441dbc68" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 부타앤카츠<br>주소: 서울 관악구 난곡로34길 70<br>영업 시간: 오전 9시30분 ~ 오후11시<br>적용대상 : 결식아동<br>적용인원 : 사장 맘대루 </pre> </div>`)[0];
+            popup_435210e143814b8f8f07c0c40bc8367e.setContent(html_d57bbada2b764f20a4e5388e441dbc68);
+
+
+        marker_4db3c442aa0741b9933d794d229b6614.bindPopup(popup_435210e143814b8f8f07c0c40bc8367e)
+        ;
+
+
+
+
+            var marker_2d3c8959faf542c5b81c297204f2450f = L.marker(
+                [37.48224817, 126.9182755],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_2ae20a7da32a491589844aa3b447ed3b = L.popup({"maxWidth": "100%"});
+
+
+            var html_4b9c88f965074f949624eb45b846a49c = $(`<div id="html_4b9c88f965074f949624eb45b846a49c" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 피자헛난곡2호점<br>주소: 서울 관악구 남부순환로 1508<br>영업 시간: 10:30~22:30<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_2ae20a7da32a491589844aa3b447ed3b.setContent(html_4b9c88f965074f949624eb45b846a49c);
+
+
+        marker_2d3c8959faf542c5b81c297204f2450f.bindPopup(popup_2ae20a7da32a491589844aa3b447ed3b)
+        ;
+
+
+
+
+            var marker_90a71a927f8e4d4db1157bcff2fa54f3 = L.marker(
+                [37.48224817, 126.9182755],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_bbc61d94bdba4499a5a18e7303d1c278 = L.popup({"maxWidth": "100%"});
+
+
+            var html_db6eced9986942afa951d4c865e43314 = $(`<div id="html_db6eced9986942afa951d4c865e43314" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 커피플래닛<br>주소: 서울 관악구 남부순환로 1508<br>영업 시간: 월-토 7:00-23:00  일9:00-23:00<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_bbc61d94bdba4499a5a18e7303d1c278.setContent(html_db6eced9986942afa951d4c865e43314);
+
+
+        marker_90a71a927f8e4d4db1157bcff2fa54f3.bindPopup(popup_bbc61d94bdba4499a5a18e7303d1c278)
+        ;
+
+
+
+
+            var marker_8586903db731472a9ec1ab9abe928f1d = L.marker(
+                [37.47786558, 126.9606899],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_2ebf1310fef5417a869e0da97966b382 = L.popup({"maxWidth": "100%"});
+
+
+            var html_239234c7040144c5bdc30d1dd0c14eef = $(`<div id="html_239234c7040144c5bdc30d1dd0c14eef" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 하루하나<br>주소: 서울 관악구 남부순환로 1904<br>영업 시간: 11시~10<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_2ebf1310fef5417a869e0da97966b382.setContent(html_239234c7040144c5bdc30d1dd0c14eef);
+
+
+        marker_8586903db731472a9ec1ab9abe928f1d.bindPopup(popup_2ebf1310fef5417a869e0da97966b382)
+        ;
+
+
+
+
+            var marker_d7bfc4d966994e9190e8c40e3d2a2ef9 = L.marker(
+                [37.47606844, 126.9776984],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_45b4bcb7f5a348a48513153e090488d8 = L.popup({"maxWidth": "100%"});
+
+
+            var html_f67b82cd636a4340aef6eb4114b72991 = $(`<div id="html_f67b82cd636a4340aef6eb4114b72991" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 티나에스테틱 <br>주소: 서울 관악구 남현길 7<br>영업 시간: 11시~10시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_45b4bcb7f5a348a48513153e090488d8.setContent(html_f67b82cd636a4340aef6eb4114b72991);
+
+
+        marker_d7bfc4d966994e9190e8c40e3d2a2ef9.bindPopup(popup_45b4bcb7f5a348a48513153e090488d8)
+        ;
+
+
+
+
+            var marker_10c67f38765641bba4bcc671ce2f8732 = L.marker(
+                [37.46917583, 126.9382423],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_46e4233ac1414de5adcdda62ce514741 = L.popup({"maxWidth": "100%"});
+
+
+            var html_a474206f8eb9442f9b1ea5f383c859d3 = $(`<div id="html_a474206f8eb9442f9b1ea5f383c859d3" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 위드짐<br>주소: 서울 관악구 대학5길 8<br>영업 시간: 오후2시-오후10시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_46e4233ac1414de5adcdda62ce514741.setContent(html_a474206f8eb9442f9b1ea5f383c859d3);
+
+
+        marker_10c67f38765641bba4bcc671ce2f8732.bindPopup(popup_46e4233ac1414de5adcdda62ce514741)
+        ;
+
+
+
+
+            var marker_5e690fe3132c47a7a7d4bdadedd3399b = L.marker(
+                [37.47444309, 126.9385051],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_c221d55ed79c48c59895e8c5b7af6674 = L.popup({"maxWidth": "100%"});
+
+
+            var html_cd4e716944e7487281adf2f8450900d6 = $(`<div id="html_cd4e716944e7487281adf2f8450900d6" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 커피정류장<br>주소: 서울 관악구 복은길 46<br>영업 시간: 9시~9시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_c221d55ed79c48c59895e8c5b7af6674.setContent(html_cd4e716944e7487281adf2f8450900d6);
+
+
+        marker_5e690fe3132c47a7a7d4bdadedd3399b.bindPopup(popup_c221d55ed79c48c59895e8c5b7af6674)
+        ;
+
+
+
+
+            var marker_c262a66aed4e499a815410cd84c921e7 = L.marker(
+                [37.47927764, 126.9534873],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_eead8bbac7494bcabbc3f882e97f2ac9 = L.popup({"maxWidth": "100%"});
+
+
+            var html_327207ada1fa435ebccfac4c469df9fe = $(`<div id="html_327207ada1fa435ebccfac4c469df9fe" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 오후의과일<br>주소: 서울 관악구 봉천동 1599-4<br>영업 시간: 11~22<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_eead8bbac7494bcabbc3f882e97f2ac9.setContent(html_327207ada1fa435ebccfac4c469df9fe);
+
+
+        marker_c262a66aed4e499a815410cd84c921e7.bindPopup(popup_eead8bbac7494bcabbc3f882e97f2ac9)
+        ;
+
+
+
+
+            var marker_2a481cabaf284bf7a855356204abb09d = L.marker(
+                [37.48721399, 126.9480721],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_4de19cb3dd4047a9ba129c1db07760a9 = L.popup({"maxWidth": "100%"});
+
+
+            var html_9a280f92107a48adbd1d0a668f191f98 = $(`<div id="html_9a280f92107a48adbd1d0a668f191f98" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 달렘<br>주소: 서울 관악구 봉천동 464-25<br>영업 시간: 화-토 오후2시~오후10시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_4de19cb3dd4047a9ba129c1db07760a9.setContent(html_9a280f92107a48adbd1d0a668f191f98);
+
+
+        marker_2a481cabaf284bf7a855356204abb09d.bindPopup(popup_4de19cb3dd4047a9ba129c1db07760a9)
+        ;
+
+
+
+
+            var marker_2b23a90e3d614f83a21787c4f1f97407 = L.marker(
+                [37.48313764, 126.9478424],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_3b8cb70f5e48472d81246c7652adcf5e = L.popup({"maxWidth": "100%"});
+
+
+            var html_b2a5a7d484b248c5b0c35a062c45ca16 = $(`<div id="html_b2a5a7d484b248c5b0c35a062c45ca16" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 피자나라치킨공주<br>주소: 서울 관악구 봉천동 892-2<br>영업 시간: 12~24시<br>적용대상 : Nan<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_3b8cb70f5e48472d81246c7652adcf5e.setContent(html_b2a5a7d484b248c5b0c35a062c45ca16);
+
+
+        marker_2b23a90e3d614f83a21787c4f1f97407.bindPopup(popup_3b8cb70f5e48472d81246c7652adcf5e)
+        ;
+
+
+
+
+            var marker_61a3e546eac14415baf03902d936fa5c = L.marker(
+                [37.48347141, 126.9432503],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_e9b00370871d4b4c88638d3ddc388105 = L.popup({"maxWidth": "100%"});
+
+
+            var html_843195b11997452ea4422867f5405edc = $(`<div id="html_843195b11997452ea4422867f5405edc" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 백년카츠 관악점<br>주소: 서울 관악구 봉천로 391<br>영업 시간: 11시 ~ 21시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_e9b00370871d4b4c88638d3ddc388105.setContent(html_843195b11997452ea4422867f5405edc);
+
+
+        marker_61a3e546eac14415baf03902d936fa5c.bindPopup(popup_e9b00370871d4b4c88638d3ddc388105)
+        ;
+
+
+
+
+            var marker_3d59a1697133437d9e93318a0935995b = L.marker(
+                [37.47938807, 126.9557439],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_9240a0a5489c446ab527e3910a7c6f7c = L.popup({"maxWidth": "100%"});
+
+
+            var html_2aa3d81985c94f11a8f751c27c75e378 = $(`<div id="html_2aa3d81985c94f11a8f751c27c75e378" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 한우육회마을2호점 <br>주소: 서울 관악구 봉천로 520-1<br>영업 시간: 오후6시~9시<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_9240a0a5489c446ab527e3910a7c6f7c.setContent(html_2aa3d81985c94f11a8f751c27c75e378);
+
+
+        marker_3d59a1697133437d9e93318a0935995b.bindPopup(popup_9240a0a5489c446ab527e3910a7c6f7c)
+        ;
+
+
+
+
+            var marker_3f9d3a7ed75f4150a8e15d03314e3051 = L.marker(
+                [37.48272396, 126.9352285],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_953b7db5ac3a42b29674a32917234295 = L.popup({"maxWidth": "100%"});
+
+
+            var html_5cb9761ecbf24b0581c3bd0bbfb4422f = $(`<div id="html_5cb9761ecbf24b0581c3bd0bbfb4422f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 바다가내손아귀<br>주소: 서울 관악구 신림동 1741<br>영업 시간: 24시간<br>적용대상 : 결식아동,소개추천<br>적용인원 : 가족포함 </pre> </div>`)[0];
+            popup_953b7db5ac3a42b29674a32917234295.setContent(html_5cb9761ecbf24b0581c3bd0bbfb4422f);
+
+
+        marker_3f9d3a7ed75f4150a8e15d03314e3051.bindPopup(popup_953b7db5ac3a42b29674a32917234295)
+        ;
+
+
+
+
+            var marker_96407fcdc3b74643bcb411da64aa32bb = L.marker(
+                [37.48229543, 126.9403552],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_eef732cbb4bd42e99ae653f84326fabc = L.popup({"maxWidth": "100%"});
+
+
+            var html_768d5cb2a3fc461f907c6bcbb9466c80 = $(`<div id="html_768d5cb2a3fc461f907c6bcbb9466c80" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 별꿈다락 <br>주소: 서울 관악구 장군봉1길 3<br>영업 시간: 12:00~22:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_eef732cbb4bd42e99ae653f84326fabc.setContent(html_768d5cb2a3fc461f907c6bcbb9466c80);
+
+
+        marker_96407fcdc3b74643bcb411da64aa32bb.bindPopup(popup_eef732cbb4bd42e99ae653f84326fabc)
+        ;
+
+
+
+
+            var marker_503b25c0952349efb4e2a6742b1a27d3 = L.marker(
+                [37.47001899, 126.9339123],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_b1d8aa73a3854d2e93d0c1e4fb0d131e = L.popup({"maxWidth": "100%"});
+
+
+            var html_8fda6cd706e94e7399e843032abe00da = $(`<div id="html_8fda6cd706e94e7399e843032abe00da" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 백가집<br>주소: 서울 관악구 호암로24길 11<br>영업 시간: 오전 11시 ~ 오후 8시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_b1d8aa73a3854d2e93d0c1e4fb0d131e.setContent(html_8fda6cd706e94e7399e843032abe00da);
+
+
+        marker_503b25c0952349efb4e2a6742b1a27d3.bindPopup(popup_b1d8aa73a3854d2e93d0c1e4fb0d131e)
+        ;
+
+
+
+
+            var marker_f7dc7f1e74344aa7b2be8e7f07216987 = L.marker(
+                [37.5426904, 127.0938461],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_d49d0e68f9534efbb87978212fa7fcb1 = L.popup({"maxWidth": "100%"});
+
+
+            var html_00f75b95fe2841abb2ee4db17afed013 = $(`<div id="html_00f75b95fe2841abb2ee4db17afed013" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 초심스터디카페 구의점<br>주소: 서울 광진구 광나루로 588<br>영업 시간: 24시간<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_d49d0e68f9534efbb87978212fa7fcb1.setContent(html_00f75b95fe2841abb2ee4db17afed013);
+
+
+        marker_f7dc7f1e74344aa7b2be8e7f07216987.bindPopup(popup_d49d0e68f9534efbb87978212fa7fcb1)
+        ;
+
+
+
+
+            var marker_0403344e11ac4ea0b68d9eabd67ae28f = L.marker(
+                [37.54522363, 127.0752425],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_b0ab012e5e3044d4b5c2faf786177671 = L.popup({"maxWidth": "100%"});
+
+
+            var html_324b563161994febbd654fe1168fcbb9 = $(`<div id="html_324b563161994febbd654fe1168fcbb9" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 카페더네네<br>주소: 서울 광진구 광나루로20가길 21<br>영업 시간: 07:00~17:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_b0ab012e5e3044d4b5c2faf786177671.setContent(html_324b563161994febbd654fe1168fcbb9);
+
+
+        marker_0403344e11ac4ea0b68d9eabd67ae28f.bindPopup(popup_b0ab012e5e3044d4b5c2faf786177671)
+        ;
+
+
+
+
+            var marker_0eaca14e03cd46729c48bc681521a09f = L.marker(
+                [37.54141746, 127.0976335],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_f7318899af324cbca0d39e307dfb7f52 = L.popup({"maxWidth": "100%"});
+
+
+            var html_870364c63fdb4e98a54229c07f639e96 = $(`<div id="html_870364c63fdb4e98a54229c07f639e96" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 초심스터디카페 광장점<br>주소: 서울 광진구 광장동 470-10<br>영업 시간: 24시간<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_f7318899af324cbca0d39e307dfb7f52.setContent(html_870364c63fdb4e98a54229c07f639e96);
+
+
+        marker_0eaca14e03cd46729c48bc681521a09f.bindPopup(popup_f7318899af324cbca0d39e307dfb7f52)
+        ;
+
+
+
+
+            var marker_01efa1cac7fb447ab7b1d19d9ba25b29 = L.marker(
+                [37.53866603, 127.0893767],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_522f79b9679143dd9f098f8bb4961114 = L.popup({"maxWidth": "100%"});
+
+
+            var html_5f24d4c6cf52426297475037b1c8c0bd = $(`<div id="html_5f24d4c6cf52426297475037b1c8c0bd" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 먹오삼<br>주소: 서울 광진구 구의로 8<br>영업 시간: 오전 11:30~ 오후 11:30<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_522f79b9679143dd9f098f8bb4961114.setContent(html_5f24d4c6cf52426297475037b1c8c0bd);
+
+
+        marker_01efa1cac7fb447ab7b1d19d9ba25b29.bindPopup(popup_522f79b9679143dd9f098f8bb4961114)
+        ;
+
+
+
+
+            var marker_6666f7605ef64441979eac3da534efd1 = L.marker(
+                [37.53750524, 127.081583],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_5ffde3e0afe04105a0d5e4e3b08de5d6 = L.popup({"maxWidth": "100%"});
+
+
+            var html_5faab55622e045f18996dabba2fef2ae = $(`<div id="html_5faab55622e045f18996dabba2fef2ae" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 프레드피자건대점<br>주소: 서울 광진구 아차산로 345<br>영업 시간: 09:00 ~ 04:30<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_5ffde3e0afe04105a0d5e4e3b08de5d6.setContent(html_5faab55622e045f18996dabba2fef2ae);
+
+
+        marker_6666f7605ef64441979eac3da534efd1.bindPopup(popup_5ffde3e0afe04105a0d5e4e3b08de5d6)
+        ;
+
+
+
+
+            var marker_ea8bda106a9943df831ebee4b542d0fe = L.marker(
+                [37.56352347, 127.0877256],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_826ab4b34a2d4100b7fbc6808b9471a9 = L.popup({"maxWidth": "100%"});
+
+
+            var html_5008542faad54ee48284b3d601ec09eb = $(`<div id="html_5008542faad54ee48284b3d601ec09eb" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 와플소녀<br>주소: 서울 광진구 용마산로22길 12<br>영업 시간: 12:00 ~ 19:30<br>적용대상 : 결식아동,독거노인<br>적용인원 : 누구든지! </pre> </div>`)[0];
+            popup_826ab4b34a2d4100b7fbc6808b9471a9.setContent(html_5008542faad54ee48284b3d601ec09eb);
+
+
+        marker_ea8bda106a9943df831ebee4b542d0fe.bindPopup(popup_826ab4b34a2d4100b7fbc6808b9471a9)
+        ;
+
+
+
+
+            var marker_18762e51bf2e4b76a4b181ec7da68eca = L.marker(
+                [37.55515978, 127.0861322],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0c115e1be41641a182ce2daf230e82c4 = L.popup({"maxWidth": "100%"});
+
+
+            var html_fb04097b13d8425d8ca401ecbe3968e8 = $(`<div id="html_fb04097b13d8425d8ca401ecbe3968e8" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 주식회사 중원디앤케이<br>주소: 서울 광진구 천호대로119길 6<br>영업 시간: 평일 오전 9:00 ~ 오후 5:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_0c115e1be41641a182ce2daf230e82c4.setContent(html_fb04097b13d8425d8ca401ecbe3968e8);
+
+
+        marker_18762e51bf2e4b76a4b181ec7da68eca.bindPopup(popup_0c115e1be41641a182ce2daf230e82c4)
+        ;
+
+
+
+
+            var marker_eb20140c8ead4f7b946462deba72c794 = L.marker(
+                [37.49012558, 126.8563095],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_dca6eb41854b40499bbe8945e8acb5b7 = L.popup({"maxWidth": "100%"});
+
+
+            var html_06c5b1e494cb4115981d3088e1886d8a = $(`<div id="html_06c5b1e494cb4115981d3088e1886d8a" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 잉크마루<br>주소: 서울 구로구 개봉로 50<br>영업 시간: 오전 10시부터 오후 7시까지<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_dca6eb41854b40499bbe8945e8acb5b7.setContent(html_06c5b1e494cb4115981d3088e1886d8a);
+
+
+        marker_eb20140c8ead4f7b946462deba72c794.bindPopup(popup_dca6eb41854b40499bbe8945e8acb5b7)
+        ;
+
+
+
+
+            var marker_45c9326c3e104675802d7bcc2f6e732a = L.marker(
+                [37.49769182, 126.8569352],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_684cf2de11dd4587b13c899d3de7e400 = L.popup({"maxWidth": "100%"});
+
+
+            var html_01348f47f88442c38fabf6e5f55e513e = $(`<div id="html_01348f47f88442c38fabf6e5f55e513e" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 곱창의축복<br>주소: 서울 구로구 경인로 331<br>영업 시간: 오후 12시 저녁 9시<br>적용대상 : 결식아동<br>적용인원 : 본인과 가족(어린이, 청소년) </pre> </div>`)[0];
+            popup_684cf2de11dd4587b13c899d3de7e400.setContent(html_01348f47f88442c38fabf6e5f55e513e);
+
+
+        marker_45c9326c3e104675802d7bcc2f6e732a.bindPopup(popup_684cf2de11dd4587b13c899d3de7e400)
+        ;
+
+
+
+
+            var marker_8a449d0353ba4b809ea542755ead934a = L.marker(
+                [37.48367843, 126.8954191],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_6211c0c1ac9241c1929602a7b9b92aca = L.popup({"maxWidth": "100%"});
+
+
+            var html_9ee6153efa3041118acc6eeaffd0798d = $(`<div id="html_9ee6153efa3041118acc6eeaffd0798d" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 어부식당<br>주소: 서울 구로구 구로동 212-8<br>영업 시간: 11-20시<br>적용대상 : 결식아동<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_6211c0c1ac9241c1929602a7b9b92aca.setContent(html_9ee6153efa3041118acc6eeaffd0798d);
+
+
+        marker_8a449d0353ba4b809ea542755ead934a.bindPopup(popup_6211c0c1ac9241c1929602a7b9b92aca)
+        ;
+
+
+
+
+            var marker_14a2c5b4a3ae47cfbc647aa578c8db25 = L.marker(
+                [37.49391885, 126.8588797],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_b1c2786487a741f19a2bb2c34640ab7a = L.popup({"maxWidth": "100%"});
+
+
+            var html_362212d7691d40b5bce7c304003b88eb = $(`<div id="html_362212d7691d40b5bce7c304003b88eb" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 육회지존(개봉역점)<br>주소: 서울 구로구 남부순환로97길 20-7<br>영업 시간: 16:30~익일 02:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 가족 구성원 전부 가능 </pre> </div>`)[0];
+            popup_b1c2786487a741f19a2bb2c34640ab7a.setContent(html_362212d7691d40b5bce7c304003b88eb);
+
+
+        marker_14a2c5b4a3ae47cfbc647aa578c8db25.bindPopup(popup_b1c2786487a741f19a2bb2c34640ab7a)
+        ;
+
+
+
+
+            var marker_6e660200bd2a4585808bb0bcf39ed65e = L.marker(
+                [37.4798477, 126.8953185],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_88d0cf792787423893601d17d519d14a = L.popup({"maxWidth": "100%"});
+
+
+            var html_be35bfc99d8248d4bd7ff7218cbf01cf = $(`<div id="html_be35bfc99d8248d4bd7ff7218cbf01cf" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 오로지라멘 구로지타워몰점<br>주소: 서울 구로구 디지털로26길 38<br>영업 시간: 11:00 ~ 21:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_88d0cf792787423893601d17d519d14a.setContent(html_be35bfc99d8248d4bd7ff7218cbf01cf);
+
+
+        marker_6e660200bd2a4585808bb0bcf39ed65e.bindPopup(popup_88d0cf792787423893601d17d519d14a)
+        ;
+
+
+
+
+            var marker_3ca0ec7dec98414e9a08669214137df7 = L.marker(
+                [37.45278001, 126.9085988],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_fb04821f1dfb4e15a8406bd5cf126173 = L.popup({"maxWidth": "100%"});
+
+
+            var html_a65c09ae9d664040908d17a13107e506 = $(`<div id="html_a65c09ae9d664040908d17a13107e506" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 이레가구<br>주소: 서울 금천구 금하로23길 33<br>영업 시간: 10시-20시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_fb04821f1dfb4e15a8406bd5cf126173.setContent(html_a65c09ae9d664040908d17a13107e506);
+
+
+        marker_3ca0ec7dec98414e9a08669214137df7.bindPopup(popup_fb04821f1dfb4e15a8406bd5cf126173)
+        ;
+
+
+
+
+            var marker_b5649a05f14b4490b0943248ad247d5c = L.marker(
+                [37.48005881, 126.8871007],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_613e17528f82441b8a606617295c3412 = L.popup({"maxWidth": "100%"});
+
+
+            var html_4c811e6c2fe04969a29f2c3c03471ce2 = $(`<div id="html_4c811e6c2fe04969a29f2c3c03471ce2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 티엔티 스피치<br>주소: 서울 금천구 디지털로9길 46<br>영업 시간: 오전 10시 ~ 밤 10시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_613e17528f82441b8a606617295c3412.setContent(html_4c811e6c2fe04969a29f2c3c03471ce2);
+
+
+        marker_b5649a05f14b4490b0943248ad247d5c.bindPopup(popup_613e17528f82441b8a606617295c3412)
+        ;
+
+
+
+
+            var marker_a2ec90d6d7c845cfab010f0ae8060d17 = L.marker(
+                [37.46681871, 126.8900295],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_f6d038604b454e9db54f355abad79208 = L.popup({"maxWidth": "100%"});
+
+
+            var html_28aaa0812a9a46048cc6a53a616b61d8 = $(`<div id="html_28aaa0812a9a46048cc6a53a616b61d8" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 더카페 이네스트점<br>주소: 서울 금천구 범안로 1155<br>영업 시간: 07:30~21:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_f6d038604b454e9db54f355abad79208.setContent(html_28aaa0812a9a46048cc6a53a616b61d8);
+
+
+        marker_a2ec90d6d7c845cfab010f0ae8060d17.bindPopup(popup_f6d038604b454e9db54f355abad79208)
+        ;
+
+
+
+
+            var marker_1bfbebf6b5dc4f10899daafd4ecf6b62 = L.marker(
+                [37.62493456, 127.0777431],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_5b7b0af49ecd405ba9841ae4af2d96a1 = L.popup({"maxWidth": "100%"});
+
+
+            var html_cca412e721044d63850d4d8985b50012 = $(`<div id="html_cca412e721044d63850d4d8985b50012" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 라라브레드<br>주소: 서울 노원구 공릉동 350-22<br>영업 시간: 10:00~21:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_5b7b0af49ecd405ba9841ae4af2d96a1.setContent(html_cca412e721044d63850d4d8985b50012);
+
+
+        marker_1bfbebf6b5dc4f10899daafd4ecf6b62.bindPopup(popup_5b7b0af49ecd405ba9841ae4af2d96a1)
+        ;
+
+
+
+
+            var marker_2d848941b32f481092643aa48eb348ca = L.marker(
+                [37.62576537, 127.081601],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0ff9b771c34f495e926f5ea8c88ba8ff = L.popup({"maxWidth": "100%"});
+
+
+            var html_225a42615750487bb098deee4e408e08 = $(`<div id="html_225a42615750487bb098deee4e408e08" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 올가드림뷰티 공릉점<br>주소: 서울 노원구 공릉로34길 86<br>영업 시간: 오전10시~오후8시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_0ff9b771c34f495e926f5ea8c88ba8ff.setContent(html_225a42615750487bb098deee4e408e08);
+
+
+        marker_2d848941b32f481092643aa48eb348ca.bindPopup(popup_0ff9b771c34f495e926f5ea8c88ba8ff)
+        ;
+
+
+
+
+            var marker_b39ef0a3e1fd45e7b29a144a9209c634 = L.marker(
+                [37.65247558, 127.0719352],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_e82029583e1049ea93426d4e8f9d88d7 = L.popup({"maxWidth": "100%"});
+
+
+            var html_7b9888874bce4362a2f03453c6860afd = $(`<div id="html_7b9888874bce4362a2f03453c6860afd" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 헤스론<br>주소: 서울 노원구 덕릉로73길 28<br>영업 시간: 평일 :13시-20시30분 / 토요일 : 11시-18시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_e82029583e1049ea93426d4e8f9d88d7.setContent(html_7b9888874bce4362a2f03453c6860afd);
+
+
+        marker_b39ef0a3e1fd45e7b29a144a9209c634.bindPopup(popup_e82029583e1049ea93426d4e8f9d88d7)
+        ;
+
+
+
+
+            var marker_79ce023e2d4742bb8cd79b25bc33bdf5 = L.marker(
+                [37.67105614, 127.0563999],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_6034d7a211fa420e999b7fae3749eb2c = L.popup({"maxWidth": "100%"});
+
+
+            var html_91eae8c9cf624e14827d8373bee2c845 = $(`<div id="html_91eae8c9cf624e14827d8373bee2c845" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 달인보쌈<br>주소: 서울 노원구 동일로 1598<br>영업 시간: 11:30~21:30<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_6034d7a211fa420e999b7fae3749eb2c.setContent(html_91eae8c9cf624e14827d8373bee2c845);
+
+
+        marker_79ce023e2d4742bb8cd79b25bc33bdf5.bindPopup(popup_6034d7a211fa420e999b7fae3749eb2c)
+        ;
+
+
+
+
+            var marker_19e40cf90c5945aba67f32881988f264 = L.marker(
+                [37.61941061, 127.0732331],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_8765051dcb4742ccbf45a637b5951cc4 = L.popup({"maxWidth": "100%"});
+
+
+            var html_c94623557cde4f5799a6af6746ca6b29 = $(`<div id="html_c94623557cde4f5799a6af6746ca6b29" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 슈마스터태릉점<br>주소: 서울 노원구 동일로173가길 25<br>영업 시간: 09~20<br>적용대상 : 결식아동,독거노인,산악구조대, 산림청,<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_8765051dcb4742ccbf45a637b5951cc4.setContent(html_c94623557cde4f5799a6af6746ca6b29);
+
+
+        marker_19e40cf90c5945aba67f32881988f264.bindPopup(popup_8765051dcb4742ccbf45a637b5951cc4)
+        ;
+
+
+
+
+            var marker_2f68e3de15504a2d880482f1403d00ee = L.marker(
+                [37.68184246, 127.0569993],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_e256cf4010524602877d411d62358a48 = L.popup({"maxWidth": "100%"});
+
+
+            var html_dc6db826347549dd83c05d55ec46c32a = $(`<div id="html_dc6db826347549dd83c05d55ec46c32a" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 용인대금메달태권도<br>주소: 서울 노원구 동일로250길 18<br>영업 시간: 12:00 ~ 22:00<br>적용대상 : 결식아동,사회적배려대상자<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_e256cf4010524602877d411d62358a48.setContent(html_dc6db826347549dd83c05d55ec46c32a);
+
+
+        marker_2f68e3de15504a2d880482f1403d00ee.bindPopup(popup_e256cf4010524602877d411d62358a48)
+        ;
+
+
+
+
+            var marker_8583169a21004417827f9cb212db00d1 = L.marker(
+                [37.65635432, 127.0622496],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_37bcfddebcfb46e59913a98344040e9a = L.popup({"maxWidth": "100%"});
+
+
+            var html_4e893d3290254705b4c2ca4c832d92f2 = $(`<div id="html_4e893d3290254705b4c2ca4c832d92f2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 카툰공감 노원역점<br>주소: 서울 노원구 상계로 65<br>영업 시간: 10:00-02:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_37bcfddebcfb46e59913a98344040e9a.setContent(html_4e893d3290254705b4c2ca4c832d92f2);
+
+
+        marker_8583169a21004417827f9cb212db00d1.bindPopup(popup_37bcfddebcfb46e59913a98344040e9a)
+        ;
+
+
+
+
+            var marker_f06b31d6624f4545ad35e13e2ba8d2bb = L.marker(
+                [37.61759699, 127.0634673],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_f0173c7bee744283b8004d65f27fce66 = L.popup({"maxWidth": "100%"});
+
+
+            var html_7e6d3ba5fcd34b56850165e0cc421ba5 = $(`<div id="html_7e6d3ba5fcd34b56850165e0cc421ba5" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 미소한가득<br>주소: 서울 노원구 석계로9길 10<br>영업 시간: 12:00~19:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_f0173c7bee744283b8004d65f27fce66.setContent(html_7e6d3ba5fcd34b56850165e0cc421ba5);
+
+
+        marker_f06b31d6624f4545ad35e13e2ba8d2bb.bindPopup(popup_f0173c7bee744283b8004d65f27fce66)
+        ;
+
+
+
+
+            var marker_e60cc100d2554f438aa4f553e1730821 = L.marker(
+                [37.63887505, 127.0702955],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_e4593afa01a540799ff234fcd5847468 = L.popup({"maxWidth": "100%"});
+
+
+            var html_e832115e369a42a78302bdf0dbaf268a = $(`<div id="html_e832115e369a42a78302bdf0dbaf268a" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 이리로<br>주소: 서울 노원구 하계동 208-19<br>영업 시간: 11시30분 ㅡ5시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_e4593afa01a540799ff234fcd5847468.setContent(html_e832115e369a42a78302bdf0dbaf268a);
+
+
+        marker_e60cc100d2554f438aa4f553e1730821.bindPopup(popup_e4593afa01a540799ff234fcd5847468)
+        ;
+
+
+
+
+            var marker_13092357e04141f09870716de0fc44f8 = L.marker(
+                [37.61574588, 127.0666312],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0ffa9b99c66d4635be7f52b4e94b605d = L.popup({"maxWidth": "100%"});
+
+
+            var html_d9fa7c2fd92d44129fe00e2ac94b462d = $(`<div id="html_d9fa7c2fd92d44129fe00e2ac94b462d" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 카페거실<br>주소: 서울 노원구 화랑로47길 9<br>영업 시간: nan<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_0ffa9b99c66d4635be7f52b4e94b605d.setContent(html_d9fa7c2fd92d44129fe00e2ac94b462d);
+
+
+        marker_13092357e04141f09870716de0fc44f8.bindPopup(popup_0ffa9b99c66d4635be7f52b4e94b605d)
+        ;
+
+
+
+
+            var marker_51f90f02419e42148027b70247561d7a = L.marker(
+                [37.65310992, 127.0500754],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_1fa0bc801ef047c18dc0ebf976808eb8 = L.popup({"maxWidth": "100%"});
+
+
+            var html_3a511a4a5ba64ea6af7fb70a2b6b0fa2 = $(`<div id="html_3a511a4a5ba64ea6af7fb70a2b6b0fa2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 족발야시장창동역점<br>주소: 서울 도봉구 노해로69길 21-11<br>영업 시간: 평일오후4시-12시 주말,휴일오전11시~밤 12시<br>적용대상 : 결식아동<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_1fa0bc801ef047c18dc0ebf976808eb8.setContent(html_3a511a4a5ba64ea6af7fb70a2b6b0fa2);
+
+
+        marker_51f90f02419e42148027b70247561d7a.bindPopup(popup_1fa0bc801ef047c18dc0ebf976808eb8)
+        ;
+
+
+
+
+            var marker_6ae88fd7f9114818afcc02db5b263a64 = L.marker(
+                [37.66457204, 127.0359669],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_dabead0cb3694e63b53d030b29d71ce9 = L.popup({"maxWidth": "100%"});
+
+
+            var html_ad8bc2ef11724d74ba6ac56ea15fbfaf = $(`<div id="html_ad8bc2ef11724d74ba6ac56ea15fbfaf" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 워너비굿즈 <br>주소: 서울 도봉구 도당로 76<br>영업 시간: wannabegoods_lux<br>적용대상 : 마스크가 필요한 어린이<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_dabead0cb3694e63b53d030b29d71ce9.setContent(html_ad8bc2ef11724d74ba6ac56ea15fbfaf);
+
+
+        marker_6ae88fd7f9114818afcc02db5b263a64.bindPopup(popup_dabead0cb3694e63b53d030b29d71ce9)
+        ;
+
+
+
+
+            var marker_36852d6011344de2b8e1f09b799f7874 = L.marker(
+                [37.67783199, 127.0435593],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_116ff6ac6f7244b1a8b49e033d56f861 = L.popup({"maxWidth": "100%"});
+
+
+            var html_9104d57801e642bbbe351ad11ad25bb7 = $(`<div id="html_9104d57801e642bbbe351ad11ad25bb7" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 써이포차나<br>주소: 서울 도봉구 도봉동 597-21<br>영업 시간: 평일 오전 11시30분 부터 오후 9시30분<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_116ff6ac6f7244b1a8b49e033d56f861.setContent(html_9104d57801e642bbbe351ad11ad25bb7);
+
+
+        marker_36852d6011344de2b8e1f09b799f7874.bindPopup(popup_116ff6ac6f7244b1a8b49e033d56f861)
+        ;
+
+
+
+
+            var marker_61483a78adac4dbda811eac6fe638e4d = L.marker(
+                [37.65072874, 127.0356034],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_fff2c0a7c90c4e9fbc4387f8fadb8bfc = L.popup({"maxWidth": "100%"});
+
+
+            var html_24baaaf560b340708353dd683552ab05 = $(`<div id="html_24baaaf560b340708353dd683552ab05" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 교촌치킨 쌍문역점<br>주소: 서울 도봉구 도봉로 505<br>영업 시간: 12:00 ~ 01:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_fff2c0a7c90c4e9fbc4387f8fadb8bfc.setContent(html_24baaaf560b340708353dd683552ab05);
+
+
+        marker_61483a78adac4dbda811eac6fe638e4d.bindPopup(popup_fff2c0a7c90c4e9fbc4387f8fadb8bfc)
+        ;
+
+
+
+
+            var marker_3de4bc78937b427da9615c2193b0afb2 = L.marker(
+                [37.65290468, 127.0492033],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_c70eef8dca984bfe9cfa28212ff40e66 = L.popup({"maxWidth": "100%"});
+
+
+            var html_cf3ac673889c4dccb5d9bfdf565c731f = $(`<div id="html_cf3ac673889c4dccb5d9bfdf565c731f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 메가커피 창동역점<br>주소: 서울 도봉구 마들로11가길 13<br>영업 시간: 09:00~21:00<br>적용대상 : Nan<br>적용인원 : 첫방문시 맴버쉽쿠폰발급(아이 본인만) </pre> </div>`)[0];
+            popup_c70eef8dca984bfe9cfa28212ff40e66.setContent(html_cf3ac673889c4dccb5d9bfdf565c731f);
+
+
+        marker_3de4bc78937b427da9615c2193b0afb2.bindPopup(popup_c70eef8dca984bfe9cfa28212ff40e66)
+        ;
+
+
+
+
+            var marker_643d53796b914dc4a16038da79bc58f8 = L.marker(
+                [37.65315868, 127.0487467],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_c2424792c9de4ef2a52a6aadfac3b10a = L.popup({"maxWidth": "100%"});
+
+
+            var html_6d0e7f7914434df39e92dd24c96dbb59 = $(`<div id="html_6d0e7f7914434df39e92dd24c96dbb59" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 소스공작단<br>주소: 서울 도봉구 마들로11길 75<br>영업 시간: 11::00 - 21:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_c2424792c9de4ef2a52a6aadfac3b10a.setContent(html_6d0e7f7914434df39e92dd24c96dbb59);
+
+
+        marker_643d53796b914dc4a16038da79bc58f8.bindPopup(popup_c2424792c9de4ef2a52a6aadfac3b10a)
+        ;
+
+
+
+
+            var marker_37beca69025544cfa04567fb8508808c = L.marker(
+                [37.66728591, 127.0448214],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_dc0dd5475cc548ef8bbe9724aa510172 = L.popup({"maxWidth": "100%"});
+
+
+            var html_5c82170f489445c4856f1f0ad5abebd5 = $(`<div id="html_5c82170f489445c4856f1f0ad5abebd5" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 바우네나주곰탕<br>주소: 서울 도봉구 방학동 717-2<br>영업 시간: 오잔8시  부터 오후9시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_dc0dd5475cc548ef8bbe9724aa510172.setContent(html_5c82170f489445c4856f1f0ad5abebd5);
+
+
+        marker_37beca69025544cfa04567fb8508808c.bindPopup(popup_dc0dd5475cc548ef8bbe9724aa510172)
+        ;
+
+
+
+
+            var marker_b0965ebf71194a08abfedf9a70d15f4d = L.marker(
+                [37.63683067, 127.0385739],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_d7806f2cdc57499fb7f1343217c099c5 = L.popup({"maxWidth": "100%"});
+
+
+            var html_bad42c54131445b3bc0c4e1fcbcd243f = $(`<div id="html_bad42c54131445b3bc0c4e1fcbcd243f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 청춘불닭발<br>주소: 서울 도봉구 창동 554-1<br>영업 시간: 16:00-02:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_d7806f2cdc57499fb7f1343217c099c5.setContent(html_bad42c54131445b3bc0c4e1fcbcd243f);
+
+
+        marker_b0965ebf71194a08abfedf9a70d15f4d.bindPopup(popup_d7806f2cdc57499fb7f1343217c099c5)
+        ;
+
+
+
+
+            var marker_2df767225a984c48bf369a368f5f3c59 = L.marker(
+                [37.65304462, 127.037945],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_73a6d09c0b1a4ba1b5f56b217113bbf4 = L.popup({"maxWidth": "100%"});
+
+
+            var html_e80d80a4377346faa8df088dade394e1 = $(`<div id="html_e80d80a4377346faa8df088dade394e1" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 주크(모드베베)<br>주소: 서울 도봉구 창동 703<br>영업 시간: nan<br>적용대상 : 결식아동<br>적용인원 : Nan </pre> </div>`)[0];
+            popup_73a6d09c0b1a4ba1b5f56b217113bbf4.setContent(html_e80d80a4377346faa8df088dade394e1);
+
+
+        marker_2df767225a984c48bf369a368f5f3c59.bindPopup(popup_73a6d09c0b1a4ba1b5f56b217113bbf4)
+        ;
+
+
+
+
+            var marker_a3d8316fb1b54764ae63f5a1aa0e03b5 = L.marker(
+                [37.58910135, 127.0531211],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_f90b394169d04dd98a6b305017958ecd = L.popup({"maxWidth": "100%"});
+
+
+            var html_4d1cc2040eed45baa47ea2d0fe9cf5ff = $(`<div id="html_4d1cc2040eed45baa47ea2d0fe9cf5ff" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 예술의악당음악학원<br>주소: 서울 동대문구 이문로1길 16-3<br>영업 시간: 오후2시부터 7시<br>적용대상 : 결식아동,독거노인,기초생활수급자 <br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_f90b394169d04dd98a6b305017958ecd.setContent(html_4d1cc2040eed45baa47ea2d0fe9cf5ff);
+
+
+        marker_a3d8316fb1b54764ae63f5a1aa0e03b5.bindPopup(popup_f90b394169d04dd98a6b305017958ecd)
+        ;
+
+
+
+
+            var marker_1d727055ac86431d91cdb409050ccd63 = L.marker(
+                [37.56512557, 127.0716423],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_b96b33ef1aed43f8aa348d09ec865448 = L.popup({"maxWidth": "100%"});
+
+
+            var html_d287d645ca1a41f7906db28f291b688a = $(`<div id="html_d287d645ca1a41f7906db28f291b688a" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 사미커피<br>주소: 서울 동대문구 장한로14길 70<br>영업 시간: 09:30~23:59<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_b96b33ef1aed43f8aa348d09ec865448.setContent(html_d287d645ca1a41f7906db28f291b688a);
+
+
+        marker_1d727055ac86431d91cdb409050ccd63.bindPopup(popup_b96b33ef1aed43f8aa348d09ec865448)
+        ;
+
+
+
+
+            var marker_609e3676a6a24dc4ba30c76d8aa27a55 = L.marker(
+                [37.57742109, 127.0728255],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_ea5a2980d25645869d0726d9f4e3bdf8 = L.popup({"maxWidth": "100%"});
+
+
+            var html_52315498cb9c4410b9f25d87812c26fc = $(`<div id="html_52315498cb9c4410b9f25d87812c26fc" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 유끼노하나<br>주소: 서울 동대문구 장한로36길 10<br>영업 시간: 낮12시~익일 새벽 1시(금,토 익일 새벽 2시)<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_ea5a2980d25645869d0726d9f4e3bdf8.setContent(html_52315498cb9c4410b9f25d87812c26fc);
+
+
+        marker_609e3676a6a24dc4ba30c76d8aa27a55.bindPopup(popup_ea5a2980d25645869d0726d9f4e3bdf8)
+        ;
+
+
+
+
+            var marker_644626ced0c044309a6ffa6c728a87e9 = L.marker(
+                [37.57880066, 127.0584512],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_a53d3cb05f0244d3b76fd5b0e135a66b = L.popup({"maxWidth": "100%"});
+
+
+            var html_75e8d5c9f42647dcb16ca2e9167ef6fe = $(`<div id="html_75e8d5c9f42647dcb16ca2e9167ef6fe" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 봉수아피자 답십리점<br>주소: 서울 동대문구 전농동 46-71<br>영업 시간: 오전11시부터 오후11시까지<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_a53d3cb05f0244d3b76fd5b0e135a66b.setContent(html_75e8d5c9f42647dcb16ca2e9167ef6fe);
+
+
+        marker_644626ced0c044309a6ffa6c728a87e9.bindPopup(popup_a53d3cb05f0244d3b76fd5b0e135a66b)
+        ;
+
+
+
+
+            var marker_2f47f6ed462b4120bebaf758c282eb15 = L.marker(
+                [37.59232195, 127.0508587],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_65414b32d34a4239b5ccb1ea3ae4e79f = L.popup({"maxWidth": "100%"});
+
+
+            var html_3330ca45799d421ba2cee42f87cf1274 = $(`<div id="html_3330ca45799d421ba2cee42f87cf1274" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 너나들이 만화카페 <br>주소: 서울 동대문구 회기동 60-71<br>영업 시간: 12:00~22:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_65414b32d34a4239b5ccb1ea3ae4e79f.setContent(html_3330ca45799d421ba2cee42f87cf1274);
+
+
+        marker_2f47f6ed462b4120bebaf758c282eb15.bindPopup(popup_65414b32d34a4239b5ccb1ea3ae4e79f)
+        ;
+
+
+
+
+            var marker_ead437280a364ec3bbdfc9e0e6a087fe = L.marker(
+                [37.59106832, 127.0531009],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_7da2fdaf615e4740933e650bf5d18483 = L.popup({"maxWidth": "100%"});
+
+
+            var html_de79a670c2714b0e9e624d96a207f3ee = $(`<div id="html_de79a670c2714b0e9e624d96a207f3ee" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 정재광 복싱 클럽<br>주소: 서울 동대문구 회기로 152<br>영업 시간: 오전 12시 부터  오후 10시 까지<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_7da2fdaf615e4740933e650bf5d18483.setContent(html_de79a670c2714b0e9e624d96a207f3ee);
+
+
+        marker_ead437280a364ec3bbdfc9e0e6a087fe.bindPopup(popup_7da2fdaf615e4740933e650bf5d18483)
+        ;
+
+
+
+
+            var marker_77698411296b4f5e951671bc35d68972 = L.marker(
+                [37.59580646, 127.0605774],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_3436033d1ce945a9b438ec22a6304a2f = L.popup({"maxWidth": "100%"});
+
+
+            var html_d865ed03b858410da58e84eb07fae31f = $(`<div id="html_d865ed03b858410da58e84eb07fae31f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 이문동辛냉면 <br>주소: 서울 동대문구 휘경로 6-8<br>영업 시간: 오전 11시~오후 7시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_3436033d1ce945a9b438ec22a6304a2f.setContent(html_d865ed03b858410da58e84eb07fae31f);
+
+
+        marker_77698411296b4f5e951671bc35d68972.bindPopup(popup_3436033d1ce945a9b438ec22a6304a2f)
+        ;
+
+
+
+
+            var marker_12810f3f7d914bbc8cbe779ab19f4fd6 = L.marker(
+                [37.49827945, 126.9313244],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_171a8f1becc6495db3d8ebc635b3fc31 = L.popup({"maxWidth": "100%"});
+
+
+            var html_b037146bae8b4f6b858d0f8064ab6ea0 = $(`<div id="html_b037146bae8b4f6b858d0f8064ab6ea0" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 봉식이떡볶이<br>주소: 서울 동작구 국사봉1길 70<br>영업 시간: 오전 11시30분~오후9시30분<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_171a8f1becc6495db3d8ebc635b3fc31.setContent(html_b037146bae8b4f6b858d0f8064ab6ea0);
+
+
+        marker_12810f3f7d914bbc8cbe779ab19f4fd6.bindPopup(popup_171a8f1becc6495db3d8ebc635b3fc31)
+        ;
+
+
+
+
+            var marker_b424531e1e9a4646a7a1f5cb71934f68 = L.marker(
+                [37.51239334, 126.9272725],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_7b4603a644eb46ce9a5f77f5fd6f8bde = L.popup({"maxWidth": "100%"});
+
+
+            var html_db21e8ef245b458ea3b70e2f7a4695c7 = $(`<div id="html_db21e8ef245b458ea3b70e2f7a4695c7" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 월경상점<br>주소: 서울 동작구 노량진로 10<br>영업 시간: 13:00 - 20:00 (요일별 상이)<br>적용대상 : Nan<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_7b4603a644eb46ce9a5f77f5fd6f8bde.setContent(html_db21e8ef245b458ea3b70e2f7a4695c7);
+
+
+        marker_b424531e1e9a4646a7a1f5cb71934f68.bindPopup(popup_7b4603a644eb46ce9a5f77f5fd6f8bde)
+        ;
+
+
+
+
+            var marker_706ae36198ab42569186e1a7057b8f4a = L.marker(
+                [37.48876924, 126.9813284],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_52b8f151b2b047d195ec6e61a6454353 = L.popup({"maxWidth": "100%"});
+
+
+            var html_769b4b328b5744a2a0957e82694e0ab1 = $(`<div id="html_769b4b328b5744a2a0957e82694e0ab1" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 육대장이수역점<br>주소: 서울 동작구 사당동 89-6<br>영업 시간: 오전11시~오후9시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_52b8f151b2b047d195ec6e61a6454353.setContent(html_769b4b328b5744a2a0957e82694e0ab1);
+
+
+        marker_706ae36198ab42569186e1a7057b8f4a.bindPopup(popup_52b8f151b2b047d195ec6e61a6454353)
+        ;
+
+
+
+
+            var marker_2b2b66f6558843f3889e5feb9b4ebc7f = L.marker(
+                [37.48357948, 126.971246],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_478c50a10cca40f092e914dbe60b02de = L.popup({"maxWidth": "100%"});
+
+
+            var html_e795631603b6441aa990982fb0adaee4 = $(`<div id="html_e795631603b6441aa990982fb0adaee4" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 오태식해바라기치킨 사당153점<br>주소: 서울 동작구 사당로16가길 42<br>영업 시간: 오전 11시 ~ 새벽 1시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_478c50a10cca40f092e914dbe60b02de.setContent(html_e795631603b6441aa990982fb0adaee4);
+
+
+        marker_2b2b66f6558843f3889e5feb9b4ebc7f.bindPopup(popup_478c50a10cca40f092e914dbe60b02de)
+        ;
+
+
+
+
+            var marker_fcf5563387f4495f9c3b48767689c40b = L.marker(
+                [37.50320805, 126.9477004],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_181ac238fa8442cf90763be3fd6a0abc = L.popup({"maxWidth": "100%"});
+
+
+            var html_b7bb5d94c0df4e61836d8e3dcf6d8864 = $(`<div id="html_b7bb5d94c0df4e61836d8e3dcf6d8864" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 브레댄코<br>주소: 서울 동작구 상도로 지하 272<br>영업 시간: 07:00-22:00<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_181ac238fa8442cf90763be3fd6a0abc.setContent(html_b7bb5d94c0df4e61836d8e3dcf6d8864);
+
+
+        marker_fcf5563387f4495f9c3b48767689c40b.bindPopup(popup_181ac238fa8442cf90763be3fd6a0abc)
+        ;
+
+
+
+
+            var marker_f6946cf57a6a498d93adb28f28afb8ff = L.marker(
+                [37.55635049, 126.9542749],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_a15f3fa434354825b87c5561b1c8e812 = L.popup({"maxWidth": "100%"});
+
+
+            var html_908d8de19eca471b91f01a78cc5d4d5d = $(`<div id="html_908d8de19eca471b91f01a78cc5d4d5d" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 커피프릭<br>주소: 서울 마포구 굴레방로7길 22<br>영업 시간: 09:00~22:00<br>적용대상 : 결식아동,독거노인,경찰<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_a15f3fa434354825b87c5561b1c8e812.setContent(html_908d8de19eca471b91f01a78cc5d4d5d);
+
+
+        marker_f6946cf57a6a498d93adb28f28afb8ff.bindPopup(popup_a15f3fa434354825b87c5561b1c8e812)
+        ;
+
+
+
+
+            var marker_b2ff7cce19ca436abcf55ed8803dc7fd = L.marker(
+                [37.55596451, 126.9239017],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_275e29b51f644f9ba7c67a799191b764 = L.popup({"maxWidth": "100%"});
+
+
+            var html_98636597edcb4990b58e7a56306747eb = $(`<div id="html_98636597edcb4990b58e7a56306747eb" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 피에스타7커피<br>주소: 서울 마포구 동교동 164-18<br>영업 시간: 평일 : 오전 8시~23시,주말 : 오전 9시~23시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_275e29b51f644f9ba7c67a799191b764.setContent(html_98636597edcb4990b58e7a56306747eb);
+
+
+        marker_b2ff7cce19ca436abcf55ed8803dc7fd.bindPopup(popup_275e29b51f644f9ba7c67a799191b764)
+        ;
+
+
+
+
+            var marker_791fde5a46414f7f80a52ef30f65ac4a = L.marker(
+                [37.5537428, 126.9096697],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_94bb034902ab4835a435b3f5016ff905 = L.popup({"maxWidth": "100%"});
+
+
+            var html_cb3440e988c642fd93a8b617ee51e9c3 = $(`<div id="html_cb3440e988c642fd93a8b617ee51e9c3" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 성산베스트플러스학원<br>주소: 서울 마포구 동교로 67<br>영업 시간: 1200~1900<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_94bb034902ab4835a435b3f5016ff905.setContent(html_cb3440e988c642fd93a8b617ee51e9c3);
+
+
+        marker_791fde5a46414f7f80a52ef30f65ac4a.bindPopup(popup_94bb034902ab4835a435b3f5016ff905)
+        ;
+
+
+
+
+            var marker_e79500bc7f60425eaf864cfab6993dca = L.marker(
+                [37.54143216, 126.9470541],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_2a5a7b49fb8a426fa7c050263c6a421e = L.popup({"maxWidth": "100%"});
+
+
+            var html_e8e5e4c39a244fe59b4364aaa62ec82d = $(`<div id="html_e8e5e4c39a244fe59b4364aaa62ec82d" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: sobit gold station<br>주소: 서울 마포구 마포대로 53<br>영업 시간: 09:00~20:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_2a5a7b49fb8a426fa7c050263c6a421e.setContent(html_e8e5e4c39a244fe59b4364aaa62ec82d);
+
+
+        marker_e79500bc7f60425eaf864cfab6993dca.bindPopup(popup_2a5a7b49fb8a426fa7c050263c6a421e)
+        ;
+
+
+
+
+            var marker_d90660fa18524446b2dc864459491a10 = L.marker(
+                [37.55812751, 126.9041936],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_6c410599f13c40698d1497f98e050b25 = L.popup({"maxWidth": "100%"});
+
+
+            var html_6e5ff9a153064393a833aee12e35ffdc = $(`<div id="html_6e5ff9a153064393a833aee12e35ffdc" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 달콤헤어<br>주소: 서울 마포구 망원동 424-9<br>영업 시간: 10시~20시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_6c410599f13c40698d1497f98e050b25.setContent(html_6e5ff9a153064393a833aee12e35ffdc);
+
+
+        marker_d90660fa18524446b2dc864459491a10.bindPopup(popup_6c410599f13c40698d1497f98e050b25)
+        ;
+
+
+
+
+            var marker_a2b2cdc5bf3840c597b73014085151ec = L.marker(
+                [37.57637326, 126.8961494],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_3c38a56696704f258ff60ea04e464d4a = L.popup({"maxWidth": "100%"});
+
+
+            var html_062c4afd686f4ba2b5d9e052c1434b5f = $(`<div id="html_062c4afd686f4ba2b5d9e052c1434b5f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 동경규동상암<br>주소: 서울 마포구 매봉산로2길 68<br>영업 시간: 11:00 ~ 20:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_3c38a56696704f258ff60ea04e464d4a.setContent(html_062c4afd686f4ba2b5d9e052c1434b5f);
+
+
+        marker_a2b2cdc5bf3840c597b73014085151ec.bindPopup(popup_3c38a56696704f258ff60ea04e464d4a)
+        ;
+
+
+
+
+            var marker_5121360f96fa4eae8b763efc3ae3718f = L.marker(
+                [37.55223793, 126.9134894],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_cba7195c89ea4b76bf0ecfb4937bb7ee = L.popup({"maxWidth": "100%"});
+
+
+            var html_c1ae2421d5e94e02a38f8dcf63363aea = $(`<div id="html_c1ae2421d5e94e02a38f8dcf63363aea" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 깊이<br>주소: 서울 마포구 서교동 384-14<br>영업 시간: 매일 10:00 ~ 24:00<br>적용대상 : 결식아동,독거노인,경찰 공무원 소방공무원 20% 할인 <br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_cba7195c89ea4b76bf0ecfb4937bb7ee.setContent(html_c1ae2421d5e94e02a38f8dcf63363aea);
+
+
+        marker_5121360f96fa4eae8b763efc3ae3718f.bindPopup(popup_cba7195c89ea4b76bf0ecfb4937bb7ee)
+        ;
+
+
+
+
+            var marker_4e77fa69996c446e8f695fa3d3697aa6 = L.marker(
+                [37.5503889, 126.9209387],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_fee2eb45dff8477897810f5077508296 = L.popup({"maxWidth": "100%"});
+
+
+            var html_c0f6dcce84144d57a660aa8c41e105d2 = $(`<div id="html_c0f6dcce84144d57a660aa8c41e105d2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 슈츄안<br>주소: 서울 마포구 서교동 405-17<br>영업 시간: 오전11~익일 오전6시<br>적용대상 : 결식아동,초등~고등학교1학년까지만(학생증확인)<br>적용인원 : 본인+동반1인, 복지카드+학생증지참 </pre> </div>`)[0];
+            popup_fee2eb45dff8477897810f5077508296.setContent(html_c0f6dcce84144d57a660aa8c41e105d2);
+
+
+        marker_4e77fa69996c446e8f695fa3d3697aa6.bindPopup(popup_fee2eb45dff8477897810f5077508296)
+        ;
+
+
+
+
+            var marker_ebfa8f4dece147bd838216d0c7453d8c = L.marker(
+                [37.56481518, 126.9160515],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_dfe3a64715e54940a5b09bc3943f28a0 = L.popup({"maxWidth": "100%"});
+
+
+            var html_f018ead64ee84401ae7709ec7bd6f421 = $(`<div id="html_f018ead64ee84401ae7709ec7bd6f421" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 네임리스커피<br>주소: 서울 마포구 성미산로13길 89<br>영업 시간: 평일 10~20시 토요일 11~20시 일요일 11~18<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_dfe3a64715e54940a5b09bc3943f28a0.setContent(html_f018ead64ee84401ae7709ec7bd6f421);
+
+
+        marker_ebfa8f4dece147bd838216d0c7453d8c.bindPopup(popup_dfe3a64715e54940a5b09bc3943f28a0)
+        ;
+
+
+
+
+            var marker_dfeca39c3cd744d1a07f1139a7c23c18 = L.marker(
+                [37.55536391, 126.930336],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_f9fe946e551f42058baeefbb84f8f5da = L.popup({"maxWidth": "100%"});
+
+
+            var html_14b11a2fd2ed415f933c274d1e97ba3c = $(`<div id="html_14b11a2fd2ed415f933c274d1e97ba3c" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 블루밍부케<br>주소: 서울 마포구 와우산로 161<br>영업 시간: 12:00~19:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_f9fe946e551f42058baeefbb84f8f5da.setContent(html_14b11a2fd2ed415f933c274d1e97ba3c);
+
+
+        marker_dfeca39c3cd744d1a07f1139a7c23c18.bindPopup(popup_f9fe946e551f42058baeefbb84f8f5da)
+        ;
+
+
+
+
+            var marker_ae01d9dd12b74e4ea5f6d57f81c55c4b = L.marker(
+                [37.55021997, 126.9232713],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_77bf71a4b93c4395a8a1ed3409a1c5fb = L.popup({"maxWidth": "100%"});
+
+
+            var html_3fc29c93a98c4a3796c0e59433efa453 = $(`<div id="html_3fc29c93a98c4a3796c0e59433efa453" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 진짜파스타<br>주소: 서울 마포구 와우산로 64<br>영업 시간: 화~일 11:30 ~ 21:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_77bf71a4b93c4395a8a1ed3409a1c5fb.setContent(html_3fc29c93a98c4a3796c0e59433efa453);
+
+
+        marker_ae01d9dd12b74e4ea5f6d57f81c55c4b.bindPopup(popup_77bf71a4b93c4395a8a1ed3409a1c5fb)
+        ;
+
+
+
+
+            var marker_225662d5f1834c12b4eea65f06551347 = L.marker(
+                [37.54847247, 126.9222762],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_cb832f061bea4704b25708a69c1a91cf = L.popup({"maxWidth": "100%"});
+
+
+            var html_04402c9e60db424993f45ade92bf71fb = $(`<div id="html_04402c9e60db424993f45ade92bf71fb" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 코코아트리<br>주소: 서울 마포구 와우산로11길 9-10<br>영업 시간: 12:00~20:00<br>적용대상 : 결식아동<br>적용인원 : Nan </pre> </div>`)[0];
+            popup_cb832f061bea4704b25708a69c1a91cf.setContent(html_04402c9e60db424993f45ade92bf71fb);
+
+
+        marker_225662d5f1834c12b4eea65f06551347.bindPopup(popup_cb832f061bea4704b25708a69c1a91cf)
+        ;
+
+
+
+
+            var marker_c2fa6353b07744ab9d8eb7c33086eeea = L.marker(
+                [37.5549238, 126.9296221],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_94487e9d4c90499ba7877854fbab3024 = L.popup({"maxWidth": "100%"});
+
+
+            var html_009b047c9f7e4266b90db3fbbbbc92c7 = $(`<div id="html_009b047c9f7e4266b90db3fbbbbc92c7" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 로샤뷰티<br>주소: 서울 마포구 와우산로29길 4-24<br>영업 시간: 10:30-8:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_94487e9d4c90499ba7877854fbab3024.setContent(html_009b047c9f7e4266b90db3fbbbbc92c7);
+
+
+        marker_c2fa6353b07744ab9d8eb7c33086eeea.bindPopup(popup_94487e9d4c90499ba7877854fbab3024)
+        ;
+
+
+
+
+            var marker_a23769aa72904b6783433443c53bd007 = L.marker(
+                [37.55709127, 126.9078092],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_99110c08e2464e41bc0d51f0aadbc489 = L.popup({"maxWidth": "100%"});
+
+
+            var html_ebd2102c6fd148a5a6bac43d842e6d90 = $(`<div id="html_ebd2102c6fd148a5a6bac43d842e6d90" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 두두리두팡<br>주소: 서울 마포구 월드컵로23길 18<br>영업 시간: 매주 금토일 오후12시~18시(조기품절시 조기마감)<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_99110c08e2464e41bc0d51f0aadbc489.setContent(html_ebd2102c6fd148a5a6bac43d842e6d90);
+
+
+        marker_a23769aa72904b6783433443c53bd007.bindPopup(popup_99110c08e2464e41bc0d51f0aadbc489)
+        ;
+
+
+
+
+            var marker_bdb6c8224511402e8fc6711cd4e44480 = L.marker(
+                [37.58010775, 126.8889823],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_05ea58a6605543fe9dd2d8f9ce0d61ae = L.popup({"maxWidth": "100%"});
+
+
+            var html_cc4b7739c4c54990a75813de973c6f86 = $(`<div id="html_cc4b7739c4c54990a75813de973c6f86" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 블리스버거상암점<br>주소: 서울 마포구 월드컵북로 402<br>영업 시간: 평일 11시~9시<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_05ea58a6605543fe9dd2d8f9ce0d61ae.setContent(html_cc4b7739c4c54990a75813de973c6f86);
+
+
+        marker_bdb6c8224511402e8fc6711cd4e44480.bindPopup(popup_05ea58a6605543fe9dd2d8f9ce0d61ae)
+        ;
+
+
+
+
+            var marker_4ca7d5a1ae9843cbaf0587d0ec022c88 = L.marker(
+                [37.58010775, 126.8889823],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_a2cf9d94b23e42219fb8d85a499e9588 = L.popup({"maxWidth": "100%"});
+
+
+            var html_9df223ac0ba44064b6e6c74b15cbd6f8 = $(`<div id="html_9df223ac0ba44064b6e6c74b15cbd6f8" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 모데나<br>주소: 서울 마포구 월드컵북로 402<br>영업 시간: 11:30~20:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_a2cf9d94b23e42219fb8d85a499e9588.setContent(html_9df223ac0ba44064b6e6c74b15cbd6f8);
+
+
+        marker_4ca7d5a1ae9843cbaf0587d0ec022c88.bindPopup(popup_a2cf9d94b23e42219fb8d85a499e9588)
+        ;
+
+
+
+
+            var marker_9ed8f557573645a998442a1a29a6b1f2 = L.marker(
+                [37.58088763, 126.8883895],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_4cecb41524db4b24b4a025d091de19b8 = L.popup({"maxWidth": "100%"});
+
+
+            var html_c1eb05c296944cef8cb744081a45814f = $(`<div id="html_c1eb05c296944cef8cb744081a45814f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 피트니스플랜비<br>주소: 서울 마포구 월드컵북로54길 11<br>영업 시간: 오전10~오후9시<br>적용대상 : Nan<br>적용인원 : 청소년 </pre> </div>`)[0];
+            popup_4cecb41524db4b24b4a025d091de19b8.setContent(html_c1eb05c296944cef8cb744081a45814f);
+
+
+        marker_9ed8f557573645a998442a1a29a6b1f2.bindPopup(popup_4cecb41524db4b24b4a025d091de19b8)
+        ;
+
+
+
+
+            var marker_a2e194799d74485b940a5cdc2a16e1e5 = L.marker(
+                [37.57442036, 126.9178974],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0f64ecca39a44139a7c0317d0306d70f = L.popup({"maxWidth": "100%"});
+
+
+            var html_6f540a06b2a246368f20ba03bc1a4d21 = $(`<div id="html_6f540a06b2a246368f20ba03bc1a4d21" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 아하하일본어<br>주소: 서울 서대문구 가재울미래로 2<br>영업 시간: 9시-18시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_0f64ecca39a44139a7c0317d0306d70f.setContent(html_6f540a06b2a246368f20ba03bc1a4d21);
+
+
+        marker_a2e194799d74485b940a5cdc2a16e1e5.bindPopup(popup_0f64ecca39a44139a7c0317d0306d70f)
+        ;
+
+
+
+
+            var marker_413a2ecca6594b95ab47d07158fdbff5 = L.marker(
+                [37.57555558, 126.9131872],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_2d59fa977cda42abb469127940850fc8 = L.popup({"maxWidth": "100%"});
+
+
+            var html_8a32618acbb24c2898d0d938e3c51a86 = $(`<div id="html_8a32618acbb24c2898d0d938e3c51a86" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 줄리앙와플and커피<br>주소: 서울 서대문구 거북골로 150<br>영업 시간: 오전10시새벽1시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_2d59fa977cda42abb469127940850fc8.setContent(html_8a32618acbb24c2898d0d938e3c51a86);
+
+
+        marker_413a2ecca6594b95ab47d07158fdbff5.bindPopup(popup_2d59fa977cda42abb469127940850fc8)
+        ;
+
+
+
+
+            var marker_db0443f3359a4a4ca22f19f83d4fa9d7 = L.marker(
+                [37.55887396, 126.9273951],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_a6b6ff7203e74963862a5c876956d70b = L.popup({"maxWidth": "100%"});
+
+
+            var html_ceceab5122b742c0823e10756ddc2c62 = $(`<div id="html_ceceab5122b742c0823e10756ddc2c62" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 아이오안경원<br>주소: 서울 서대문구 신촌로 1<br>영업 시간: 10:00~21:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_a6b6ff7203e74963862a5c876956d70b.setContent(html_ceceab5122b742c0823e10756ddc2c62);
+
+
+        marker_db0443f3359a4a4ca22f19f83d4fa9d7.bindPopup(popup_a6b6ff7203e74963862a5c876956d70b)
+        ;
+
+
+
+
+            var marker_61405c60c99448feadd183adf6b7f702 = L.marker(
+                [37.56735783, 126.9288694],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_711e6009a57d414da2d6e76571e44bb0 = L.popup({"maxWidth": "100%"});
+
+
+            var html_bf480ee176b441d18909f5842ddfd13c = $(`<div id="html_bf480ee176b441d18909f5842ddfd13c" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 준에이치(JUNH)<br>주소: 서울 서대문구 연희동 130-13<br>영업 시간: 11-6pm<br>적용대상 : 결식아동,저소득층 복지누리카드소지자<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_711e6009a57d414da2d6e76571e44bb0.setContent(html_bf480ee176b441d18909f5842ddfd13c);
+
+
+        marker_61405c60c99448feadd183adf6b7f702.bindPopup(popup_711e6009a57d414da2d6e76571e44bb0)
+        ;
+
+
+
+
+            var marker_33deedce31e14918b206b14d9c741732 = L.marker(
+                [37.56643453, 126.929991],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_98e65070e4c04549823378fa4044792a = L.popup({"maxWidth": "100%"});
+
+
+            var html_a0e3c07f0d6140e9a91733f71dceac54 = $(`<div id="html_a0e3c07f0d6140e9a91733f71dceac54" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 황카페<br>주소: 서울 서대문구 연희로 89-8<br>영업 시간: 오전11시~밤9시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_98e65070e4c04549823378fa4044792a.setContent(html_a0e3c07f0d6140e9a91733f71dceac54);
+
+
+        marker_33deedce31e14918b206b14d9c741732.bindPopup(popup_98e65070e4c04549823378fa4044792a)
+        ;
+
+
+
+
+            var marker_58ef01193f3047b29822678c7f094a31 = L.marker(
+                [37.55933427, 126.9448747],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_d9cace54c6014fd78c23b9d8b95d2e13 = L.popup({"maxWidth": "100%"});
+
+
+            var html_2ffd4d0b4ab74f9ea11f51f48eca6cd2 = $(`<div id="html_2ffd4d0b4ab74f9ea11f51f48eca6cd2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 고스트요거트 이대점<br>주소: 서울 서대문구 이화여대길 52-15<br>영업 시간: 월-금 11-19/토 12-19<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_d9cace54c6014fd78c23b9d8b95d2e13.setContent(html_2ffd4d0b4ab74f9ea11f51f48eca6cd2);
+
+
+        marker_58ef01193f3047b29822678c7f094a31.bindPopup(popup_d9cace54c6014fd78c23b9d8b95d2e13)
+        ;
+
+
+
+
+            var marker_69f9a7600dab4fc8a016a3909b4c9029 = L.marker(
+                [37.59387089, 126.9457978],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_596d4847ee1942ef870f6ab6bcb1cced = L.popup({"maxWidth": "100%"});
+
+
+            var html_09e85fa560e34395a7c212077f74980f = $(`<div id="html_09e85fa560e34395a7c212077f74980f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 싸움의고수<br>주소: 서울 서대문구 홍은동 48-106<br>영업 시간: 11:00-22:00<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_596d4847ee1942ef870f6ab6bcb1cced.setContent(html_09e85fa560e34395a7c212077f74980f);
+
+
+        marker_69f9a7600dab4fc8a016a3909b4c9029.bindPopup(popup_596d4847ee1942ef870f6ab6bcb1cced)
+        ;
+
+
+
+
+            var marker_2f1b35fe0ccb4621a83e9c7d67e3866c = L.marker(
+                [37.49155734, 127.0299709],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_4d3458d0bf9b47dbbfc45c2e79673032 = L.popup({"maxWidth": "100%"});
+
+
+            var html_1db5f539d1c9498a94f48ea52db08c93 = $(`<div id="html_1db5f539d1c9498a94f48ea52db08c93" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 구슬함박 서초점<br>주소: 서울 서초구 강남대로 321<br>영업 시간: 오전11시-밤12시<br>적용대상 : 결식아동<br>적용인원 : 만19세 미만 청소년 및 아동 </pre> </div>`)[0];
+            popup_4d3458d0bf9b47dbbfc45c2e79673032.setContent(html_1db5f539d1c9498a94f48ea52db08c93);
+
+
+        marker_2f1b35fe0ccb4621a83e9c7d67e3866c.bindPopup(popup_4d3458d0bf9b47dbbfc45c2e79673032)
+        ;
+
+
+
+
+            var marker_f52bb437b34f4eadbe866956d1556bf8 = L.marker(
+                [37.47081116, 127.0415619],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_34b49dae6c114af7bcbf14a815cafc6d = L.popup({"maxWidth": "100%"});
+
+
+            var html_df90bc024c6944ce8c9546eeaa524dde = $(`<div id="html_df90bc024c6944ce8c9546eeaa524dde" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 해물과차돌박이 <br>주소: 서울 서초구 강남대로12길 50<br>영업 시간: 11시30~14시<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_34b49dae6c114af7bcbf14a815cafc6d.setContent(html_df90bc024c6944ce8c9546eeaa524dde);
+
+
+        marker_f52bb437b34f4eadbe866956d1556bf8.bindPopup(popup_34b49dae6c114af7bcbf14a815cafc6d)
+        ;
+
+
+
+
+            var marker_75201fd7af984c108f814723948c4057 = L.marker(
+                [37.48287579, 127.0409967],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_54655106481543a79a44fd7c200e1b0b = L.popup({"maxWidth": "100%"});
+
+
+            var html_eb66791392ab474b8c586c542c4fd173 = $(`<div id="html_eb66791392ab474b8c586c542c4fd173" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 장금수부대찌개양재점 <br>주소: 서울 서초구 강남대로30길 73-3<br>영업 시간: 오전11시 오후9시30<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_54655106481543a79a44fd7c200e1b0b.setContent(html_eb66791392ab474b8c586c542c4fd173);
+
+
+        marker_75201fd7af984c108f814723948c4057.bindPopup(popup_54655106481543a79a44fd7c200e1b0b)
+        ;
+
+
+
+
+            var marker_f43794d79b9b4cd799016a2d2fc3afa8 = L.marker(
+                [37.51618262, 127.0186323],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_da0de643cfff43bb8e29056172cfcf42 = L.popup({"maxWidth": "100%"});
+
+
+            var html_6793a4b44fdf4594a209488fb32cb73e = $(`<div id="html_6793a4b44fdf4594a209488fb32cb73e" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 돈가스신사<br>주소: 서울 서초구 나루터로15길 6<br>영업 시간: 평일 11:00-21:00 토요일 11:00-15:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_da0de643cfff43bb8e29056172cfcf42.setContent(html_6793a4b44fdf4594a209488fb32cb73e);
+
+
+        marker_f43794d79b9b4cd799016a2d2fc3afa8.bindPopup(popup_da0de643cfff43bb8e29056172cfcf42)
+        ;
+
+
+
+
+            var marker_299792ab4d2a4ffd8b94cd93f375b5fc = L.marker(
+                [37.46246735, 127.0369479],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_d9cf54201b2a4b98ba42519edf476717 = L.popup({"maxWidth": "100%"});
+
+
+            var html_905264cb65c3479ba0b215ef16535741 = $(`<div id="html_905264cb65c3479ba0b215ef16535741" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 림돈(돈가스)<br>주소: 서울 서초구 매헌로 16<br>영업 시간: 오전11시~오후8시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_d9cf54201b2a4b98ba42519edf476717.setContent(html_905264cb65c3479ba0b215ef16535741);
+
+
+        marker_299792ab4d2a4ffd8b94cd93f375b5fc.bindPopup(popup_d9cf54201b2a4b98ba42519edf476717)
+        ;
+
+
+
+
+            var marker_d934d46c13a84daf9a0dae72b6e489cc = L.marker(
+                [37.46246735, 127.0369479],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_76ed04263fe7455eb847dd94b4a55496 = L.popup({"maxWidth": "100%"});
+
+
+            var html_bc42aad62ac84f6696d89f80b08ab904 = $(`<div id="html_bc42aad62ac84f6696d89f80b08ab904" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 아이언그릴<br>주소: 서울 서초구 매헌로 16<br>영업 시간: 09~20<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_76ed04263fe7455eb847dd94b4a55496.setContent(html_bc42aad62ac84f6696d89f80b08ab904);
+
+
+        marker_d934d46c13a84daf9a0dae72b6e489cc.bindPopup(popup_76ed04263fe7455eb847dd94b4a55496)
+        ;
+
+
+
+
+            var marker_d61efa5d37514e8c8a449dc43a6fc861 = L.marker(
+                [37.4812784, 126.984171],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_1ca03291343f4157be49576986e1f370 = L.popup({"maxWidth": "100%"});
+
+
+            var html_e21c11f38f754745860fe5778d86d889 = $(`<div id="html_e21c11f38f754745860fe5778d86d889" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 자판기가게<br>주소: 서울 서초구 방배천로2안길 96<br>영업 시간: 24시간<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_1ca03291343f4157be49576986e1f370.setContent(html_e21c11f38f754745860fe5778d86d889);
+
+
+        marker_d61efa5d37514e8c8a449dc43a6fc861.bindPopup(popup_1ca03291343f4157be49576986e1f370)
+        ;
+
+
+
+
+            var marker_090ba1e9f96f4823a123271a69028fda = L.marker(
+                [37.49666677, 126.9980048],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_055199693986457d958950c1931f9513 = L.popup({"maxWidth": "100%"});
+
+
+            var html_509fdce01b064afeb81b1521822fec60 = $(`<div id="html_509fdce01b064afeb81b1521822fec60" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 원더스잉글리시아카데미<br>주소: 서울 서초구 서래로 17<br>영업 시간: nan<br>적용대상 : Nan<br>적용인원 : Nan </pre> </div>`)[0];
+            popup_055199693986457d958950c1931f9513.setContent(html_509fdce01b064afeb81b1521822fec60);
+
+
+        marker_090ba1e9f96f4823a123271a69028fda.bindPopup(popup_055199693986457d958950c1931f9513)
+        ;
+
+
+
+
+            var marker_07cbf8bdb4cc4592b382cd4d02519b28 = L.marker(
+                [37.49254068, 127.0162371],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_c328ae546cf844e09035a658d2ecf1a6 = L.popup({"maxWidth": "100%"});
+
+
+            var html_4905ff0960ee42f39b78c2d415ccc616 = $(`<div id="html_4905ff0960ee42f39b78c2d415ccc616" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 고스트요거트 교대본점<br>주소: 서울 서초구 서초중앙로20길 37<br>영업 시간: 월-금 10-19:30/토 11-19<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_c328ae546cf844e09035a658d2ecf1a6.setContent(html_4905ff0960ee42f39b78c2d415ccc616);
+
+
+        marker_07cbf8bdb4cc4592b382cd4d02519b28.bindPopup(popup_c328ae546cf844e09035a658d2ecf1a6)
+        ;
+
+
+
+
+            var marker_b3dea57709794cd99d51d58f4a8f1b8e = L.marker(
+                [37.56018581, 127.0347489],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_e12a2f86e06e4302989059a68334ce16 = L.popup({"maxWidth": "100%"});
+
+
+            var html_ef5ff3bf1f8d45b9a8750bf07d4645b0 = $(`<div id="html_ef5ff3bf1f8d45b9a8750bf07d4645b0" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 만석돼지갈비<br>주소: 서울 성동구 고산자로12길 2<br>영업 시간: 11시반부터 10시<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_e12a2f86e06e4302989059a68334ce16.setContent(html_ef5ff3bf1f8d45b9a8750bf07d4645b0);
+
+
+        marker_b3dea57709794cd99d51d58f4a8f1b8e.bindPopup(popup_e12a2f86e06e4302989059a68334ce16)
+        ;
+
+
+
+
+            var marker_9120678b672c48aa8c05be847cf19cb6 = L.marker(
+                [37.55619853, 127.0388365],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_8f9c205cc70947bb9e49ece061faa55b = L.popup({"maxWidth": "100%"});
+
+
+            var html_fbae4647c30d493e83d173589b6b0a93 = $(`<div id="html_fbae4647c30d493e83d173589b6b0a93" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 카페 드 모나코<br>주소: 서울 성동구 고산자로2길 65<br>영업 시간: 오전9시 ~ 오후 10시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_8f9c205cc70947bb9e49ece061faa55b.setContent(html_fbae4647c30d493e83d173589b6b0a93);
+
+
+        marker_9120678b672c48aa8c05be847cf19cb6.bindPopup(popup_8f9c205cc70947bb9e49ece061faa55b)
+        ;
+
+
+
+
+            var marker_05a80d38f03e445cb9bbc762c14cc6d8 = L.marker(
+                [37.55237636, 127.0245531],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_5ad5fcd9eb0f401aa1b8917da133548c = L.popup({"maxWidth": "100%"});
+
+
+            var html_4c5efa2757c647ff847dbf69eaf26852 = $(`<div id="html_4c5efa2757c647ff847dbf69eaf26852" style="width: 100.0%; height: 100.0%;"><pre>매장 이름:  투썸플레이스  금호하이리버점<br>주소: 서울 성동구 금호로 105<br>영업 시간: 8~23시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_5ad5fcd9eb0f401aa1b8917da133548c.setContent(html_4c5efa2757c647ff847dbf69eaf26852);
+
+
+        marker_05a80d38f03e445cb9bbc762c14cc6d8.bindPopup(popup_5ad5fcd9eb0f401aa1b8917da133548c)
+        ;
+
+
+
+
+            var marker_137a7b7cd6cc4a6e87596a0e85f7c6b8 = L.marker(
+                [37.56916416, 127.0263479],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_beb56e78c2f64893b94895b95eb07efb = L.popup({"maxWidth": "100%"});
+
+
+            var html_061850ec9c374bec993358fc6df1e7db = $(`<div id="html_061850ec9c374bec993358fc6df1e7db" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 돈카츠마켙왕십리점<br>주소: 서울 성동구 무학로 33<br>영업 시간: 10:00~21:00<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_beb56e78c2f64893b94895b95eb07efb.setContent(html_061850ec9c374bec993358fc6df1e7db);
+
+
+        marker_137a7b7cd6cc4a6e87596a0e85f7c6b8.bindPopup(popup_beb56e78c2f64893b94895b95eb07efb)
+        ;
+
+
+
+
+            var marker_8ffdb66bb7424ad9b4622833705114ed = L.marker(
+                [37.54497088, 127.0490942],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_c91bf6676c694e19a172f03185c9be61 = L.popup({"maxWidth": "100%"});
+
+
+            var html_ee8a7fd8c4b6497bb021ac35fd19f48b = $(`<div id="html_ee8a7fd8c4b6497bb021ac35fd19f48b" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 쑤쑤타이<br>주소: 서울 성동구 상원1길 12<br>영업 시간: nan<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_c91bf6676c694e19a172f03185c9be61.setContent(html_ee8a7fd8c4b6497bb021ac35fd19f48b);
+
+
+        marker_8ffdb66bb7424ad9b4622833705114ed.bindPopup(popup_c91bf6676c694e19a172f03185c9be61)
+        ;
+
+
+
+
+            var marker_127db047706b4a0ab86042a2daffd6be = L.marker(
+                [37.54369624, 127.0626068],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_1234e5546c1d494b8f2e0fdc89c6ff90 = L.popup({"maxWidth": "100%"});
+
+
+            var html_47af59d041764725bab11bc9558cbbae = $(`<div id="html_47af59d041764725bab11bc9558cbbae" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 루트비커피 성수점<br>주소: 서울 성동구 아차산로15길 10<br>영업 시간: 07:00 ~ 18:30<br>적용대상 : 결식아동,독거노인,소방관 1인 무료, 추가인원50%할인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_1234e5546c1d494b8f2e0fdc89c6ff90.setContent(html_47af59d041764725bab11bc9558cbbae);
+
+
+        marker_127db047706b4a0ab86042a2daffd6be.bindPopup(popup_1234e5546c1d494b8f2e0fdc89c6ff90)
+        ;
+
+
+
+
+            var marker_ad636cb735524a73852c6572eecd8f10 = L.marker(
+                [37.56363389, 127.0306507],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_4ad6391291384274a8d385cd2601653a = L.popup({"maxWidth": "100%"});
+
+
+            var html_1f6d4dbccef040b18913083e98eb5a24 = $(`<div id="html_1f6d4dbccef040b18913083e98eb5a24" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 어반그라운드헤어 상왕십리점<br>주소: 서울 성동구 왕십리로 353<br>영업 시간: 11:00 ~ 21:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_4ad6391291384274a8d385cd2601653a.setContent(html_1f6d4dbccef040b18913083e98eb5a24);
+
+
+        marker_ad636cb735524a73852c6572eecd8f10.bindPopup(popup_4ad6391291384274a8d385cd2601653a)
+        ;
+
+
+
+
+            var marker_694b7cae7aee40d19406bdbd52b1a8ac = L.marker(
+                [37.56105242, 127.0330712],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_2951f48eee4b452582cd4cd64ad85aed = L.popup({"maxWidth": "100%"});
+
+
+            var html_f42ecdb557d1436fb874362801a9b5d2 = $(`<div id="html_f42ecdb557d1436fb874362801a9b5d2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 더짜글왕십리점<br>주소: 서울 성동구 왕십리로21가길 1<br>영업 시간: 11:00~23:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_2951f48eee4b452582cd4cd64ad85aed.setContent(html_f42ecdb557d1436fb874362801a9b5d2);
+
+
+        marker_694b7cae7aee40d19406bdbd52b1a8ac.bindPopup(popup_2951f48eee4b452582cd4cd64ad85aed)
+        ;
+
+
+
+
+            var marker_87f624e5096047ec8155f6e37e319c86 = L.marker(
+                [37.58533768, 127.0303206],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_2c39f0773747430284c97441746214c6 = L.popup({"maxWidth": "100%"});
+
+
+            var html_0a7658b3e7744b7c8c20dd87af42c1cb = $(`<div id="html_0a7658b3e7744b7c8c20dd87af42c1cb" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 주식회사 늘<br>주소: 서울 성북구 고려대로24가길 13-2<br>영업 시간: PM 5:00 ~ AM 1:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_2c39f0773747430284c97441746214c6.setContent(html_0a7658b3e7744b7c8c20dd87af42c1cb);
+
+
+        marker_87f624e5096047ec8155f6e37e319c86.bindPopup(popup_2c39f0773747430284c97441746214c6)
+        ;
+
+
+
+
+            var marker_4385616c65854aaf810d47c61b057824 = L.marker(
+                [37.60920605, 127.0611484],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_4b1289b75fb04d8bafd2703d332d20a2 = L.popup({"maxWidth": "100%"});
+
+
+            var html_2f739ef4abd1405b858ed0661b50f1da = $(`<div id="html_2f739ef4abd1405b858ed0661b50f1da" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 대연생고깃간<br>주소: 서울 성북구 돌곶이로22나길 29<br>영업 시간: 오전9시30분~ 저녁9시30분<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_4b1289b75fb04d8bafd2703d332d20a2.setContent(html_2f739ef4abd1405b858ed0661b50f1da);
+
+
+        marker_4385616c65854aaf810d47c61b057824.bindPopup(popup_4b1289b75fb04d8bafd2703d332d20a2)
+        ;
+
+
+
+
+            var marker_08a2746c163a43caa4f5201ddd3b98bc = L.marker(
+                [37.59226157, 127.0189355],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_bd15cda1ead14630888dd05d3dde374f = L.popup({"maxWidth": "100%"});
+
+
+            var html_d0c4816c0ec14175ad232252ae8bb19f = $(`<div id="html_d0c4816c0ec14175ad232252ae8bb19f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 대한푸드(사계절치킨)<br>주소: 서울 성북구 동소문로24길 31<br>영업 시간: 오전10시부터 새벽2시까지<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_bd15cda1ead14630888dd05d3dde374f.setContent(html_d0c4816c0ec14175ad232252ae8bb19f);
+
+
+        marker_08a2746c163a43caa4f5201ddd3b98bc.bindPopup(popup_bd15cda1ead14630888dd05d3dde374f)
+        ;
+
+
+
+
+            var marker_b7033a182a484f34953a136efdf884e6 = L.marker(
+                [37.59097109, 127.0193769],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_7856c0a68d4b4c6c8e7283315633ec89 = L.popup({"maxWidth": "100%"});
+
+
+            var html_fa816132d7c24630997f2258f3b43109 = $(`<div id="html_fa816132d7c24630997f2258f3b43109" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 나이스 샌드위치<br>주소: 서울 성북구 보문로34길 72-4<br>영업 시간: 오전 10시 30분~ 밤 12시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인과 친구들 사주고 싶을때   </pre> </div>`)[0];
+            popup_7856c0a68d4b4c6c8e7283315633ec89.setContent(html_fa816132d7c24630997f2258f3b43109);
+
+
+        marker_b7033a182a484f34953a136efdf884e6.bindPopup(popup_7856c0a68d4b4c6c8e7283315633ec89)
+        ;
+
+
+
+
+            var marker_195b5a2d85bf419e8ffd9cc5e31044f7 = L.marker(
+                [37.60712437, 127.0154451],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_f10402a80a244c318b7c3a6013d1a6d1 = L.popup({"maxWidth": "100%"});
+
+
+            var html_f72312f064be49829b2733519af95373 = $(`<div id="html_f72312f064be49829b2733519af95373" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 하오하오츠<br>주소: 서울 성북구 서경로 37<br>영업 시간: 11:00 ~ 21:30 (마지막 주문 20:30)<br>적용대상 : 결식아동,독거노인,군인 경찰<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_f10402a80a244c318b7c3a6013d1a6d1.setContent(html_f72312f064be49829b2733519af95373);
+
+
+        marker_195b5a2d85bf419e8ffd9cc5e31044f7.bindPopup(popup_f10402a80a244c318b7c3a6013d1a6d1)
+        ;
+
+
+
+
+            var marker_ddcf58b566e6463d8bcfd5fd87648966 = L.marker(
+                [37.61198667, 127.028784],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_7bc2afd79de248268ce6478439766f0b = L.popup({"maxWidth": "100%"});
+
+
+            var html_2c7c6a376dda445a9bbb92149f57002f = $(`<div id="html_2c7c6a376dda445a9bbb92149f57002f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 72420미아사거리점<br>주소: 서울 성북구 숭인로 50<br>영업 시간: 11:00~21:00<br>적용대상 : Nan<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_7bc2afd79de248268ce6478439766f0b.setContent(html_2c7c6a376dda445a9bbb92149f57002f);
+
+
+        marker_ddcf58b566e6463d8bcfd5fd87648966.bindPopup(popup_7bc2afd79de248268ce6478439766f0b)
+        ;
+
+
+
+
+            var marker_ffad77d653b249e596b21ff18a887453 = L.marker(
+                [37.58396192, 127.029729],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_13feb5e39ddf45e48818f3b57524164a = L.popup({"maxWidth": "100%"});
+
+
+            var html_e7c9298380ca4745bf4950afb943856b = $(`<div id="html_e7c9298380ca4745bf4950afb943856b" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 닥터브이 코인노래연습장<br>주소: 서울 성북구 안암동5가 104-30<br>영업 시간: 9시부터 새벽3시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_13feb5e39ddf45e48818f3b57524164a.setContent(html_e7c9298380ca4745bf4950afb943856b);
+
+
+        marker_ffad77d653b249e596b21ff18a887453.bindPopup(popup_13feb5e39ddf45e48818f3b57524164a)
+        ;
+
+
+
+
+            var marker_f26abf9ccb2642a58c1924670fcc4bdc = L.marker(
+                [37.604307, 127.0429812],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_54cd4bceba7b4149b1cf935526fa397d = L.popup({"maxWidth": "100%"});
+
+
+            var html_91f3c516930441119890bf6a48f9e261 = $(`<div id="html_91f3c516930441119890bf6a48f9e261" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 샤롱샤롱<br>주소: 서울 성북구 장월로1길 111<br>영업 시간: 화수목금 12:30~7시(제품 소진시 조기마감)<br>적용대상 : 결식아동,기초수급가정아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_54cd4bceba7b4149b1cf935526fa397d.setContent(html_91f3c516930441119890bf6a48f9e261);
+
+
+        marker_f26abf9ccb2642a58c1924670fcc4bdc.bindPopup(popup_54cd4bceba7b4149b1cf935526fa397d)
+        ;
+
+
+
+
+            var marker_69bec28ba80c449ba26dbb4a1262396d = L.marker(
+                [37.60957472, 127.0521737],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0010db2e49824a41b2281ab5d3cba8b9 = L.popup({"maxWidth": "100%"});
+
+
+            var html_b065cb701d8a4f24b845bbab62aa563e = $(`<div id="html_b065cb701d8a4f24b845bbab62aa563e" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 서민스시<br>주소: 서울 성북구 장위동 66-323<br>영업 시간: 오전11시30분 ~ 오후9시<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_0010db2e49824a41b2281ab5d3cba8b9.setContent(html_b065cb701d8a4f24b845bbab62aa563e);
+
+
+        marker_69bec28ba80c449ba26dbb4a1262396d.bindPopup(popup_0010db2e49824a41b2281ab5d3cba8b9)
+        ;
+
+
+
+
+            var marker_f33215e8fa804a2ea42dee9bc2d8869c = L.marker(
+                [37.60327757, 127.0421197],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_4869e604a67a482c8f27f09a3345739e = L.popup({"maxWidth": "100%"});
+
+
+            var html_bae0e150392e4faebf5b548802a5c030 = $(`<div id="html_bae0e150392e4faebf5b548802a5c030" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 쌀똑핫도그 월곡직영점<br>주소: 서울 성북구 하월곡동 227<br>영업 시간: 11:00-23:0<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_4869e604a67a482c8f27f09a3345739e.setContent(html_bae0e150392e4faebf5b548802a5c030);
+
+
+        marker_f33215e8fa804a2ea42dee9bc2d8869c.bindPopup(popup_4869e604a67a482c8f27f09a3345739e)
+        ;
+
+
+
+
+            var marker_56ec97340c0b45f3b56c270d7f5768b1 = L.marker(
+                [37.60945421, 127.0522897],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_b1e2ba81a0ce49398d0d7efb856194f7 = L.popup({"maxWidth": "100%"});
+
+
+            var html_a9e8b54a7373485f8c42b59c90acb4cd = $(`<div id="html_a9e8b54a7373485f8c42b59c90acb4cd" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 발효명가기와집갈비<br>주소: 서울 성북구 화랑로25길 18<br>영업 시간: 오전11~오후10<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_b1e2ba81a0ce49398d0d7efb856194f7.setContent(html_a9e8b54a7373485f8c42b59c90acb4cd);
+
+
+        marker_56ec97340c0b45f3b56c270d7f5768b1.bindPopup(popup_b1e2ba81a0ce49398d0d7efb856194f7)
+        ;
+
+
+
+
+            var marker_f85fe969f4554ac2b497dd52cb9f41bb = L.marker(
+                [37.49506449, 127.1204362],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_140ca4d0a1ca41f594886bcf7ebd93d4 = L.popup({"maxWidth": "100%"});
+
+
+            var html_1fe18710ccef449d87867380267921c6 = $(`<div id="html_1fe18710ccef449d87867380267921c6" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 필라멘<br>주소: 서울 송파구 가락동 80<br>영업 시간: 11-14.30  16:30-21:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_140ca4d0a1ca41f594886bcf7ebd93d4.setContent(html_1fe18710ccef449d87867380267921c6);
+
+
+        marker_f85fe969f4554ac2b497dd52cb9f41bb.bindPopup(popup_140ca4d0a1ca41f594886bcf7ebd93d4)
+        ;
+
+
+
+
+            var marker_f7acc11529504b95bd1c3e0745b98a67 = L.marker(
+                [37.48916353, 127.1236663],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_765dbc84c7a54b42b22926d82854828a = L.popup({"maxWidth": "100%"});
+
+
+            var html_bde73722675e4dbbb3d8d2c1993f05b7 = $(`<div id="html_bde73722675e4dbbb3d8d2c1993f05b7" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 카페시아아틀리에<br>주소: 서울 송파구 문정로1길 34<br>영업 시간: 10:00 ~ 20:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_765dbc84c7a54b42b22926d82854828a.setContent(html_bde73722675e4dbbb3d8d2c1993f05b7);
+
+
+        marker_f7acc11529504b95bd1c3e0745b98a67.bindPopup(popup_765dbc84c7a54b42b22926d82854828a)
+        ;
+
+
+
+
+            var marker_dc39f3d53ab64bdcb7fe3279b857a310 = L.marker(
+                [37.50154387, 127.0985952],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_87c68e16c70a48ddbc505131b2289ff3 = L.popup({"maxWidth": "100%"});
+
+
+            var html_8143b706158b42ae8c2ad9d7ad65d7ad = $(`<div id="html_8143b706158b42ae8c2ad9d7ad65d7ad" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 달떡볶이 잠실점<br>주소: 서울 송파구 삼학사로12길 14<br>영업 시간: 10:00 ~ 22:00<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_87c68e16c70a48ddbc505131b2289ff3.setContent(html_8143b706158b42ae8c2ad9d7ad65d7ad);
+
+
+        marker_dc39f3d53ab64bdcb7fe3279b857a310.bindPopup(popup_87c68e16c70a48ddbc505131b2289ff3)
+        ;
+
+
+
+
+            var marker_dbc399fad7a0412ab3df3334f98b3ebc = L.marker(
+                [37.50999855, 127.1104017],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_76844394ec2e4d0f9a0ae0c84585d7a1 = L.popup({"maxWidth": "100%"});
+
+
+            var html_ead990d9da524b48a80c125a3dc385a6 = $(`<div id="html_ead990d9da524b48a80c125a3dc385a6" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 입분식가정집<br>주소: 서울 송파구 송파동 51-4<br>영업 시간: 11:30~21시<br>적용대상 : 결식아동<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_76844394ec2e4d0f9a0ae0c84585d7a1.setContent(html_ead990d9da524b48a80c125a3dc385a6);
+
+
+        marker_dbc399fad7a0412ab3df3334f98b3ebc.bindPopup(popup_76844394ec2e4d0f9a0ae0c84585d7a1)
+        ;
+
+
+
+
+            var marker_523018ec57d146169ba0b107555a85fb = L.marker(
+                [37.50988915, 127.1103261],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_c737339d6e5f4bdab7aea1ea6b49de27 = L.popup({"maxWidth": "100%"});
+
+
+            var html_67fd5191ecd740ca91c1ca9f54cba7e0 = $(`<div id="html_67fd5191ecd740ca91c1ca9f54cba7e0" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 천향마라탕잠실점<br>주소: 서울 송파구 송파동 51-8<br>영업 시간: 10:00 -22:00<br>적용대상 : 결식아동,독거노인,65세이상 어르신<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_c737339d6e5f4bdab7aea1ea6b49de27.setContent(html_67fd5191ecd740ca91c1ca9f54cba7e0);
+
+
+        marker_523018ec57d146169ba0b107555a85fb.bindPopup(popup_c737339d6e5f4bdab7aea1ea6b49de27)
+        ;
+
+
+
+
+            var marker_fd297ab1f6fd499ca5025e43b9971c67 = L.marker(
+                [37.51888493, 127.0992805],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_40ac0dce6c7b4d029a6b485657feecc3 = L.popup({"maxWidth": "100%"});
+
+
+            var html_d91ab53f64644219901f805c1f2f6309 = $(`<div id="html_d91ab53f64644219901f805c1f2f6309" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 헤어매직<br>주소: 서울 송파구 신천동 7<br>영업 시간: 8-Oct<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_40ac0dce6c7b4d029a6b485657feecc3.setContent(html_d91ab53f64644219901f805c1f2f6309);
+
+
+        marker_fd297ab1f6fd499ca5025e43b9971c67.bindPopup(popup_40ac0dce6c7b4d029a6b485657feecc3)
+        ;
+
+
+
+
+            var marker_f4f66362534641ac855f9f58e0ba544f = L.marker(
+                [37.50939106, 127.1292595],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_134cf1be2fb546da9d1da4f512c27ee7 = L.popup({"maxWidth": "100%"});
+
+
+            var html_a7dd502ae97b433a9b8d6a454794333f = $(`<div id="html_a7dd502ae97b433a9b8d6a454794333f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 1974<br>주소: 서울 송파구 오금동 11<br>영업 시간: 오후 3시~새벽 1시<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_134cf1be2fb546da9d1da4f512c27ee7.setContent(html_a7dd502ae97b433a9b8d6a454794333f);
+
+
+        marker_f4f66362534641ac855f9f58e0ba544f.bindPopup(popup_134cf1be2fb546da9d1da4f512c27ee7)
+        ;
+
+
+
+
+            var marker_eb990debcf6d4c80836c8cd1828d798a = L.marker(
+                [37.51113268, 127.1091047],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_a26d258435c1489ea282a8ff4d83ea6b = L.popup({"maxWidth": "100%"});
+
+
+            var html_293ef5057265431b88ce1d7e7c6ca917 = $(`<div id="html_293ef5057265431b88ce1d7e7c6ca917" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 라라브레드 잠실점<br>주소: 서울 송파구 오금로16길 4<br>영업 시간: 10:00 ~ 21:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_a26d258435c1489ea282a8ff4d83ea6b.setContent(html_293ef5057265431b88ce1d7e7c6ca917);
+
+
+        marker_eb990debcf6d4c80836c8cd1828d798a.bindPopup(popup_a26d258435c1489ea282a8ff4d83ea6b)
+        ;
+
+
+
+
+            var marker_e34494f724034afbb58b476059d6683c = L.marker(
+                [37.51691299, 127.1022358],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0ea5bbdaf22943c7a0ac1b862a635277 = L.popup({"maxWidth": "100%"});
+
+
+            var html_cf1553fde8b04ff1a624886641e38d25 = $(`<div id="html_cf1553fde8b04ff1a624886641e38d25" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 티테리아 (TEA TERIA)<br>주소: 서울 송파구 올림픽로35가길 10<br>영업 시간: 오전8:00 ~ 오후7:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_0ea5bbdaf22943c7a0ac1b862a635277.setContent(html_cf1553fde8b04ff1a624886641e38d25);
+
+
+        marker_e34494f724034afbb58b476059d6683c.bindPopup(popup_0ea5bbdaf22943c7a0ac1b862a635277)
+        ;
+
+
+
+
+            var marker_3c379ed5dd7f4fdbbd42b264d6ec03f9 = L.marker(
+                [37.47501456, 127.1416298],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_b2a3ac045e504430aace0d711733bd46 = L.popup({"maxWidth": "100%"});
+
+
+            var html_2eca9b02cce54bc4ad114f50fb5dbb0d = $(`<div id="html_2eca9b02cce54bc4ad114f50fb5dbb0d" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 북경짜장 위례신도시점<br>주소: 서울 송파구 위례광장로 120<br>영업 시간: 10:00~20:30<br>적용대상 : 결식아동,독거노인,정말 돈없고 배고픈 사람들<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_b2a3ac045e504430aace0d711733bd46.setContent(html_2eca9b02cce54bc4ad114f50fb5dbb0d);
+
+
+        marker_3c379ed5dd7f4fdbbd42b264d6ec03f9.bindPopup(popup_b2a3ac045e504430aace0d711733bd46)
+        ;
+
+
+
+
+            var marker_0474cdfb66ab4685bb9276c5b6a25ca1 = L.marker(
+                [37.52917527, 126.8313073],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_e57533c681d44ca4971279b0b27cf11a = L.popup({"maxWidth": "100%"});
+
+
+            var html_5e5087ffe1334410b642b6dc3f4d36c8 = $(`<div id="html_5e5087ffe1334410b642b6dc3f4d36c8" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 서서울<br>주소: 서울 양천구 남부순환로58길 33<br>영업 시간: 오전9시~저녁10시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_e57533c681d44ca4971279b0b27cf11a.setContent(html_5e5087ffe1334410b642b6dc3f4d36c8);
+
+
+        marker_0474cdfb66ab4685bb9276c5b6a25ca1.bindPopup(popup_e57533c681d44ca4971279b0b27cf11a)
+        ;
+
+
+
+
+            var marker_d836abb3f60b477c903a2b937aad5989 = L.marker(
+                [37.52801699, 126.8706157],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_ae2e2d8983374c249ca9c7841ff0a199 = L.popup({"maxWidth": "100%"});
+
+
+            var html_0d2a13782b8746efb46ded2d26444916 = $(`<div id="html_0d2a13782b8746efb46ded2d26444916" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 한옥안동국시<br>주소: 서울 양천구 목동서로 213<br>영업 시간: nan<br>적용대상 : Nan<br>적용인원 : Nan </pre> </div>`)[0];
+            popup_ae2e2d8983374c249ca9c7841ff0a199.setContent(html_0d2a13782b8746efb46ded2d26444916);
+
+
+        marker_d836abb3f60b477c903a2b937aad5989.bindPopup(popup_ae2e2d8983374c249ca9c7841ff0a199)
+        ;
+
+
+
+
+            var marker_e7e4314abcc643d4ba0f7270e97bc063 = L.marker(
+                [37.53011521, 126.8355991],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_9946e5cf8dff46da992c7a5e54981f25 = L.popup({"maxWidth": "100%"});
+
+
+            var html_0c71ea6959e54d8bb489ecbca35007cd = $(`<div id="html_0c71ea6959e54d8bb489ecbca35007cd" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 성찬푸드<br>주소: 서울 양천구 신월동 122-15<br>영업 시간: 오전11시30분~익일 02시 까지<br>적용대상 : 결식아동,독거노인<br>적용인원 : 그날 상황에 따라 달라질수 있습니다 </pre> </div>`)[0];
+            popup_9946e5cf8dff46da992c7a5e54981f25.setContent(html_0c71ea6959e54d8bb489ecbca35007cd);
+
+
+        marker_e7e4314abcc643d4ba0f7270e97bc063.bindPopup(popup_9946e5cf8dff46da992c7a5e54981f25)
+        ;
+
+
+
+
+            var marker_569d3fbeb8de42b7a1114c9919ec404f = L.marker(
+                [37.54073459, 126.8333616],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_545dc18c11e34ddc9dcdac2932586f94 = L.popup({"maxWidth": "100%"});
+
+
+            var html_59bfaaa94177435ab43bffb901c73702 = $(`<div id="html_59bfaaa94177435ab43bffb901c73702" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 유캔두잇 신월점<br>주소: 서울 양천구 신월동 22-19<br>영업 시간: 오전10시~밤10시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_545dc18c11e34ddc9dcdac2932586f94.setContent(html_59bfaaa94177435ab43bffb901c73702);
+
+
+        marker_569d3fbeb8de42b7a1114c9919ec404f.bindPopup(popup_545dc18c11e34ddc9dcdac2932586f94)
+        ;
+
+
+
+
+            var marker_a83939c238a2409582859989fadad6b8 = L.marker(
+                [37.52216881, 126.8600582],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_c0db55f5294d4aaa8768b8fb05893bc6 = L.popup({"maxWidth": "100%"});
+
+
+            var html_2092d1220336400cb42b1fe7376d7c5e = $(`<div id="html_2092d1220336400cb42b1fe7376d7c5e" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 피자베이본점<br>주소: 서울 양천구 신월로 351<br>영업 시간: 오전 11시부터 밤 12시까지<br>적용대상 : 결식아동,독거노인,식사를 잘못하는 불우한이웃!!<br>적용인원 : 피자 한판으로 제공  </pre> </div>`)[0];
+            popup_c0db55f5294d4aaa8768b8fb05893bc6.setContent(html_2092d1220336400cb42b1fe7376d7c5e);
+
+
+        marker_a83939c238a2409582859989fadad6b8.bindPopup(popup_c0db55f5294d4aaa8768b8fb05893bc6)
+        ;
+
+
+
+
+            var marker_c7000285e7f245c0b85dd1420012a2fd = L.marker(
+                [37.5212686, 126.8584534],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_311bb652186f4f708183e4e46f57ed59 = L.popup({"maxWidth": "100%"});
+
+
+            var html_cd40006e71c8429489b7f7287637cf60 = $(`<div id="html_cd40006e71c8429489b7f7287637cf60" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 푸라닭신정1동점<br>주소: 서울 양천구 신월로36길 3-1<br>영업 시간: 12시~24시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_311bb652186f4f708183e4e46f57ed59.setContent(html_cd40006e71c8429489b7f7287637cf60);
+
+
+        marker_c7000285e7f245c0b85dd1420012a2fd.bindPopup(popup_311bb652186f4f708183e4e46f57ed59)
+        ;
+
+
+
+
+            var marker_fe6d34a2572d4bd68bbd73bd668fbd34 = L.marker(
+                [37.51289569, 126.8325647],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_e5c51703026d4c66b2bf5150666280a0 = L.popup({"maxWidth": "100%"});
+
+
+            var html_e3752e7c962e4ddbb846158ec9fc1ea6 = $(`<div id="html_e3752e7c962e4ddbb846158ec9fc1ea6" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 엘리트태권도<br>주소: 서울 양천구 신정이펜2로 22<br>영업 시간: 13시30분~21시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_e5c51703026d4c66b2bf5150666280a0.setContent(html_e3752e7c962e4ddbb846158ec9fc1ea6);
+
+
+        marker_fe6d34a2572d4bd68bbd73bd668fbd34.bindPopup(popup_e5c51703026d4c66b2bf5150666280a0)
+        ;
+
+
+
+
+            var marker_cfbeb68054e644b192e8eeac3499cb48 = L.marker(
+                [37.52898745, 126.8971809],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_ae372df35d42498e88f16d0363cd6be4 = L.popup({"maxWidth": "100%"});
+
+
+            var html_cfedbdb4ccad4fbf852043489f5ddd56 = $(`<div id="html_cfedbdb4ccad4fbf852043489f5ddd56" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 당산돈<br>주소: 서울 영등포구 당산로35길 6<br>영업 시간: 11:00 ~ 22:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_ae372df35d42498e88f16d0363cd6be4.setContent(html_cfedbdb4ccad4fbf852043489f5ddd56);
+
+
+        marker_cfbeb68054e644b192e8eeac3499cb48.bindPopup(popup_ae372df35d42498e88f16d0363cd6be4)
+        ;
+
+
+
+
+            var marker_26a7e4113cb44870b26a5b5c3f4aae5a = L.marker(
+                [37.50715635, 126.898142],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_19538ef5905f434d929c4ab7bdba8e73 = L.popup({"maxWidth": "100%"});
+
+
+            var html_10d9e549efe248a48b3fa42e7223c50f = $(`<div id="html_10d9e549efe248a48b3fa42e7223c50f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 쿠이대<br>주소: 서울 영등포구 도림동 232-2<br>영업 시간: 11시~~9시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_19538ef5905f434d929c4ab7bdba8e73.setContent(html_10d9e549efe248a48b3fa42e7223c50f);
+
+
+        marker_26a7e4113cb44870b26a5b5c3f4aae5a.bindPopup(popup_19538ef5905f434d929c4ab7bdba8e73)
+        ;
+
+
+
+
+            var marker_150b6e4e40bc4f64a956740f476d0eae = L.marker(
+                [37.51018327, 126.9049457],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_453f456e738f40d5891700aa0b0ed6d5 = L.popup({"maxWidth": "100%"});
+
+
+            var html_148c2dca04094a3eb2ca8a03b416c092 = $(`<div id="html_148c2dca04094a3eb2ca8a03b416c092" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 홍대돈부리 영등포점<br>주소: 서울 영등포구 도신로29사길 3<br>영업 시간: 09:00-20:50<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_453f456e738f40d5891700aa0b0ed6d5.setContent(html_148c2dca04094a3eb2ca8a03b416c092);
+
+
+        marker_150b6e4e40bc4f64a956740f476d0eae.bindPopup(popup_453f456e738f40d5891700aa0b0ed6d5)
+        ;
+
+
+
+
+            var marker_4f730da755ee45a39ebee893d30f3890 = L.marker(
+                [37.51018327, 126.9049457],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_f64404ed7ae044ed87f7b784fc837cd4 = L.popup({"maxWidth": "100%"});
+
+
+            var html_5fca33f224e94a87bafef44c1204ef34 = $(`<div id="html_5fca33f224e94a87bafef44c1204ef34" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 까사피에스타 영등포점<br>주소: 서울 영등포구 도신로29사길 3<br>영업 시간: 09:00-20:50<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_f64404ed7ae044ed87f7b784fc837cd4.setContent(html_5fca33f224e94a87bafef44c1204ef34);
+
+
+        marker_4f730da755ee45a39ebee893d30f3890.bindPopup(popup_f64404ed7ae044ed87f7b784fc837cd4)
+        ;
+
+
+
+
+            var marker_166a09eb1f1f426aa31be93dad790dae = L.marker(
+                [37.49252558, 126.9045513],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_d6cc757536ce46679697e5a59009c1d7 = L.popup({"maxWidth": "100%"});
+
+
+            var html_bd4d192f14054cb3b3000be296ff01d9 = $(`<div id="html_bd4d192f14054cb3b3000be296ff01d9" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 직화삼겹직구삼 대림신길점<br>주소: 서울 영등포구 디지털로66길 8<br>영업 시간: 11:00에서 새벽1시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_d6cc757536ce46679697e5a59009c1d7.setContent(html_bd4d192f14054cb3b3000be296ff01d9);
+
+
+        marker_166a09eb1f1f426aa31be93dad790dae.bindPopup(popup_d6cc757536ce46679697e5a59009c1d7)
+        ;
+
+
+
+
+            var marker_72a6b0aa453e4f78a523b9eac0bf2c6c = L.marker(
+                [37.52246613, 126.891781],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_150bc869a78a4797807ac778c88809d0 = L.popup({"maxWidth": "100%"});
+
+
+            var html_5733dde971fd4f6a86d386ec4bb25b1c = $(`<div id="html_5733dde971fd4f6a86d386ec4bb25b1c" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 브로스키친<br>주소: 서울 영등포구 선유동1로 6-4<br>영업 시간: 25-Nov<br>적용대상 : 결식아동<br>적용인원 : 어려운아이들과 어려운 가정에게 </pre> </div>`)[0];
+            popup_150bc869a78a4797807ac778c88809d0.setContent(html_5733dde971fd4f6a86d386ec4bb25b1c);
+
+
+        marker_72a6b0aa453e4f78a523b9eac0bf2c6c.bindPopup(popup_150bc869a78a4797807ac778c88809d0)
+        ;
+
+
+
+
+            var marker_f2e9eb5e97574a4e95479d7646aea017 = L.marker(
+                [37.52606589, 126.891572],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_6cbda75cea7f4564b9129f018efcaf10 = L.popup({"maxWidth": "100%"});
+
+
+            var html_54224954ffc64578a748e5f572be1692 = $(`<div id="html_54224954ffc64578a748e5f572be1692" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 샐러디 롯데마트서울양평점<br>주소: 서울 영등포구 선유로 138<br>영업 시간: 오전11시-오후8시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_6cbda75cea7f4564b9129f018efcaf10.setContent(html_54224954ffc64578a748e5f572be1692);
+
+
+        marker_f2e9eb5e97574a4e95479d7646aea017.bindPopup(popup_6cbda75cea7f4564b9129f018efcaf10)
+        ;
+
+
+
+
+            var marker_8a2c5a7f201f4e089008b6fe3ae4beac = L.marker(
+                [37.51610031, 126.8868154],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_f0f83dd339724796be910a6838860e58 = L.popup({"maxWidth": "100%"});
+
+
+            var html_388a7851431d4e7c9a76efe9948da8ad = $(`<div id="html_388a7851431d4e7c9a76efe9948da8ad" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 디와이코퍼레이션(GalleryDIM)<br>주소: 서울 영등포구 선유로3길 10<br>영업 시간: 11:00~19:00<br>적용대상 : Nan<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_f0f83dd339724796be910a6838860e58.setContent(html_388a7851431d4e7c9a76efe9948da8ad);
+
+
+        marker_8a2c5a7f201f4e089008b6fe3ae4beac.bindPopup(popup_f0f83dd339724796be910a6838860e58)
+        ;
+
+
+
+
+            var marker_a21302a3b5854a7c9b6376429ee1b22b = L.marker(
+                [37.499763, 126.9183635],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_d8daa4981f804aeaaf58d456a97aa63b = L.popup({"maxWidth": "100%"});
+
+
+            var html_711c793080b54abfbe3f2cd094c7bfe2 = $(`<div id="html_711c793080b54abfbe3f2cd094c7bfe2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 신길점추오정남원추어탕 <br>주소: 서울 영등포구 신풍로 110<br>영업 시간: 09~21<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_d8daa4981f804aeaaf58d456a97aa63b.setContent(html_711c793080b54abfbe3f2cd094c7bfe2);
+
+
+        marker_a21302a3b5854a7c9b6376429ee1b22b.bindPopup(popup_d8daa4981f804aeaaf58d456a97aa63b)
+        ;
+
+
+
+
+            var marker_12f07d2b2c9645bf9b1e537d7c1c7297 = L.marker(
+                [37.52653714, 126.9181067],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_175f1ac004f4437089554c979edaa5d0 = L.popup({"maxWidth": "100%"});
+
+
+            var html_0efe0c28c1be4f12b50681d0dc1b28fb = $(`<div id="html_0efe0c28c1be4f12b50681d0dc1b28fb" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 더복희네<br>주소: 서울 영등포구 의사당대로 26<br>영업 시간: 오전11:00~오후10:00<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_175f1ac004f4437089554c979edaa5d0.setContent(html_0efe0c28c1be4f12b50681d0dc1b28fb);
+
+
+        marker_12f07d2b2c9645bf9b1e537d7c1c7297.bindPopup(popup_175f1ac004f4437089554c979edaa5d0)
+        ;
+
+
+
+
+            var marker_dbcda1e80db7406888ab9b48992f9563 = L.marker(
+                [37.53016316, 127.0078018],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_52dbfdb67ee341d0968de1ce9420260c = L.popup({"maxWidth": "100%"});
+
+
+            var html_233007e6c07c43d091d16c69336bfae0 = $(`<div id="html_233007e6c07c43d091d16c69336bfae0" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 본도시락 한남점 <br>주소: 서울 용산구 독서당로 22<br>영업 시간: 09:00~20:00<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_52dbfdb67ee341d0968de1ce9420260c.setContent(html_233007e6c07c43d091d16c69336bfae0);
+
+
+        marker_dbcda1e80db7406888ab9b48992f9563.bindPopup(popup_52dbfdb67ee341d0968de1ce9420260c)
+        ;
+
+
+
+
+            var marker_f5ab7a4a2478488e90dd3f0f8bb60a16 = L.marker(
+                [37.53021668, 126.9677763],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_dbfcc25501834fc4b819ff4c3c6ebaad = L.popup({"maxWidth": "100%"});
+
+
+            var html_49ee1333576441bfb3c6fe925a4de222 = $(`<div id="html_49ee1333576441bfb3c6fe925a4de222" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 아힘사 요가&명상<br>주소: 서울 용산구 새창로 217<br>영업 시간: 6:30-22:00<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_dbfcc25501834fc4b819ff4c3c6ebaad.setContent(html_49ee1333576441bfb3c6fe925a4de222);
+
+
+        marker_f5ab7a4a2478488e90dd3f0f8bb60a16.bindPopup(popup_dbfcc25501834fc4b819ff4c3c6ebaad)
+        ;
+
+
+
+
+            var marker_1a8037b2f6574b8c9aff7549e7a0c569 = L.marker(
+                [37.53278886, 126.9595585],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_ce599d4bb4eb496daa9d6b86ff63a59e = L.popup({"maxWidth": "100%"});
+
+
+            var html_3a87c66a31ba48f7bcd66456bfaabf50 = $(`<div id="html_3a87c66a31ba48f7bcd66456bfaabf50" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 더트레인<br>주소: 서울 용산구 청파로 74<br>영업 시간: 11시~20시<br>적용대상 : 결식아동,독거노인,군장병<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_ce599d4bb4eb496daa9d6b86ff63a59e.setContent(html_3a87c66a31ba48f7bcd66456bfaabf50);
+
+
+        marker_1a8037b2f6574b8c9aff7549e7a0c569.bindPopup(popup_ce599d4bb4eb496daa9d6b86ff63a59e)
+        ;
+
+
+
+
+            var marker_96ced53f58944ef39811c3685723e4c2 = L.marker(
+                [37.5297718, 126.9647415],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_dddc7451ae004552823348971ff9d356 = L.popup({"maxWidth": "100%"});
+
+
+            var html_f685f98a24364278904934ce4f30ce28 = $(`<div id="html_f685f98a24364278904934ce4f30ce28" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 인스타일<br>주소: 서울 용산구 한강대로23길 55<br>영업 시간: 08~23<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_dddc7451ae004552823348971ff9d356.setContent(html_f685f98a24364278904934ce4f30ce28);
+
+
+        marker_96ced53f58944ef39811c3685723e4c2.bindPopup(popup_dddc7451ae004552823348971ff9d356)
+        ;
+
+
+
+
+            var marker_09eee3ff6fbf48bbbe62bb4adc2653e0 = L.marker(
+                [37.54207521, 126.9716704],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_43efd2baa7b04d5880e874abadc69a9a = L.popup({"maxWidth": "100%"});
+
+
+            var html_d0d7c00b04cb488bad017925cd1ead17 = $(`<div id="html_d0d7c00b04cb488bad017925cd1ead17" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 얌샘김밥 남영점<br>주소: 서울 용산구 한강대로77길 18<br>영업 시간: 07시 ~ 24시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_43efd2baa7b04d5880e874abadc69a9a.setContent(html_d0d7c00b04cb488bad017925cd1ead17);
+
+
+        marker_09eee3ff6fbf48bbbe62bb4adc2653e0.bindPopup(popup_43efd2baa7b04d5880e874abadc69a9a)
+        ;
+
+
+
+
+            var marker_011e948e771d4970bcfcb5707ebf93c2 = L.marker(
+                [37.61519564, 126.911789],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_eb84842aa285432cb7ec13f66d68c2ad = L.popup({"maxWidth": "100%"});
+
+
+            var html_ba55d870b18648238c962842ab09675c = $(`<div id="html_ba55d870b18648238c962842ab09675c" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 선경하우징<br>주소: 서울 은평구 갈현동 509-1<br>영업 시간: 09~19시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_eb84842aa285432cb7ec13f66d68c2ad.setContent(html_ba55d870b18648238c962842ab09675c);
+
+
+        marker_011e948e771d4970bcfcb5707ebf93c2.bindPopup(popup_eb84842aa285432cb7ec13f66d68c2ad)
+        ;
+
+
+
+
+            var marker_725746508c4b41159ede4f6aae0cb15b = L.marker(
+                [37.60685272, 126.9226733],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_d4e0beea31d24a419b6bfb64ed836b53 = L.popup({"maxWidth": "100%"});
+
+
+            var html_f8e6c5588e4d4e618d6a851547db9c62 = $(`<div id="html_f8e6c5588e4d4e618d6a851547db9c62" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 일월만두<br>주소: 서울 은평구 서오릉로 72<br>영업 시간: 아침 10시~ 저녁 9시반<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_d4e0beea31d24a419b6bfb64ed836b53.setContent(html_f8e6c5588e4d4e618d6a851547db9c62);
+
+
+        marker_725746508c4b41159ede4f6aae0cb15b.bindPopup(popup_d4e0beea31d24a419b6bfb64ed836b53)
+        ;
+
+
+
+
+            var marker_806eeb4131694bec93cb5fcd3f7f6143 = L.marker(
+                [37.60144952, 126.9104816],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_3a197269deea41818230d7f4128a73c4 = L.popup({"maxWidth": "100%"});
+
+
+            var html_c42c3fc603804a448fce5633de3847b1 = $(`<div id="html_c42c3fc603804a448fce5633de3847b1" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 로드락후라이드 은평신사점<br>주소: 서울 은평구 신사동 7-24<br>영업 시간: 14시-02시<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_3a197269deea41818230d7f4128a73c4.setContent(html_c42c3fc603804a448fce5633de3847b1);
+
+
+        marker_806eeb4131694bec93cb5fcd3f7f6143.bindPopup(popup_3a197269deea41818230d7f4128a73c4)
+        ;
+
+
+
+
+            var marker_ae8e82e22ecb4cb5b7d2e36c38ea1523 = L.marker(
+                [37.6377915, 126.936819],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_f971d71f779a45e28492e58879f6eb0c = L.popup({"maxWidth": "100%"});
+
+
+            var html_e671ca488004480cb97cb61940882dcc = $(`<div id="html_e671ca488004480cb97cb61940882dcc" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 달아요<br>주소: 서울 은평구 연서로48길 11<br>영업 시간: 10시부터 2시<br>적용대상 : 결식아동,독거노인,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_f971d71f779a45e28492e58879f6eb0c.setContent(html_e671ca488004480cb97cb61940882dcc);
+
+
+        marker_ae8e82e22ecb4cb5b7d2e36c38ea1523.bindPopup(popup_f971d71f779a45e28492e58879f6eb0c)
+        ;
+
+
+
+
+            var marker_af611040f12e417bb829b2894a7208b5 = L.marker(
+                [37.5971843, 126.9197235],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_fa705a935b8d436d9465235bd06bf1cd = L.popup({"maxWidth": "100%"});
+
+
+            var html_a57965e59ebb4d4dadbd515d14f6acc7 = $(`<div id="html_a57965e59ebb4d4dadbd515d14f6acc7" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 단발소녀<br>주소: 서울 은평구 응암로 285<br>영업 시간: 11~21<br>적용대상 : 결식아동,독거노인,국가유공자<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_fa705a935b8d436d9465235bd06bf1cd.setContent(html_a57965e59ebb4d4dadbd515d14f6acc7);
+
+
+        marker_af611040f12e417bb829b2894a7208b5.bindPopup(popup_fa705a935b8d436d9465235bd06bf1cd)
+        ;
+
+
+
+
+            var marker_355b317c53b24cad9bf3a45393c32a59 = L.marker(
+                [37.63386256, 126.9185725],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_f440876bb7714fefacd45a6175d3b1e9 = L.popup({"maxWidth": "100%"});
+
+
+            var html_efc5b92c019946b3822d0fd5b5c3e826 = $(`<div id="html_efc5b92c019946b3822d0fd5b5c3e826" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 갓츠킹 가마솥돈까스 진관점<br>주소: 서울 은평구 진관1로 21-39<br>영업 시간: 11:00~21 :00/ 라스트오더 20:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_f440876bb7714fefacd45a6175d3b1e9.setContent(html_efc5b92c019946b3822d0fd5b5c3e826);
+
+
+        marker_355b317c53b24cad9bf3a45393c32a59.bindPopup(popup_f440876bb7714fefacd45a6175d3b1e9)
+        ;
+
+
+
+
+            var marker_e44e07b4f03048cf95a749a926a90299 = L.marker(
+                [37.64276446, 126.9209327],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_fd60d915a5ca442698552a3c15b10093 = L.popup({"maxWidth": "100%"});
+
+
+            var html_e5e121b4de2547e3adfb760a979affb2 = $(`<div id="html_e5e121b4de2547e3adfb760a979affb2" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 갈현동할머니떡볶이 <br>주소: 서울 은평구 진관3로 67<br>영업 시간: 10:30~19:30<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_fd60d915a5ca442698552a3c15b10093.setContent(html_e5e121b4de2547e3adfb760a979affb2);
+
+
+        marker_e44e07b4f03048cf95a749a926a90299.bindPopup(popup_fd60d915a5ca442698552a3c15b10093)
+        ;
+
+
+
+
+            var marker_e2e683ca62b04266b80d92b3644ea84d = L.marker(
+                [37.58097324, 126.9672412],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_0fa91ae5cd3f41bbaf1077b16f85e20f = L.popup({"maxWidth": "100%"});
+
+
+            var html_f75ed8952fed497a9699daeabdc41552 = $(`<div id="html_f75ed8952fed497a9699daeabdc41552" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 콤콤오락실<br>주소: 서울 종로구 옥인길 28<br>영업 시간: 24시간<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_0fa91ae5cd3f41bbaf1077b16f85e20f.setContent(html_f75ed8952fed497a9699daeabdc41552);
+
+
+        marker_e2e683ca62b04266b80d92b3644ea84d.bindPopup(popup_0fa91ae5cd3f41bbaf1077b16f85e20f)
+        ;
+
+
+
+
+            var marker_477b3c52d3e24d83ad06b402c5ae975d = L.marker(
+                [37.57545386, 126.9797758],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_c128346503a349e3bc484e36253b0210 = L.popup({"maxWidth": "100%"});
+
+
+            var html_33d96db5159a42a89283c90fec9f1fd7 = $(`<div id="html_33d96db5159a42a89283c90fec9f1fd7" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 부산아지매국밥 트윈트리타워점<br>주소: 서울 종로구 율곡로 6<br>영업 시간: 10:30~19:30<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_c128346503a349e3bc484e36253b0210.setContent(html_33d96db5159a42a89283c90fec9f1fd7);
+
+
+        marker_477b3c52d3e24d83ad06b402c5ae975d.bindPopup(popup_c128346503a349e3bc484e36253b0210)
+        ;
+
+
+
+
+            var marker_22cd7a8f4db74f9d94340c3a0e6cfbb4 = L.marker(
+                [37.57085836, 127.0103483],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_05d31ea910884455a8648c22bcc304bb = L.popup({"maxWidth": "100%"});
+
+
+            var html_9516dfdda3e446d38fdd64fe11804543 = $(`<div id="html_9516dfdda3e446d38fdd64fe11804543" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 연혜인참치<br>주소: 서울 종로구 종로 286<br>영업 시간: 오전10:00~오후10:00까지<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_05d31ea910884455a8648c22bcc304bb.setContent(html_9516dfdda3e446d38fdd64fe11804543);
+
+
+        marker_22cd7a8f4db74f9d94340c3a0e6cfbb4.bindPopup(popup_05d31ea910884455a8648c22bcc304bb)
+        ;
+
+
+
+
+            var marker_52d7762536ee4ba2aef779028db4b103 = L.marker(
+                [37.57011375, 127.0147848],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_35c366e6a4ad4882991744221c3b19b1 = L.popup({"maxWidth": "100%"});
+
+
+            var html_975d76653bf449e88b76add7154688d9 = $(`<div id="html_975d76653bf449e88b76add7154688d9" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 레기돌(넘버나인,해피필링)<br>주소: 서울 종로구 창신동 436-64<br>영업 시간: 밤12-낮12시<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_35c366e6a4ad4882991744221c3b19b1.setContent(html_975d76653bf449e88b76add7154688d9);
+
+
+        marker_52d7762536ee4ba2aef779028db4b103.bindPopup(popup_35c366e6a4ad4882991744221c3b19b1)
+        ;
+
+
+
+
+            var marker_839f65bc7f344e35ae6ee2ad6d0922a1 = L.marker(
+                [37.59338974, 126.9615712],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_25e98bbc866b4882b0d5c12cac354f19 = L.popup({"maxWidth": "100%"});
+
+
+            var html_33c156c97cd94e5abda9de0bb69306dd = $(`<div id="html_33c156c97cd94e5abda9de0bb69306dd" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 레이지버거클럽<br>주소: 서울 종로구 창의문로11길 23<br>영업 시간: 11:30 - 21:00<br>적용대상 : 결식아동<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_25e98bbc866b4882b0d5c12cac354f19.setContent(html_33c156c97cd94e5abda9de0bb69306dd);
+
+
+        marker_839f65bc7f344e35ae6ee2ad6d0922a1.bindPopup(popup_25e98bbc866b4882b0d5c12cac354f19)
+        ;
+
+
+
+
+            var marker_841107bd476b4a50ba6fbef26e7155d8 = L.marker(
+                [37.60686264, 126.9690062],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_8857cd3569c4437d983a2817a9db7ef9 = L.popup({"maxWidth": "100%"});
+
+
+            var html_75eb7660dacc400585cd4a19e926f8dc = $(`<div id="html_75eb7660dacc400585cd4a19e926f8dc" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 교촌치킨평창점<br>주소: 서울 종로구 평창문화로 75<br>영업 시간: 12:00~23:30<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_8857cd3569c4437d983a2817a9db7ef9.setContent(html_75eb7660dacc400585cd4a19e926f8dc);
+
+
+        marker_841107bd476b4a50ba6fbef26e7155d8.bindPopup(popup_8857cd3569c4437d983a2817a9db7ef9)
+        ;
+
+
+
+
+            var marker_ab451c22fd7341faab9349c2b54d8a7a = L.marker(
+                [37.55606592, 126.9681386],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_c565cd2ef4fe4c8993f9cdb9a04b10c6 = L.popup({"maxWidth": "100%"});
+
+
+            var html_3f692c0a63e740fa91349fa9e8f68127 = $(`<div id="html_3f692c0a63e740fa91349fa9e8f68127" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 공일부엌<br>주소: 서울 중구 만리재로 209<br>영업 시간: 11시~10시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_c565cd2ef4fe4c8993f9cdb9a04b10c6.setContent(html_3f692c0a63e740fa91349fa9e8f68127);
+
+
+        marker_ab451c22fd7341faab9349c2b54d8a7a.bindPopup(popup_c565cd2ef4fe4c8993f9cdb9a04b10c6)
+        ;
+
+
+
+
+            var marker_b22fc6ae552642fb963794b7cb3f1e0f = L.marker(
+                [37.58907805, 127.0931941],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_a963b6483df8428891792b77f30cd464 = L.popup({"maxWidth": "100%"});
+
+
+            var html_cee3316c09b04c4bb9825a5f3665d95b = $(`<div id="html_cee3316c09b04c4bb9825a5f3665d95b" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 소소한얼<br>주소: 서울 중랑구 겸재로50길 53<br>영업 시간: 11:00~23:00<br>적용대상 : 결식아동,독거노인,독거노인<br>적용인원 : 동반 2인 </pre> </div>`)[0];
+            popup_a963b6483df8428891792b77f30cd464.setContent(html_cee3316c09b04c4bb9825a5f3665d95b);
+
+
+        marker_b22fc6ae552642fb963794b7cb3f1e0f.bindPopup(popup_a963b6483df8428891792b77f30cd464)
+        ;
+
+
+
+
+            var marker_69fb0ba786184615bd75a5056da8e243 = L.marker(
+                [37.61727613, 127.0810183],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_e380977e8909461eae961f94b0d67679 = L.popup({"maxWidth": "100%"});
+
+
+            var html_c01059c988f24e9ba98ea5907cc27447 = $(`<div id="html_c01059c988f24e9ba98ea5907cc27447" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 쌀똑핫도그 태릉점<br>주소: 서울 중랑구 공릉로12가길 29<br>영업 시간: 평일 1시 - 12시  주말 11시 - 12시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_e380977e8909461eae961f94b0d67679.setContent(html_c01059c988f24e9ba98ea5907cc27447);
+
+
+        marker_69fb0ba786184615bd75a5056da8e243.bindPopup(popup_e380977e8909461eae961f94b0d67679)
+        ;
+
+
+
+
+            var marker_e1a4028fd84f44b6ba2b8147c2a10ecc = L.marker(
+                [37.60933564, 127.0741511],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_1036add4693b4099bf73a35bd408e617 = L.popup({"maxWidth": "100%"});
+
+
+            var html_6ffe411255254d6e95b704500e6a6677 = $(`<div id="html_6ffe411255254d6e95b704500e6a6677" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 카페더메뉴얼<br>주소: 서울 중랑구 동일로157길 65<br>영업 시간: 11:00-20:00<br>적용대상 : 결식아동,독거노인 어르신<br>적용인원 : 가족이나 친구들과 함께 와도 좋습니다 </pre> </div>`)[0];
+            popup_1036add4693b4099bf73a35bd408e617.setContent(html_6ffe411255254d6e95b704500e6a6677);
+
+
+        marker_e1a4028fd84f44b6ba2b8147c2a10ecc.bindPopup(popup_1036add4693b4099bf73a35bd408e617)
+        ;
+
+
+
+
+            var marker_6520a3cdd3bb4628bde266c575155e7a = L.marker(
+                [37.59547032, 127.0892169],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_39d8fef23f584703beb7ebf8e50de33f = L.popup({"maxWidth": "100%"});
+
+
+            var html_2036481526cf4344a9a9d84f1d0718cc = $(`<div id="html_2036481526cf4344a9a9d84f1d0718cc" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 함평국밥<br>주소: 서울 중랑구 봉우재로33길 73<br>영업 시간: 오전 11:30오픈 오후 10시 마감<br>적용대상 : 결식아동<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_39d8fef23f584703beb7ebf8e50de33f.setContent(html_2036481526cf4344a9a9d84f1d0718cc);
+
+
+        marker_6520a3cdd3bb4628bde266c575155e7a.bindPopup(popup_39d8fef23f584703beb7ebf8e50de33f)
+        ;
+
+
+
+
+            var marker_2dd8a7c75d68482eaa6afd0f86226701 = L.marker(
+                [37.6113848, 127.0958495],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_afeb111b51114dfb91cd2e5ef3a2c17e = L.popup({"maxWidth": "100%"});
+
+
+            var html_1251cf63dea94f329d8f484c57389b7b = $(`<div id="html_1251cf63dea94f329d8f484c57389b7b" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 네네치킨신내1점<br>주소: 서울 중랑구 신내로 135<br>영업 시간: 18:00~24:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_afeb111b51114dfb91cd2e5ef3a2c17e.setContent(html_1251cf63dea94f329d8f484c57389b7b);
+
+
+        marker_2dd8a7c75d68482eaa6afd0f86226701.bindPopup(popup_afeb111b51114dfb91cd2e5ef3a2c17e)
+        ;
+
+
+
+
+            var marker_ca6453a63854482db5da3576242e6d2d = L.marker(
+                [37.60451914, 127.0972138],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_68c1d862089b4f498d479407609a02cf = L.popup({"maxWidth": "100%"});
+
+
+            var html_9058924fc1e7478f9cc6c22eb2b5ed2f = $(`<div id="html_9058924fc1e7478f9cc6c22eb2b5ed2f" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 마석감자탕<br>주소: 서울 중랑구 신내로10길 29<br>영업 시간: 10:00 ~22:00<br>적용대상 : 결식아동,독거노인<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_68c1d862089b4f498d479407609a02cf.setContent(html_9058924fc1e7478f9cc6c22eb2b5ed2f);
+
+
+        marker_ca6453a63854482db5da3576242e6d2d.bindPopup(popup_68c1d862089b4f498d479407609a02cf)
+        ;
+
+
+
+
+            var marker_2a9f02272d3947b2ae20c219ae517bb6 = L.marker(
+                [37.59161095, 127.0986946],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_ea9103e62a7b416793bd843f10174363 = L.popup({"maxWidth": "100%"});
+
+
+            var html_9d1a749c05b24ed89916949782dcf913 = $(`<div id="html_9d1a749c05b24ed89916949782dcf913" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 브리즈<br>주소: 서울 중랑구 용마산로100길 7<br>영업 시간: 평일 09시 ~ 18시<br>적용대상 : 결식아동,독거노인<br>적용인원 : 동반 1인 </pre> </div>`)[0];
+            popup_ea9103e62a7b416793bd843f10174363.setContent(html_9d1a749c05b24ed89916949782dcf913);
+
+
+        marker_2a9f02272d3947b2ae20c219ae517bb6.bindPopup(popup_ea9103e62a7b416793bd843f10174363)
+        ;
+
+
+
+
+            var marker_39a62d7b8690432588628fb4ea99a260 = L.marker(
+                [37.5628056, 127.0019524],
+                {}
+            ).addTo(marker_cluster_28621e751957478996f32db1c0840b28);
+
+
+        var popup_1a49b0258d844f3b8af50663e0bb0d1d = L.popup({"maxWidth": "100%"});
+
+
+            var html_02b520b2af1a4ebfa509c71aa1ae2819 = $(`<div id="html_02b520b2af1a4ebfa509c71aa1ae2819" style="width: 100.0%; height: 100.0%;"><pre>매장 이름: 주)청어람플러스<br>주소: 서울 중구 퇴계로 272<br>영업 시간: am10:00-pm10:00<br>적용대상 : 결식아동<br>적용인원 : 아이 본인만 </pre> </div>`)[0];
+            popup_1a49b0258d844f3b8af50663e0bb0d1d.setContent(html_02b520b2af1a4ebfa509c71aa1ae2819);
+
+
+        marker_39a62d7b8690432588628fb4ea99a260.bindPopup(popup_1a49b0258d844f3b8af50663e0bb0d1d)
+        ;
+
+
+
+</script>

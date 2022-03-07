@@ -6,51 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="../css/main.css" rel="stylesheet">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../static/css/main.css" rel="stylesheet">
+    <link href="../../../static/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <button onclick="doDisplay('popup-place-info')">지도 테스트용 버튼</button>
+                <button onclick="location.href='/polls/348';">삼청골명가 더수제비</button>
+                <iframe src="./map.html" height="500" width="500"></iframe>
 
-
-                <footer style=>
-                    <!-- st. 장소 클릭 시 상세정보 -->
-                    <div id="popup-place-info" style="width: 100%;">
-                        <div class="place-info" id="place-info">
-                            <aside id="right-float" style="width: 30%;padding: 5px;">
-                                <img src="../img/다운로드.jpg" width="100%" />
-                                <footer style="float: right;">
-                                    <form>
-                                        <!-- 자세히보기 버튼 :  
-                              선한영향력 : https://xn--o39akkz01az4ip7f4xzwoa.com/store/view?idx=인덱스번호-->
-                                        <button style="margin-bottom: 30px;" type="button" onclick="location.href='https://xn--o39akkz01az4ip7f4xzwoa.com/store/view?idx=1090';" class="btn btn-light btn-outline-secondary btnflt1">자세히보기</button>
-                                    </form>
-                                </footer>
-                            </aside>
-                            <aside id="right-float" style="width: 10%;height:100%;padding: 0px;">
-
-                                <img style="margin:0" src="https://www.foodbank.co.kr/news/photo/202111/62168_19582_4347.jpg" width="100%" />
-                                <!-- 선한영향력이면 선한영향력 사진 뜨게 -->
-
-                            </aside>
-                            <div style="width: 65%;">
-                                <p class="smallname">채은네식당</p>
-                                강원도 철원군 서면 자등리
-                                <br> 영업시간 :
-                                <br> 꼬르륵
-                                <br> 대상자 : 저소득층 자녀
-                                <br> 동반 1인 가능
-                                <br> <button onclick="timeNow()">현재시간</button>
-                                <br> <span id="time" onload="timeNow()"> </span>
-                            </div>
-                        </div>
-                        <!-- en. 장소 클릭 시 상세정보 -->
-                </footer>
-                </div>
                 <div class="col-3">
                     <!-- st . nav bar=============================== -->
                     <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Fifth navbar example">
@@ -131,7 +98,7 @@
     </div>
 </body>
 
-<script src="../js/main.js">
+<script src="../../../static/js/main.js">
 </script>
 
 </html>
