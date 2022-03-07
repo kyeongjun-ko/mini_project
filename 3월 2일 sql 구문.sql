@@ -34,7 +34,7 @@ SELECT *,(
 		when "02,99" then concat("독거노인,",target2_etc)
 	else target2_code
     end
-    ) as "제공대상" ,(
+    ) as "sup_obj" ,(
 	case target1_code
 		when "" then "Nan"
 		when "01" then "아이 본인만"
@@ -43,7 +43,7 @@ SELECT *,(
 		when "99" then target1_etc
 	else target1_code
     end
-	) as "제공인원" ,(
+	) as "sup_num" ,(
 	case item_code
 		when "" then ""
         when "01" then ""
@@ -51,10 +51,10 @@ SELECT *,(
 		when "99" then item_etc
 	else item_code
     end
-	) as "제공품목" from stores_db
+	) as "sup_item" from stores_db
 order by field(area,"경기","서울") desc, addr1 asc,
-         field(제공대상,"소방관","독거노인","결식아동") desc,
-		 field(제공인원, target1_etc,"동반 2인","동반 1인");
+         field(sup_obj,"소방관","독거노인","결식아동") desc,
+		 field(sup_num, target1_etc,"동반 2인","동반 1인");
         
 
 select *
