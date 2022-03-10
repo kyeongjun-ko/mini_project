@@ -1,17 +1,21 @@
 use mini_project;
 
--- 데이터 지우기
--- TRUNCATE stores_db;
+-- 데이터 설명
+-- stores_db : 선한 영향력에서 처음으로 뽑은 JSON 데이터
+-- stores_db1 : 코드에 따라서 다르게 출력 ( Nan 값 추가)
+-- stores_db2 : img_info DB 합친후 컬럼순서, 출력순서 변경 (최종)
 
 -- 테이블 확인하기
 select * from stores_db;
 select * from stores_db1;
+select * from stores_db2;
 
+-- 데이터 관리
 -- 지역명이 겹치는 데이터가 몇개인지 추출하기
 select area, count(*) from stores_db
 group by area having count(*) > 1;
 
---  target1_code, target2_code 에 따라서 다르게 출력하기 
+-- stores_db1 : code 에 따라서 다르게 출력하는 column 추가
 CREATE TABLE stores_db1
 SELECT *,(
 	case target2_code
@@ -47,7 +51,7 @@ SELECT *,(
     end
 	) as "sup_item" from stores_db;
 
--- column 순서 정렬
+-- column 순서 정렬 구문
 ALTER TABLE stores_db1 MODIFY COLUMN idx varchar(128) first;
 ALTER TABLE stores_db1 MODIFY COLUMN area varchar(128) AFTER idx;
 ALTER TABLE stores_db1 MODIFY COLUMN name varchar(128) AFTER area;
