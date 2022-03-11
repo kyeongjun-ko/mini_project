@@ -1,0 +1,304 @@
+{% load static %}
+<!DOCTYPE html>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Miniport by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="{% static '/assets/css/main.css' %}" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+		
+		<style>
+		.image_box {
+			width:380px;
+			height:450px;
+			overflow:hidden;
+			margin: 0 auto;
+		}
+
+		.div_image{
+			width:100%;
+			height:200px;
+			object-fit:cover;
+			margin-bottom:10px;
+		}
+
+		@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+        .my_img { border-radius: 80%; width: 200px; height: 200px; position: relative;}
+        .my_img img{ border-radius: 70%; width: 100%; height: auto; border: 0px; 
+            display: block; position: absolute; top: 0px; left: 0px; transform: opacity 1s;} 
+        .my_img:hover img:last-child{opacity: 0}
+
+        @font-face {
+            font-family: 'Noto Sans KR';
+            font-style: normal;
+            font-weight: 300;
+            src: url(/fonts/NotoSansKr/NotoSansKR-Light.woff2) format('woff2'),
+            url(/fonts/NotoSansKr/NotoSansKR-Light.woff) format('woff'),
+            url(/fonts/NotoSansKr/NotoSansKR-Light.otf) format('opentype');
+            unicode-range: U+AC00-D7AF;
+            }
+            
+        @font-face {
+            font-family: 'Noto Sans KR';
+            font-style: normal;
+            font-weight: 400;
+            src: url(/fonts/NotoSansKr/NotoSansKR-Regular.woff2) format('woff2'),
+            url(/fonts/NotoSansKr/NotoSansKR-Regular.woff) format('woff'),
+            url(/fonts/NotoSansKr/NotoSansKR-Regular.otf) format('opentype');
+            unicode-range: U+AC00-D7AF;
+        }
+            
+        @font-face {
+            font-family: 'Noto Sans KR';
+            font-style: normal;
+            font-weight: 700;
+            src: url(/fonts/NotoSansKr/NotoSansKR-Bold.woff2) format('woff2'),
+            url(/fonts/NotoSansKr/NotoSansKR-Bold.woff) format('woff'),
+            url(/fonts/NotoSansKr/NotoSansKR-Bold.otf) format('opentype');
+            unicode-range: U+AC00-D7AF;
+        }
+
+        @font-face {
+            font-family: 'Giveny Free';
+            src: url('/static/fonts/Giveny.ttf') format("ttf");
+            unicode-range: U+0041-005A, U+0061-007A;
+            font-style: normal;
+            font-weight: normal;
+            font-size: large;
+        }
+
+        .font0 {
+            font-family: 'Giveny Free','Noto Sans KR' !important;
+        }
+
+		</style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#top">Top</a></li>
+					<li><a href="#work">Work</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+
+		<!-- Home -->
+			<article id="top" class="wrapper style1">
+				<div class="container">
+					<div class="row">
+						<div class="col-4 col-5-large col-12-medium">
+							<span class="fit"><img src="{% static 'my_image/images/logo.png' %}" alt="" /></span>
+						</div>
+						<div class="col-8 col-7-large col-12-medium font0">
+							<header style= "line-height:60px;">
+								<h1><strong>따</strong>듯한
+									<strong>밥</strong>을 제 때에
+									<br><strong>따박</strong> 따박 챙겨먹는다. </h1>
+						
+							</header>
+							<p><strong>'따밥따밥</strong>은 사회적 취약 계층을 대상으로 언제나 따듯한 밥 한끼를 먹을수 있도록 '무료급식소 데이터', '선한영향력 가게' 등 여러 데이터를 출력해주는 웹 페이지 입니다.</p>
+							<a href="#work" class="button large scrolly">'따밥따밥'의 주요 기능 보러가기</a>
+						</div>
+					</div>
+				</div>
+			</article>
+
+		<!-- Work -->
+			<article id="work" class="wrapper style2 font0">
+				<div class="container">
+					<header>
+						<h2>대한민국 모두가 밥을 굶지 않는 그날 까지 <strong>따밥따밥</strong>이 함께합니다.</h2>
+						<p>따밥따밥의 주요 기능</p>
+					</header>
+					<div class="row aln-center">
+						<div class="col-4 col-6-medium col-12-small">
+							<div class="">
+							<section class="box style1 image_box" >
+								<img class="div_image" src="{% static 'images/title_before.png' %}" style="width:130px; height:100px; margin-bottom:15px;">
+								<h3>'선한 영향력 가게' 찾기</h3>
+								<p>결식아동에게 무료로 식사를 지원하는 '선한영향력 가게'는 전국 천여개의 대리점이 있다.
+								전국에 위치한 모든 착한영향력식당을 주소, 음식 구분에 따라 보여준다. </p>
+							</section>
+						</div>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<div class="">
+							<section class="box style1 image_box">
+								<img class="div_image" src="{% static 'images/test3.png' %}" style="width:270px; height:180px;">
+								<h3>지역별 데이터 추출</h3>
+								<p>지역 별, 식당 종류, 운영시간 등 여러 조건을 설정해서 원하는 정보를 선택하여서 볼 수 있습니다.</p>
+							</section>
+						</div>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<div class="">
+							<section class="box style1 image_box">
+								<img class="div_image" src="{% static 'images/free2.jpg' %}" style="width:230px; height:150px;">
+								<h3>무료급식소 데이터</h3>
+								<p>경제 사정이 어려운 사람, 노약자, 장애인 등 사회적 취약 계층을 대상으로 무상으로 식사를 제공하는 무료급식소 현황을 보여준다.</p>
+							</section>
+						</div>
+						</div>
+					</div>
+					<footer>
+						<p>기존 선한영향력 가게 찾기 사이트와는 어떤 차별점이 있는지 궁금하신가요?</p>
+						<a href="#portfolio" class="button large scrolly">'따밥따밥' 세부기능 알아보기</a>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Portfolio -->
+			<article id="portfolio" class="wrapper style3 font0">
+				<div class="container">
+					<header>
+						<h2>기존 '선한영향력 가게' 사이트와 차별점</h2>
+						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
+					</header>
+					<div class="row">
+						<div class="col-4 col-6-medium col-12-small">
+							<div class="">
+								<article class="box style2 image_box">
+									<img class="div_image" src="{% static 'images/test1.png' %}"  style="text-align: center;" alt="" />
+									<h3><a href="#">지역별 가게 갯수 확인</a></h3>
+									<p>파이썬 Folium모듈을 사용하여서 데이터 저장 되어있는</p>
+								</article>
+							</div>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<div class="">
+								<article class="box style2 image_box">
+									<img class="div_image" src="{% static 'images/test2.png' %}" alt=""/>
+									<h3><a href="#">지도 상에서 가게정보 열람</a></h3>
+									<p>페이지를 이동하지 않아도 상점의 위치를 클릭하면 지도 상에서 간략한 가게정보를 한눈에 확인 할 수있음.</p>
+								</article>
+							</div>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<div class="">
+								<article class="box style2 image_box">
+									<img class="div_image" src="{% static 'images/test4.png' %}" alt="" />
+									<h3><a href="#">현재 영업중인 식당 목록</a></h3>
+									<p>웹에서 일일히 검색해서 찾아보거나 전화할 필요없이 현재 시간을 기준으로 영업중인 식당과 영업중이지 않은 식당데이터를 선택해서 출력이 가능하다.</p>
+								</article>
+							</div>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<div class="">
+								<article class="box style2 image_box">
+									<img class="div_image" src="{% static 'images/test5.png' %}" alt="" />
+									<h3><a href="#">지역별 가게정보 추출</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<div class="">
+								<article class="box style2 image_box">
+									<img class="div_image" src="{% static 'images/test6.png' %}" alt="" />
+									<h3><a href="#">다양한 메뉴</a></h3>
+									<p>지도 페이지에서 여러가지 기능 페이지로 이동할 수 있도록 메뉴 바 생성</p>
+								</article>
+							</div>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<div class="">
+								<article class="box style2 image_box">
+									<img class="div_image" src="{% static 'images/test1.png' %}" alt="" />
+									<h3><a href="#">사용자의 실시간 위치 표시</a></h3>
+									<p>현재 '따밥따밥' 웹 기능을 사용하고있는 현재 사용자의 위치를 실시간으로 위치정보를 조회하여서 지도상에 현재 위치를 마커로 표시해준다.</p>
+								</article>
+							</div>
+						</div>
+					</div>
+					<footer>
+						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+						<a href="#contact" class="button large scrolly">Get in touch with me</a>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Contact -->
+			<article id="contact" class="wrapper style4 font0">
+				<div class="container medium">
+					<header>
+						<h2>I would like to hire you.</h2>
+						<p>Ornare nulla proin odio consequat sapien vestibulum ipsum.</p>
+					</header>
+					<div class="row">
+						<div class="col-12">
+							<form method="post" action="#">
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<input type="text" name="name" id="name" placeholder="Name" />
+									</div>
+									<div class="col-6 col-12-small">
+										<input type="text" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="col-12">
+										<input type="text" name="subject" id="subject" placeholder="Subject" />
+									</div>
+									<div class="col-12">
+										<textarea name="message" id="message" placeholder="Message"></textarea>
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" /></li>
+											<li><input type="reset" value="Clear Form" class="alt" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="col-12">
+							<hr />
+							<h3>Find me on ...</h3>
+							<ul class="social">
+								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
+								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+								<!--
+								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
+								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
+								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
+								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
+								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
+								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
+								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
+								-->
+							</ul>
+							<hr />
+						</div>
+					</div>
+					<footer>
+						<ul id="copyright">
+							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Scripts -->
+			<script src="{% static '/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static '/assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static '/assets/js/browser.min.js' %}"></script>
+			<script src="{% static '/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static '/assets/js/util.js' %}"></script>
+			<script src="{% static '/assets/js/main.js' %}"></script>
+	</body>
+</html>
