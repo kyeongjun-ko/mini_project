@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+
+# from django.contrib import admin
+# from aboutus.views import index
+# from miniport.views import detail
+		
+# admin.site.register(index)
+# admin.site.register(detail)
