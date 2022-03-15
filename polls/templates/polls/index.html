@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>따밥따밥</title>
+    <link href="/static/css/main.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="d-flex flex-wrap justify-content-center py-3 border-bottom" style="margin: 0">
+            <svg class="bi me-2" width="40" height="0"></svg>
+            <a href="/polls/"> <span class="fs-4"><img src="/static/img/ddabab.png" style="width: 2.5em; height: 2.5em;"/></span></a>
+        </header>
+        <div class="row">
+            <div class="col-9">
+                <!-- 지도 들어가는 자리 ===========================-->
+                {# 선한영향력 전체#}
+                <iframe class="map" id="map1" src="https://jhpark1014.github.io/folium/stores_map.html" height="800em" width="100%" style="display: block;"></iframe> {# 선한영향력-결식아동#}
+                <iframe class="map" id="map1-1" src="https://jhpark1014.github.io/folium/child_map.html" height="800em" width="100%" style="display: none;"></iframe> {# 선한영향력-독거노인#}
+                <iframe class="map" id="map1-2" src="https://jhpark1014.github.io/folium/old_map.html" height="800em" width="100%" style="display: none;"></iframe> {# 선한영향력- 소방관 외 기타#}
+                <iframe class="map" id="map1-3" src="https://jhpark1014.github.io/folium/fire_map.html" height="800em" width="100%" style="display: none;"></iframe>
+            </div>
+            <div class="col-3">
+                <!-- st . 우측 메뉴바 =============================== -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width:100%;" aria-label="Fifth navbar example">
+                    <div class="ml-auto" style="padding: 2%;margin: 3% 20% 1% 10%;">
+                        <a class="navbar-brand" href="#" style="font-size: 2.2em;">
+                            <img src="/static/img/ddabab.png" style="width: 2.5em; height: 2.5em;"/>
+                        </a>
+                    </div>
+                    <div class="dropdown ml-auto" style="text-align: right;">
+                        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                        </a>
+                    </div>
+                </nav>
+                <div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 100%;height: 60%;">
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <hr>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link link-dark" aria-current="page">
+                                <i class="fas fa-pen-to-square fa-lg"></i><svg class="bi me-2" width="16" height="16"></svg>정보수정
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link link-dark">
+                                <i class="fas fa-solid fa-headset fa-lg"></i><svg class="bi me-2" width="16" height="16"></svg>문의하기
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="where/all" class="nav-link link-dark" aria-current="page">
+                                <i class="fas fa-solid fa-binoculars fa-lg"></i><svg class="bi me-2" width="16" height="16"></svg>지역으로 찾기
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="where" class="nav-link link-dark" aria-current="page">
+                                <i class="fas fa-solid fa-users fa-lg"></i><svg class="bi me-2" width="16" height="16"></svg>About Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 지도종류 선택============= -->
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width: 100%;">
+                    <input onclick="doDisplay0(['map1','sunhan'],['muryo','map1-1','map1-2','map1-3'])" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-secondary" for="btnradio1" style="font-size:95% ; width:100%">선한 영향력</label>
+
+                    <input onclick="#" type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" style="width:30%">
+                    <label class="btn btn-outline-secondary" for="btnradio2" style="width: 100%;">급식소</label>
+                    <!-- <input onclick="doDisplay0('card','muryo','sunhan')" type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio3" style="width:100%">급식카드</label> -->
+                </div>
+                <!-- en.지도 종류 선택 ============== -->
+                <!-- 상세조건 선택============= -->
+                <div class="btn-group" id="sunhan" role="group" aria-label="Basic radio toggle button group" style="width: 100%; display: block">
+                    <input onclick="doDisplay0(['map1'],['map1-1', 'map1-2','map1-3'])" type="radio" class="btn-check" name="btnradio_1" id="btnradio20" autocomplete="off" checked>
+                    <label class="btn btn-outline-secondary" for="btnradio20" style="font-size:95% ; width:24.2%">전체</label>
+                    <input onclick="doDisplay0(['map1-1'],['map1', 'map1-2','map1-3'])" type="radio" class="btn-check" name="btnradio_1" id="btnradio21" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio21" style="font-size:95% ; width:24.2%">결식아동</label>
+                    <input onclick="doDisplay0(['map1-2'],['map1','map1-3','map1-1'])" type="radio" class="btn-check" name="btnradio_1" id="btnradio23" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio23" style="font-size:95% ; width:24.2%">독거노인</label>
+                    <input onclick="doDisplay0(['map1-3'],['map1','map1-2','map1-1'])" type="radio" class="btn-check" name="btnradio_1" id="btnradio24" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio24" style="font-size:95% ; width:24.2%">기타</label>
+                </div>
+
+
+                <form id="muryo" class="jogeon" style="display: none;">
+                    <input type="checkbox" name="target1_code" value="1" checked> 무료
+                    <input type="checkbox" name="target1_code" value="0"> 급식소
+                </form>
+                <!-- en.상세조건 선택 ============== -->
+
+                <!-- en.우측 메뉴바=========================== -->
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/static/js/main.js">
+</script>
+
+</html>

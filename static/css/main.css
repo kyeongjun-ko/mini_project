@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'IM_Hyemin-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    /* border: 2px solid #000000; */
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    font-family: 'IM_Hyemin-Regular', 'Selif' !important;
+    margin: 0%;
+    padding: 0;
+    height: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+#right-float {
+    float: right;
+}
+
+.smallname {
+    font-weight: bold;
+    font-size: 2.7em;
+    line-height: 1.5em;
+}
+
+#side-bar {
+    float: right;
+    background-color: #ffffff;
+    width: 27%;
+}
+
+article {
+    float: left;
+    width: 70%;
+}
+
+li {
+    list-style: none;
+    padding: 5px;
+}
+
+.btn-group {
+    background-color: #ffffff;
+    text-align: center;
+    margin: 2px auto;
+}
+
+#popup-place-info {
+    padding: 5px 5px 0 5px;
+    display: none;
+    height: 20%;
+}
+
+.btnflt1 {
+    float: right;
+    margin: 0 2px 0 auto;
+}
+
+.jogeon {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.loginimg {
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>무료급식소!</title>
+    <link href="../../../static/css/main.css" rel="stylesheet">
+    <link href="../../../static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- 1줄, 종류 로고 들어감-->
+            <div class="col" style="text-align: center; font-size: 3em;">
+                무료급식소
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7 ml-auto mr-auto">
+                <p class="smallname">{{ store.name }}</p>
+                {{ store.addr1 }}
+                <br> 영업시간 : <b>{{ store.open_info }}</b>
+                <br> 휴무 : <b>{{ store.close_info }}</b>
+                <br> 대상자 : <b>저소득층 자녀</b>
+                <br>
+            </div>
+            <div class="col-4 ml-auto mr-auto">
+                <img src="../../../download_Data/348.jpg" width="100%" />
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button style="margin-bottom: 30px;" type="button" onclick="location.href='https://xn--o39akkz01az4ip7f4xzwoa.com/store/view?idx={{store.idx}}';" class="btn btn-light btn-outline-secondary btnflt1">자세히보기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- en. 장소 클릭 시 상세정보 -->
+</body>
+
+</html>
